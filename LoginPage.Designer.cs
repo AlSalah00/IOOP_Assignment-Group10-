@@ -68,6 +68,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.Image = Properties.Resources.Hotel_Logo2;
             pictureBox1.Location = new Point(70, 75);
