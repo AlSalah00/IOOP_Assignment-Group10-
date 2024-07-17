@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IOOP_Assignment_Group10_.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,27 @@ namespace IOOP_Assignment_Group10_
         public ManagerPage()
         {
             InitializeComponent();
+            ManageUsers mu = new ManageUsers();
+            addUserControl(mu);
+        }
+
+        private void addUserControl(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            ManagerPanel.Controls.Clear();
+            ManagerPanel.Controls.Add(userControl);
+            userControl.BringToFront();
+        }
+        private void ManagerPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ManageUsers mu = new ManageUsers();
+            addUserControl(mu);
+            UAccBtn.BackColor = Color.Blue;
         }
     }
 }

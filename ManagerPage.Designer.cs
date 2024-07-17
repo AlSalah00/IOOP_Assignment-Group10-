@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label1 = new Label();
             button7 = new Button();
             button6 = new Button();
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
-            button1 = new Button();
+            UAccBtn = new Button();
             pictureBox1 = new PictureBox();
-            label1 = new Label();
+            ManagerPanel = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -52,13 +53,24 @@
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(UAccBtn);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(328, 685);
             panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(81, 181);
+            label1.Name = "label1";
+            label1.Size = new Size(140, 23);
+            label1.TabIndex = 8;
+            label1.Text = "Welcome! (user)";
             // 
             // button7
             // 
@@ -156,21 +168,22 @@
             button2.TextAlign = ContentAlignment.MiddleLeft;
             button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // UAccBtn
             // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources.user21;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(12, 216);
-            button1.Name = "button1";
-            button1.Size = new Size(313, 59);
-            button1.TabIndex = 1;
-            button1.Text = "       Users Accounts";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = true;
+            UAccBtn.FlatAppearance.BorderSize = 0;
+            UAccBtn.FlatStyle = FlatStyle.Flat;
+            UAccBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UAccBtn.ForeColor = Color.White;
+            UAccBtn.Image = Properties.Resources.user21;
+            UAccBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            UAccBtn.Location = new Point(12, 216);
+            UAccBtn.Name = "UAccBtn";
+            UAccBtn.Size = new Size(313, 59);
+            UAccBtn.TabIndex = 1;
+            UAccBtn.Text = "       Users Accounts";
+            UAccBtn.TextAlign = ContentAlignment.MiddleLeft;
+            UAccBtn.UseVisualStyleBackColor = true;
+            UAccBtn.Click += button1_Click;
             // 
             // pictureBox1
             // 
@@ -181,16 +194,12 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // label1
+            // ManagerPanel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(81, 181);
-            label1.Name = "label1";
-            label1.Size = new Size(140, 23);
-            label1.TabIndex = 8;
-            label1.Text = "Welcome! (user)";
+            ManagerPanel.Location = new Point(334, 24);
+            ManagerPanel.Name = "ManagerPanel";
+            ManagerPanel.Size = new Size(748, 641);
+            ManagerPanel.TabIndex = 1;
             // 
             // ManagerPage
             // 
@@ -198,9 +207,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1094, 685);
+            Controls.Add(ManagerPanel);
             Controls.Add(panel1);
             Name = "ManagerPage";
             Text = "ManagerPage";
+            Load += ManagerPage_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -211,7 +222,7 @@
 
         private Panel panel1;
         private PictureBox pictureBox1;
-        private Button button1;
+        private Button UAccBtn;
         private Button button7;
         private Button button6;
         private Button button5;
@@ -219,5 +230,6 @@
         private Button button3;
         private Button button2;
         private Label label1;
+        private Panel ManagerPanel;
     }
 }
