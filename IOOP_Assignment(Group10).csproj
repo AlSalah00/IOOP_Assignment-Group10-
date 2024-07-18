@@ -24,4 +24,11 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="UserControls\CustomerUCs\" />
+    <Folder Include="UserControls\HousekeepingUCs\" />
+    <Folder Include="UserControls\ReceptionistUCs\" />
+  </ItemGroup>
+
 </Project>

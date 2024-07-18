@@ -38,7 +38,6 @@
             textBox2 = new TextBox();
             button1 = new Button();
             linkLabel1 = new LinkLabel();
-            linkLabel2 = new LinkLabel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -148,23 +147,12 @@
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Forgot password?";
             // 
-            // linkLabel2
-            // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.Location = new Point(445, 381);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(139, 20);
-            linkLabel2.TabIndex = 8;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Create new account";
-            // 
             // LoginPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(858, 471);
-            Controls.Add(linkLabel2);
             Controls.Add(linkLabel1);
             Controls.Add(button1);
             Controls.Add(textBox2);
@@ -193,7 +181,6 @@
         private TextBox textBox2;
         private Button button1;
         private LinkLabel linkLabel1;
-        private LinkLabel linkLabel2;
         private Label label4;
     }
 }
