@@ -30,12 +30,12 @@
         {
             panel1 = new Panel();
             label1 = new Label();
-            button7 = new Button();
-            button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
+            LOBtn_M = new Button();
+            PRBtn = new Button();
+            ROBtn = new Button();
+            CRBtn = new Button();
+            RCSBtn = new Button();
+            RoomInfBtn = new Button();
             UAccBtn = new Button();
             pictureBox1 = new PictureBox();
             ManagerPanel = new Panel();
@@ -47,12 +47,12 @@
             // 
             panel1.BackColor = Color.Navy;
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(button7);
-            panel1.Controls.Add(button6);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(LOBtn_M);
+            panel1.Controls.Add(PRBtn);
+            panel1.Controls.Add(ROBtn);
+            panel1.Controls.Add(CRBtn);
+            panel1.Controls.Add(RCSBtn);
+            panel1.Controls.Add(RoomInfBtn);
             panel1.Controls.Add(UAccBtn);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
@@ -72,101 +72,102 @@
             label1.TabIndex = 8;
             label1.Text = "Welcome! (user)";
             // 
-            // button7
+            // LOBtn_M
             // 
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button7.ForeColor = Color.White;
-            button7.Image = Properties.Resources.logout;
-            button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(12, 606);
-            button7.Name = "button7";
-            button7.Size = new Size(313, 59);
-            button7.TabIndex = 7;
-            button7.Text = "       Logout";
-            button7.TextAlign = ContentAlignment.MiddleLeft;
-            button7.UseVisualStyleBackColor = true;
+            LOBtn_M.FlatAppearance.BorderSize = 0;
+            LOBtn_M.FlatStyle = FlatStyle.Flat;
+            LOBtn_M.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LOBtn_M.ForeColor = Color.White;
+            LOBtn_M.Image = Properties.Resources.logout;
+            LOBtn_M.ImageAlign = ContentAlignment.MiddleLeft;
+            LOBtn_M.Location = new Point(12, 606);
+            LOBtn_M.Name = "LOBtn_M";
+            LOBtn_M.Size = new Size(313, 59);
+            LOBtn_M.TabIndex = 7;
+            LOBtn_M.Text = "       Logout";
+            LOBtn_M.TextAlign = ContentAlignment.MiddleLeft;
+            LOBtn_M.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // PRBtn
             // 
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button6.ForeColor = Color.White;
-            button6.Image = Properties.Resources.report;
-            button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(12, 541);
-            button6.Name = "button6";
-            button6.Size = new Size(313, 59);
-            button6.TabIndex = 6;
-            button6.Text = "       Profit Report";
-            button6.TextAlign = ContentAlignment.MiddleLeft;
-            button6.UseVisualStyleBackColor = true;
+            PRBtn.FlatAppearance.BorderSize = 0;
+            PRBtn.FlatStyle = FlatStyle.Flat;
+            PRBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PRBtn.ForeColor = Color.White;
+            PRBtn.Image = Properties.Resources.report;
+            PRBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            PRBtn.Location = new Point(12, 541);
+            PRBtn.Name = "PRBtn";
+            PRBtn.Size = new Size(313, 59);
+            PRBtn.TabIndex = 6;
+            PRBtn.Text = "       Profit Report";
+            PRBtn.TextAlign = ContentAlignment.MiddleLeft;
+            PRBtn.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // ROBtn
             // 
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = Color.White;
-            button5.Image = Properties.Resources.occupied;
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(12, 411);
-            button5.Name = "button5";
-            button5.Size = new Size(313, 59);
-            button5.TabIndex = 5;
-            button5.Text = "       Room Occupancy";
-            button5.TextAlign = ContentAlignment.MiddleLeft;
-            button5.UseVisualStyleBackColor = true;
+            ROBtn.FlatAppearance.BorderSize = 0;
+            ROBtn.FlatStyle = FlatStyle.Flat;
+            ROBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ROBtn.ForeColor = Color.White;
+            ROBtn.Image = Properties.Resources.occupied;
+            ROBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            ROBtn.Location = new Point(12, 411);
+            ROBtn.Name = "ROBtn";
+            ROBtn.Size = new Size(313, 59);
+            ROBtn.TabIndex = 5;
+            ROBtn.Text = "       Room Occupancy";
+            ROBtn.TextAlign = ContentAlignment.MiddleLeft;
+            ROBtn.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // CRBtn
             // 
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.White;
-            button4.Image = Properties.Resources.review;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(12, 476);
-            button4.Name = "button4";
-            button4.Size = new Size(313, 59);
-            button4.TabIndex = 4;
-            button4.Text = "       Customers Reviews";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = true;
+            CRBtn.FlatAppearance.BorderSize = 0;
+            CRBtn.FlatStyle = FlatStyle.Flat;
+            CRBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CRBtn.ForeColor = Color.White;
+            CRBtn.Image = Properties.Resources.review;
+            CRBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            CRBtn.Location = new Point(12, 476);
+            CRBtn.Name = "CRBtn";
+            CRBtn.Size = new Size(313, 59);
+            CRBtn.TabIndex = 4;
+            CRBtn.Text = "       Customers Reviews";
+            CRBtn.TextAlign = ContentAlignment.MiddleLeft;
+            CRBtn.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // RCSBtn
             // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Image = Properties.Resources.calendar;
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(12, 346);
-            button3.Name = "button3";
-            button3.Size = new Size(313, 59);
-            button3.TabIndex = 3;
-            button3.Text = "       Room Cleaning Shedule";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.UseVisualStyleBackColor = true;
+            RCSBtn.FlatAppearance.BorderSize = 0;
+            RCSBtn.FlatStyle = FlatStyle.Flat;
+            RCSBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RCSBtn.ForeColor = Color.White;
+            RCSBtn.Image = Properties.Resources.calendar;
+            RCSBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            RCSBtn.Location = new Point(12, 346);
+            RCSBtn.Name = "RCSBtn";
+            RCSBtn.Size = new Size(313, 59);
+            RCSBtn.TabIndex = 3;
+            RCSBtn.Text = "       Room Cleaning Shedule";
+            RCSBtn.TextAlign = ContentAlignment.MiddleLeft;
+            RCSBtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // RoomInfBtn
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = Properties.Resources.bed;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(12, 281);
-            button2.Name = "button2";
-            button2.Size = new Size(313, 59);
-            button2.TabIndex = 2;
-            button2.Text = "       Room Information";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = true;
+            RoomInfBtn.FlatAppearance.BorderSize = 0;
+            RoomInfBtn.FlatStyle = FlatStyle.Flat;
+            RoomInfBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RoomInfBtn.ForeColor = Color.White;
+            RoomInfBtn.Image = Properties.Resources.bed;
+            RoomInfBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            RoomInfBtn.Location = new Point(12, 281);
+            RoomInfBtn.Name = "RoomInfBtn";
+            RoomInfBtn.Size = new Size(313, 59);
+            RoomInfBtn.TabIndex = 2;
+            RoomInfBtn.Text = "       Room Information";
+            RoomInfBtn.TextAlign = ContentAlignment.MiddleLeft;
+            RoomInfBtn.UseVisualStyleBackColor = true;
+            RoomInfBtn.Click += button2_Click;
             // 
             // UAccBtn
             // 
@@ -205,7 +206,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1094, 685);
             Controls.Add(ManagerPanel);
             Controls.Add(panel1);
@@ -223,12 +224,12 @@
         private Panel panel1;
         private PictureBox pictureBox1;
         private Button UAccBtn;
-        private Button button7;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
+        private Button LOBtn_M;
+        private Button PRBtn;
+        private Button ROBtn;
+        private Button CRBtn;
+        private Button RCSBtn;
+        private Button RoomInfBtn;
         private Label label1;
         private Panel ManagerPanel;
     }
