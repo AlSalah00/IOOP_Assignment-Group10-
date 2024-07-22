@@ -16,13 +16,44 @@ namespace IOOP_Assignment_Group10_
     {
 
         private Color highlight = ColorTranslator.FromHtml("#0066cc");
-        private Color Default = Color.Navy;
+        private Color defaultColor = Color.Navy;
+        private Button[] buttons;
         public ManagerPage()
         {
             InitializeComponent();
             ManageUsers mu = new ManageUsers();
             addUserControl(mu);
-            UAccBtn.BackColor = highlight;
+
+            buttons = new Button[] { UAccBtn, RoomInfBtn, RCSBtn, ROBtn, CRBtn, PRBtn, LOBtn_M };
+
+            foreach (Button btn in buttons)
+            {
+                btn.Click += Button_Click;
+            }
+
+            HighlightButton(UAccBtn);
+        }
+
+        private void Button_Click(object? sender, EventArgs e)
+        {
+
+            if (sender is Button clickedButton)
+            {
+                // Reset all buttons to default color
+                foreach (Button btn in buttons)
+                {
+                    btn.BackColor = defaultColor;
+                }
+
+                // Highlight the clicked button
+                HighlightButton(clickedButton);
+            }
+
+        }
+
+        private void HighlightButton(Button button)
+        {
+            button.BackColor = highlight;
         }
 
         private void addUserControl(UserControl userControl)
@@ -41,26 +72,36 @@ namespace IOOP_Assignment_Group10_
         {
             ManageUsers mu = new ManageUsers();
             addUserControl(mu);
-            UAccBtn.BackColor = highlight;
-            ROBtn.BackColor = Default;
-            RCSBtn.BackColor = Default;
-            RoomInfBtn.BackColor = Default;
-            PRBtn.BackColor = Default;
-            CRBtn.BackColor = Default;
-            LOBtn_M.BackColor = Default;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             RoomInfo ri = new RoomInfo();
             addUserControl(ri);
-            RoomInfBtn.BackColor = highlight;
-            UAccBtn.BackColor = Default;
-            ROBtn.BackColor = Default;
-            RCSBtn.BackColor = Default;
-            PRBtn.BackColor = Default;
-            CRBtn.BackColor = Default;
-            LOBtn_M.BackColor = Default;
+        }
+
+        private void RCSBtn_Click(object sender, EventArgs e)
+        {
+            RoomCSH roomCSH = new RoomCSH();
+            addUserControl(roomCSH);
+        }
+
+        private void ROBtn_Click(object sender, EventArgs e)
+        {
+            RoomOccupancy ro = new RoomOccupancy();
+            addUserControl(ro);
+        }
+
+        private void CRBtn_Click(object sender, EventArgs e)
+        {
+            CustomerReviews cr = new CustomerReviews();
+            addUserControl(cr);
+        }
+
+        private void PRBtn_Click(object sender, EventArgs e)
+        {
+            ProfitReport pr = new ProfitReport();
+            addUserControl(pr);
         }
     }
 }

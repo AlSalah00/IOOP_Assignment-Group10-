@@ -80,12 +80,13 @@
             LOBtn_M.ForeColor = Color.White;
             LOBtn_M.Image = Properties.Resources.logout;
             LOBtn_M.ImageAlign = ContentAlignment.MiddleLeft;
-            LOBtn_M.Location = new Point(12, 606);
+            LOBtn_M.Location = new Point(3, 606);
             LOBtn_M.Name = "LOBtn_M";
-            LOBtn_M.Size = new Size(313, 59);
+            LOBtn_M.Size = new Size(322, 59);
             LOBtn_M.TabIndex = 7;
-            LOBtn_M.Text = "       Logout";
+            LOBtn_M.Text = " Logout";
             LOBtn_M.TextAlign = ContentAlignment.MiddleLeft;
+            LOBtn_M.TextImageRelation = TextImageRelation.ImageBeforeText;
             LOBtn_M.UseVisualStyleBackColor = true;
             // 
             // PRBtn
@@ -96,13 +97,15 @@
             PRBtn.ForeColor = Color.White;
             PRBtn.Image = Properties.Resources.report;
             PRBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            PRBtn.Location = new Point(12, 541);
+            PRBtn.Location = new Point(3, 541);
             PRBtn.Name = "PRBtn";
-            PRBtn.Size = new Size(313, 59);
+            PRBtn.Size = new Size(322, 59);
             PRBtn.TabIndex = 6;
-            PRBtn.Text = "       Profit Report";
+            PRBtn.Text = " Profit Report";
             PRBtn.TextAlign = ContentAlignment.MiddleLeft;
+            PRBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             PRBtn.UseVisualStyleBackColor = true;
+            PRBtn.Click += PRBtn_Click;
             // 
             // ROBtn
             // 
@@ -112,13 +115,15 @@
             ROBtn.ForeColor = Color.White;
             ROBtn.Image = Properties.Resources.occupied;
             ROBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            ROBtn.Location = new Point(12, 411);
+            ROBtn.Location = new Point(3, 411);
             ROBtn.Name = "ROBtn";
-            ROBtn.Size = new Size(313, 59);
+            ROBtn.Size = new Size(322, 59);
             ROBtn.TabIndex = 5;
-            ROBtn.Text = "       Room Occupancy";
+            ROBtn.Text = "   Room Occupancy";
             ROBtn.TextAlign = ContentAlignment.MiddleLeft;
+            ROBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             ROBtn.UseVisualStyleBackColor = true;
+            ROBtn.Click += ROBtn_Click;
             // 
             // CRBtn
             // 
@@ -128,13 +133,15 @@
             CRBtn.ForeColor = Color.White;
             CRBtn.Image = Properties.Resources.review;
             CRBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            CRBtn.Location = new Point(12, 476);
+            CRBtn.Location = new Point(3, 476);
             CRBtn.Name = "CRBtn";
-            CRBtn.Size = new Size(313, 59);
+            CRBtn.Size = new Size(322, 59);
             CRBtn.TabIndex = 4;
-            CRBtn.Text = "       Customers Reviews";
+            CRBtn.Text = " Customers Reviews";
             CRBtn.TextAlign = ContentAlignment.MiddleLeft;
+            CRBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             CRBtn.UseVisualStyleBackColor = true;
+            CRBtn.Click += CRBtn_Click;
             // 
             // RCSBtn
             // 
@@ -144,13 +151,15 @@
             RCSBtn.ForeColor = Color.White;
             RCSBtn.Image = Properties.Resources.calendar;
             RCSBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            RCSBtn.Location = new Point(12, 346);
+            RCSBtn.Location = new Point(3, 346);
             RCSBtn.Name = "RCSBtn";
-            RCSBtn.Size = new Size(313, 59);
+            RCSBtn.Size = new Size(322, 59);
             RCSBtn.TabIndex = 3;
-            RCSBtn.Text = "       Room Cleaning Shedule";
+            RCSBtn.Text = " Room Cleaning Schedule";
             RCSBtn.TextAlign = ContentAlignment.MiddleLeft;
+            RCSBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             RCSBtn.UseVisualStyleBackColor = true;
+            RCSBtn.Click += RCSBtn_Click;
             // 
             // RoomInfBtn
             // 
@@ -160,12 +169,13 @@
             RoomInfBtn.ForeColor = Color.White;
             RoomInfBtn.Image = Properties.Resources.bed;
             RoomInfBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            RoomInfBtn.Location = new Point(12, 281);
+            RoomInfBtn.Location = new Point(3, 281);
             RoomInfBtn.Name = "RoomInfBtn";
-            RoomInfBtn.Size = new Size(313, 59);
+            RoomInfBtn.Size = new Size(322, 59);
             RoomInfBtn.TabIndex = 2;
-            RoomInfBtn.Text = "       Room Information";
+            RoomInfBtn.Text = " Room Information";
             RoomInfBtn.TextAlign = ContentAlignment.MiddleLeft;
+            RoomInfBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             RoomInfBtn.UseVisualStyleBackColor = true;
             RoomInfBtn.Click += button2_Click;
             // 
@@ -177,12 +187,13 @@
             UAccBtn.ForeColor = Color.White;
             UAccBtn.Image = Properties.Resources.user21;
             UAccBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            UAccBtn.Location = new Point(12, 216);
+            UAccBtn.Location = new Point(3, 216);
             UAccBtn.Name = "UAccBtn";
-            UAccBtn.Size = new Size(313, 59);
+            UAccBtn.Size = new Size(322, 59);
             UAccBtn.TabIndex = 1;
-            UAccBtn.Text = "       Users Accounts";
+            UAccBtn.Text = " Users Accounts";
             UAccBtn.TextAlign = ContentAlignment.MiddleLeft;
+            UAccBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             UAccBtn.UseVisualStyleBackColor = true;
             UAccBtn.Click += button1_Click;
             // 
@@ -206,7 +217,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.WhiteSmoke;
+            BackColor = Color.White;
             ClientSize = new Size(1094, 685);
             Controls.Add(ManagerPanel);
             Controls.Add(panel1);

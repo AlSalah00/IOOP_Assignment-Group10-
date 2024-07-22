@@ -43,7 +43,6 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            panel1 = new Panel();
             SuspendLayout();
             // 
             // comboBox1
@@ -208,20 +207,11 @@
             button3.Text = "Delete";
             button3.UseVisualStyleBackColor = false;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.White;
-            panel1.ForeColor = Color.Black;
-            panel1.Location = new Point(15, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(720, 635);
-            panel1.TabIndex = 15;
-            // 
             // RoomInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.WhiteSmoke;
+            BackColor = Color.White;
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -237,7 +227,6 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(comboBox1);
-            Controls.Add(panel1);
             Name = "RoomInfo";
             Size = new Size(748, 641);
             ResumeLayout(false);
@@ -261,6 +250,5 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private Panel panel1;
     }
 }

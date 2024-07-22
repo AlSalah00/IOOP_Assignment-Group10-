@@ -181,7 +181,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.WhiteSmoke;
+            BackColor = Color.White;
             ClientSize = new Size(1094, 685);
             Controls.Add(ReceptionistPanel);
             Controls.Add(panel1);
