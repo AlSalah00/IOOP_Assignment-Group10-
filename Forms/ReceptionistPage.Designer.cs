@@ -162,7 +162,7 @@
             UAccBtn.Name = "UAccBtn";
             UAccBtn.Size = new Size(313, 59);
             UAccBtn.TabIndex = 1;
-            UAccBtn.Text = " Option 1";
+            UAccBtn.Text = " Manage Customers";
             UAccBtn.TextAlign = ContentAlignment.MiddleLeft;
             UAccBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             UAccBtn.UseVisualStyleBackColor = true;
