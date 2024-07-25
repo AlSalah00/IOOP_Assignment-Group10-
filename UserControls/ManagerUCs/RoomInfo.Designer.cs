@@ -28,227 +28,232 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBox1 = new ComboBox();
-            label1 = new Label();
-            label2 = new Label();
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox3 = new CheckBox();
-            checkBox4 = new CheckBox();
-            checkBox5 = new CheckBox();
-            checkBox6 = new CheckBox();
-            label3 = new Label();
-            textBox1 = new TextBox();
-            listBox1 = new ListBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            CBRoomType = new ComboBox();
+            lblRoomType = new Label();
+            lblAmenities = new Label();
+            CHBFreeWF = new CheckBox();
+            CHBFreeBF = new CheckBox();
+            CHBAC = new CheckBox();
+            CHBLS = new CheckBox();
+            CHBGP = new CheckBox();
+            CHBPF = new CheckBox();
+            lblPrice = new Label();
+            txtPrice = new TextBox();
+            AddBtn = new Button();
+            EditBtn = new Button();
+            DelBtn = new Button();
+            RoomInfoTable = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)RoomInfoTable).BeginInit();
             SuspendLayout();
             // 
-            // comboBox1
+            // CBRoomType
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Standard", "Deluxe", "Suite", "Apartment" });
-            comboBox1.Location = new Point(90, 95);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(316, 28);
-            comboBox1.TabIndex = 0;
+            CBRoomType.FormattingEnabled = true;
+            CBRoomType.Items.AddRange(new object[] { "Standard", "Deluxe", "Suite", "Apartment" });
+            CBRoomType.Location = new Point(90, 95);
+            CBRoomType.Name = "CBRoomType";
+            CBRoomType.Size = new Size(316, 28);
+            CBRoomType.TabIndex = 0;
             // 
-            // label1
+            // lblRoomType
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(90, 64);
-            label1.Name = "label1";
-            label1.Size = new Size(118, 28);
-            label1.TabIndex = 1;
-            label1.Text = "Room Type";
+            lblRoomType.AutoSize = true;
+            lblRoomType.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRoomType.Location = new Point(90, 64);
+            lblRoomType.Name = "lblRoomType";
+            lblRoomType.Size = new Size(118, 28);
+            lblRoomType.TabIndex = 1;
+            lblRoomType.Text = "Room Type";
             // 
-            // label2
+            // lblAmenities
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(90, 146);
-            label2.Name = "label2";
-            label2.Size = new Size(107, 28);
-            label2.TabIndex = 2;
-            label2.Text = "Amenities";
+            lblAmenities.AutoSize = true;
+            lblAmenities.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAmenities.Location = new Point(90, 146);
+            lblAmenities.Name = "lblAmenities";
+            lblAmenities.Size = new Size(107, 28);
+            lblAmenities.TabIndex = 2;
+            lblAmenities.Text = "Amenities";
             // 
-            // checkBox1
+            // CHBFreeWF
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            checkBox1.Location = new Point(90, 177);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(114, 27);
-            checkBox1.TabIndex = 3;
-            checkBox1.Text = "Free Wi-Fi";
-            checkBox1.UseVisualStyleBackColor = true;
+            CHBFreeWF.AutoSize = true;
+            CHBFreeWF.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CHBFreeWF.Location = new Point(90, 177);
+            CHBFreeWF.Name = "CHBFreeWF";
+            CHBFreeWF.Size = new Size(114, 27);
+            CHBFreeWF.TabIndex = 3;
+            CHBFreeWF.Text = "Free Wi-Fi";
+            CHBFreeWF.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // CHBFreeBF
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            checkBox2.Location = new Point(90, 210);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(147, 27);
-            checkBox2.TabIndex = 4;
-            checkBox2.Text = "Free Breakfast";
-            checkBox2.UseVisualStyleBackColor = true;
+            CHBFreeBF.AutoSize = true;
+            CHBFreeBF.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CHBFreeBF.Location = new Point(90, 210);
+            CHBFreeBF.Name = "CHBFreeBF";
+            CHBFreeBF.Size = new Size(147, 27);
+            CHBFreeBF.TabIndex = 4;
+            CHBFreeBF.Text = "Free Breakfast";
+            CHBFreeBF.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // CHBAC
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            checkBox3.Location = new Point(90, 243);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(166, 27);
-            checkBox3.TabIndex = 5;
-            checkBox3.Text = "Air Conditioning";
-            checkBox3.UseVisualStyleBackColor = true;
+            CHBAC.AutoSize = true;
+            CHBAC.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CHBAC.Location = new Point(90, 243);
+            CHBAC.Name = "CHBAC";
+            CHBAC.Size = new Size(166, 27);
+            CHBAC.TabIndex = 5;
+            CHBAC.Text = "Air Conditioning";
+            CHBAC.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // CHBLS
             // 
-            checkBox4.AutoSize = true;
-            checkBox4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            checkBox4.Location = new Point(260, 177);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(168, 27);
-            checkBox4.TabIndex = 6;
-            checkBox4.Text = "Laundry Services";
-            checkBox4.UseVisualStyleBackColor = true;
+            CHBLS.AutoSize = true;
+            CHBLS.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CHBLS.Location = new Point(260, 177);
+            CHBLS.Name = "CHBLS";
+            CHBLS.Size = new Size(168, 27);
+            CHBLS.TabIndex = 6;
+            CHBLS.Text = "Laundry Services";
+            CHBLS.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // CHBGP
             // 
-            checkBox5.AutoSize = true;
-            checkBox5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            checkBox5.Location = new Point(260, 210);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(143, 27);
-            checkBox5.TabIndex = 7;
-            checkBox5.Text = "Gym and Pool";
-            checkBox5.UseVisualStyleBackColor = true;
+            CHBGP.AutoSize = true;
+            CHBGP.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CHBGP.Location = new Point(260, 210);
+            CHBGP.Name = "CHBGP";
+            CHBGP.Size = new Size(143, 27);
+            CHBGP.TabIndex = 7;
+            CHBGP.Text = "Gym and Pool";
+            CHBGP.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // CHBPF
             // 
-            checkBox6.AutoSize = true;
-            checkBox6.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            checkBox6.Location = new Point(262, 243);
-            checkBox6.Name = "checkBox6";
-            checkBox6.Size = new Size(128, 27);
-            checkBox6.TabIndex = 8;
-            checkBox6.Text = "Pet-Friendly";
-            checkBox6.UseVisualStyleBackColor = true;
+            CHBPF.AutoSize = true;
+            CHBPF.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CHBPF.Location = new Point(262, 243);
+            CHBPF.Name = "CHBPF";
+            CHBPF.Size = new Size(128, 27);
+            CHBPF.TabIndex = 8;
+            CHBPF.Text = "Pet-Friendly";
+            CHBPF.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // lblPrice
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(90, 292);
-            label3.Name = "label3";
-            label3.Size = new Size(59, 28);
-            label3.TabIndex = 9;
-            label3.Text = "Price";
+            lblPrice.AutoSize = true;
+            lblPrice.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPrice.Location = new Point(90, 292);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(59, 28);
+            lblPrice.TabIndex = 9;
+            lblPrice.Text = "Price";
             // 
-            // textBox1
+            // txtPrice
             // 
-            textBox1.Location = new Point(90, 323);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(147, 27);
-            textBox1.TabIndex = 10;
+            txtPrice.Location = new Point(90, 323);
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new Size(147, 27);
+            txtPrice.TabIndex = 10;
             // 
-            // listBox1
+            // AddBtn
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(90, 451);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(572, 164);
-            listBox1.TabIndex = 11;
+            AddBtn.BackColor = SystemColors.HotTrack;
+            AddBtn.FlatAppearance.BorderSize = 0;
+            AddBtn.FlatStyle = FlatStyle.Flat;
+            AddBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AddBtn.ForeColor = Color.White;
+            AddBtn.Location = new Point(90, 382);
+            AddBtn.Name = "AddBtn";
+            AddBtn.Size = new Size(101, 36);
+            AddBtn.TabIndex = 12;
+            AddBtn.Text = "Add";
+            AddBtn.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // EditBtn
             // 
-            button1.BackColor = SystemColors.HotTrack;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(90, 382);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 36);
-            button1.TabIndex = 12;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = false;
+            EditBtn.BackColor = SystemColors.HotTrack;
+            EditBtn.FlatAppearance.BorderSize = 0;
+            EditBtn.FlatStyle = FlatStyle.Flat;
+            EditBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            EditBtn.ForeColor = Color.White;
+            EditBtn.Location = new Point(212, 382);
+            EditBtn.Name = "EditBtn";
+            EditBtn.Size = new Size(101, 36);
+            EditBtn.TabIndex = 13;
+            EditBtn.Text = "Edit";
+            EditBtn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // DelBtn
             // 
-            button2.BackColor = SystemColors.HotTrack;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(212, 382);
-            button2.Name = "button2";
-            button2.Size = new Size(101, 36);
-            button2.TabIndex = 13;
-            button2.Text = "Edit";
-            button2.UseVisualStyleBackColor = false;
+            DelBtn.BackColor = Color.Red;
+            DelBtn.FlatAppearance.BorderSize = 0;
+            DelBtn.FlatStyle = FlatStyle.Flat;
+            DelBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DelBtn.ForeColor = Color.White;
+            DelBtn.Location = new Point(334, 382);
+            DelBtn.Name = "DelBtn";
+            DelBtn.Size = new Size(101, 36);
+            DelBtn.TabIndex = 14;
+            DelBtn.Text = "Delete";
+            DelBtn.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // RoomInfoTable
             // 
-            button3.BackColor = Color.Red;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(334, 382);
-            button3.Name = "button3";
-            button3.Size = new Size(101, 36);
-            button3.TabIndex = 14;
-            button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = false;
+            RoomInfoTable.BackgroundColor = Color.White;
+            RoomInfoTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            RoomInfoTable.GridColor = Color.Black;
+            RoomInfoTable.Location = new Point(90, 445);
+            RoomInfoTable.Name = "RoomInfoTable";
+            RoomInfoTable.RowHeadersWidth = 51;
+            RoomInfoTable.Size = new Size(595, 164);
+            RoomInfoTable.TabIndex = 15;
             // 
             // RoomInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(listBox1);
-            Controls.Add(textBox1);
-            Controls.Add(label3);
-            Controls.Add(checkBox6);
-            Controls.Add(checkBox5);
-            Controls.Add(checkBox4);
-            Controls.Add(checkBox3);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(RoomInfoTable);
+            Controls.Add(DelBtn);
+            Controls.Add(EditBtn);
+            Controls.Add(AddBtn);
+            Controls.Add(txtPrice);
+            Controls.Add(lblPrice);
+            Controls.Add(CHBPF);
+            Controls.Add(CHBGP);
+            Controls.Add(CHBLS);
+            Controls.Add(CHBAC);
+            Controls.Add(CHBFreeBF);
+            Controls.Add(CHBFreeWF);
+            Controls.Add(lblAmenities);
+            Controls.Add(lblRoomType);
+            Controls.Add(CBRoomType);
             Name = "RoomInfo";
             Size = new Size(748, 641);
+            ((System.ComponentModel.ISupportInitialize)RoomInfoTable).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private ComboBox comboBox1;
-        private Label label1;
-        private Label label2;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
-        private CheckBox checkBox4;
-        private CheckBox checkBox5;
-        private CheckBox checkBox6;
-        private Label label3;
-        private TextBox textBox1;
-        private ListBox listBox1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private ComboBox CBRoomType;
+        private Label lblRoomType;
+        private Label lblAmenities;
+        private CheckBox CHBFreeWF;
+        private CheckBox CHBFreeBF;
+        private CheckBox CHBAC;
+        private CheckBox CHBLS;
+        private CheckBox CHBGP;
+        private CheckBox CHBPF;
+        private Label lblPrice;
+        private TextBox txtPrice;
+        private Button AddBtn;
+        private Button EditBtn;
+        private Button DelBtn;
+        private DataGridView RoomInfoTable;
     }
 }

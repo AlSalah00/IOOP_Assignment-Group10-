@@ -82,8 +82,9 @@
             button7.Name = "button7";
             button7.Size = new Size(313, 59);
             button7.TabIndex = 7;
-            button7.Text = "       Logout";
+            button7.Text = " Logout";
             button7.TextAlign = ContentAlignment.MiddleLeft;
+            button7.TextImageRelation = TextImageRelation.ImageBeforeText;
             button7.UseVisualStyleBackColor = true;
             // 
             // button5
@@ -97,8 +98,9 @@
             button5.Name = "button5";
             button5.Size = new Size(313, 59);
             button5.TabIndex = 5;
-            button5.Text = "       Option 4";
+            button5.Text = " Option 4";
             button5.TextAlign = ContentAlignment.MiddleLeft;
+            button5.TextImageRelation = TextImageRelation.ImageBeforeText;
             button5.UseVisualStyleBackColor = true;
             // 
             // button4
@@ -112,8 +114,9 @@
             button4.Name = "button4";
             button4.Size = new Size(313, 59);
             button4.TabIndex = 4;
-            button4.Text = "       Option 5";
+            button4.Text = " Option 5";
             button4.TextAlign = ContentAlignment.MiddleLeft;
+            button4.TextImageRelation = TextImageRelation.ImageBeforeText;
             button4.UseVisualStyleBackColor = true;
             // 
             // button3
@@ -127,8 +130,9 @@
             button3.Name = "button3";
             button3.Size = new Size(313, 59);
             button3.TabIndex = 3;
-            button3.Text = "       Option 3";
+            button3.Text = " Option 3";
             button3.TextAlign = ContentAlignment.MiddleLeft;
+            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
             button3.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -142,8 +146,9 @@
             button2.Name = "button2";
             button2.Size = new Size(313, 59);
             button2.TabIndex = 2;
-            button2.Text = "       Option 2";
+            button2.Text = " Option 2";
             button2.TextAlign = ContentAlignment.MiddleLeft;
+            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
             button2.UseVisualStyleBackColor = true;
             // 
             // UAccBtn
@@ -157,8 +162,9 @@
             UAccBtn.Name = "UAccBtn";
             UAccBtn.Size = new Size(313, 59);
             UAccBtn.TabIndex = 1;
-            UAccBtn.Text = "       Option 1";
+            UAccBtn.Text = " Option 1";
             UAccBtn.TextAlign = ContentAlignment.MiddleLeft;
+            UAccBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             UAccBtn.UseVisualStyleBackColor = true;
             // 
             // pictureBox1

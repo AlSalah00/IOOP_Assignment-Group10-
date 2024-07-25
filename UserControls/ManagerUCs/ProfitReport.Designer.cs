@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
-            label2 = new Label();
             pictureBox1 = new PictureBox();
+            label2 = new Label();
+            label1 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -56,17 +56,17 @@
             label23 = new Label();
             label24 = new Label();
             panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
-            panel7 = new Panel();
-            panel8 = new Panel();
-            panel9 = new Panel();
-            panel10 = new Panel();
-            panel11 = new Panel();
-            panel12 = new Panel();
-            panel13 = new Panel();
             panel14 = new Panel();
+            panel13 = new Panel();
+            panel12 = new Panel();
+            panel11 = new Panel();
+            panel10 = new Panel();
+            panel9 = new Panel();
+            panel8 = new Panel();
+            panel7 = new Panel();
+            panel6 = new Panel();
+            panel5 = new Panel();
+            panel4 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
@@ -78,21 +78,19 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(38, 50);
+            panel1.Location = new Point(44, 92);
             panel1.Name = "panel1";
             panel1.Size = new Size(558, 141);
             panel1.TabIndex = 0;
             // 
-            // label1
+            // pictureBox1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(164, 38);
-            label1.TabIndex = 0;
-            label1.Text = "Total Profit";
+            pictureBox1.Image = Properties.Resources.profits;
+            pictureBox1.Location = new Point(400, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(135, 135);
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -105,20 +103,22 @@
             label2.TabIndex = 1;
             label2.Text = "RM 0";
             // 
-            // pictureBox1
+            // label1
             // 
-            pictureBox1.Image = Properties.Resources.profits;
-            pictureBox1.Location = new Point(400, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(135, 135);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(164, 38);
+            label1.TabIndex = 0;
+            label1.Text = "Total Profit";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(45, 230);
+            label3.Location = new Point(51, 272);
             label3.Name = "label3";
             label3.Size = new Size(41, 20);
             label3.TabIndex = 2;
@@ -128,7 +128,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(48, 250);
+            label4.Location = new Point(54, 292);
             label4.Name = "label4";
             label4.Size = new Size(32, 20);
             label4.TabIndex = 3;
@@ -138,7 +138,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(48, 270);
+            label5.Location = new Point(54, 312);
             label5.Name = "label5";
             label5.Size = new Size(32, 20);
             label5.TabIndex = 4;
@@ -148,7 +148,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(48, 290);
+            label6.Location = new Point(54, 332);
             label6.Name = "label6";
             label6.Size = new Size(32, 20);
             label6.TabIndex = 5;
@@ -158,7 +158,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(48, 310);
+            label7.Location = new Point(54, 352);
             label7.Name = "label7";
             label7.Size = new Size(32, 20);
             label7.TabIndex = 6;
@@ -168,7 +168,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(48, 330);
+            label8.Location = new Point(54, 372);
             label8.Name = "label8";
             label8.Size = new Size(32, 20);
             label8.TabIndex = 7;
@@ -178,7 +178,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(48, 350);
+            label9.Location = new Point(54, 392);
             label9.Name = "label9";
             label9.Size = new Size(32, 20);
             label9.TabIndex = 8;
@@ -188,7 +188,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(48, 370);
+            label10.Location = new Point(54, 412);
             label10.Name = "label10";
             label10.Size = new Size(32, 20);
             label10.TabIndex = 9;
@@ -198,7 +198,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(48, 390);
+            label11.Location = new Point(54, 432);
             label11.Name = "label11";
             label11.Size = new Size(32, 20);
             label11.TabIndex = 10;
@@ -208,7 +208,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(48, 410);
+            label12.Location = new Point(54, 452);
             label12.Name = "label12";
             label12.Size = new Size(32, 20);
             label12.TabIndex = 11;
@@ -216,17 +216,18 @@
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Bottom;
             panel2.BackColor = SystemColors.HotTrack;
-            panel2.Location = new Point(57, 197);
+            panel2.Location = new Point(54, 57);
             panel2.Name = "panel2";
-            panel2.Size = new Size(34, 10);
+            panel2.Size = new Size(34, 150);
             panel2.TabIndex = 12;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(96, 444);
+            label13.Location = new Point(102, 486);
             label13.Name = "label13";
             label13.Size = new Size(33, 20);
             label13.TabIndex = 13;
@@ -236,7 +237,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.Location = new Point(135, 444);
+            label14.Location = new Point(141, 486);
             label14.Name = "label14";
             label14.Size = new Size(34, 20);
             label14.TabIndex = 14;
@@ -246,7 +247,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(175, 444);
+            label15.Location = new Point(181, 486);
             label15.Name = "label15";
             label15.Size = new Size(37, 20);
             label15.TabIndex = 15;
@@ -256,7 +257,7 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.Location = new Point(218, 444);
+            label16.Location = new Point(224, 486);
             label16.Name = "label16";
             label16.Size = new Size(35, 20);
             label16.TabIndex = 16;
@@ -266,7 +267,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.Location = new Point(259, 444);
+            label17.Location = new Point(265, 486);
             label17.Name = "label17";
             label17.Size = new Size(39, 20);
             label17.TabIndex = 17;
@@ -276,7 +277,7 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.Location = new Point(304, 444);
+            label18.Location = new Point(310, 486);
             label18.Name = "label18";
             label18.Size = new Size(34, 20);
             label18.TabIndex = 18;
@@ -286,7 +287,7 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label19.Location = new Point(344, 444);
+            label19.Location = new Point(350, 486);
             label19.Name = "label19";
             label19.Size = new Size(29, 20);
             label19.TabIndex = 19;
@@ -296,7 +297,7 @@
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label20.Location = new Point(379, 444);
+            label20.Location = new Point(385, 486);
             label20.Name = "label20";
             label20.Size = new Size(38, 20);
             label20.TabIndex = 20;
@@ -306,7 +307,7 @@
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label21.Location = new Point(423, 444);
+            label21.Location = new Point(429, 486);
             label21.Name = "label21";
             label21.Size = new Size(34, 20);
             label21.TabIndex = 21;
@@ -316,7 +317,7 @@
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label22.Location = new Point(463, 444);
+            label22.Location = new Point(469, 486);
             label22.Name = "label22";
             label22.Size = new Size(33, 20);
             label22.TabIndex = 22;
@@ -326,7 +327,7 @@
             // 
             label23.AutoSize = true;
             label23.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label23.Location = new Point(502, 444);
+            label23.Location = new Point(508, 486);
             label23.Name = "label23";
             label23.Size = new Size(38, 20);
             label23.TabIndex = 23;
@@ -336,7 +337,7 @@
             // 
             label24.AutoSize = true;
             label24.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label24.Location = new Point(546, 444);
+            label24.Location = new Point(552, 486);
             label24.Name = "label24";
             label24.Size = new Size(35, 20);
             label24.TabIndex = 24;
@@ -357,82 +358,18 @@
             panel3.Controls.Add(panel5);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(panel2);
-            panel3.Location = new Point(38, 222);
+            panel3.Location = new Point(44, 264);
             panel3.Name = "panel3";
             panel3.Size = new Size(558, 253);
             panel3.TabIndex = 25;
             // 
-            // panel4
+            // panel14
             // 
-            panel4.BackColor = SystemColors.HotTrack;
-            panel4.Location = new Point(97, 197);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(34, 10);
-            panel4.TabIndex = 13;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = SystemColors.HotTrack;
-            panel5.Location = new Point(136, 197);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(34, 10);
-            panel5.TabIndex = 14;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = SystemColors.HotTrack;
-            panel6.Location = new Point(179, 197);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(34, 10);
-            panel6.TabIndex = 15;
-            // 
-            // panel7
-            // 
-            panel7.BackColor = SystemColors.HotTrack;
-            panel7.Location = new Point(220, 197);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(34, 10);
-            panel7.TabIndex = 16;
-            // 
-            // panel8
-            // 
-            panel8.BackColor = SystemColors.HotTrack;
-            panel8.Location = new Point(260, 197);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(34, 10);
-            panel8.TabIndex = 17;
-            // 
-            // panel9
-            // 
-            panel9.BackColor = SystemColors.HotTrack;
-            panel9.Location = new Point(300, 197);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(34, 10);
-            panel9.TabIndex = 18;
-            // 
-            // panel10
-            // 
-            panel10.BackColor = SystemColors.HotTrack;
-            panel10.Location = new Point(340, 197);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(34, 10);
-            panel10.TabIndex = 19;
-            // 
-            // panel11
-            // 
-            panel11.BackColor = SystemColors.HotTrack;
-            panel11.Location = new Point(380, 197);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(34, 10);
-            panel11.TabIndex = 20;
-            // 
-            // panel12
-            // 
-            panel12.BackColor = SystemColors.HotTrack;
-            panel12.Location = new Point(420, 197);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(34, 10);
-            panel12.TabIndex = 21;
+            panel14.BackColor = SystemColors.HotTrack;
+            panel14.Location = new Point(500, 197);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(34, 10);
+            panel14.TabIndex = 23;
             // 
             // panel13
             // 
@@ -442,13 +379,77 @@
             panel13.Size = new Size(34, 10);
             panel13.TabIndex = 22;
             // 
-            // panel14
+            // panel12
             // 
-            panel14.BackColor = SystemColors.HotTrack;
-            panel14.Location = new Point(500, 197);
-            panel14.Name = "panel14";
-            panel14.Size = new Size(34, 10);
-            panel14.TabIndex = 23;
+            panel12.BackColor = SystemColors.HotTrack;
+            panel12.Location = new Point(420, 197);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(34, 10);
+            panel12.TabIndex = 21;
+            // 
+            // panel11
+            // 
+            panel11.BackColor = SystemColors.HotTrack;
+            panel11.Location = new Point(380, 197);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(34, 10);
+            panel11.TabIndex = 20;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = SystemColors.HotTrack;
+            panel10.Location = new Point(340, 197);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(34, 10);
+            panel10.TabIndex = 19;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = SystemColors.HotTrack;
+            panel9.Location = new Point(300, 197);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(34, 10);
+            panel9.TabIndex = 18;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = SystemColors.HotTrack;
+            panel8.Location = new Point(260, 197);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(34, 10);
+            panel8.TabIndex = 17;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = SystemColors.HotTrack;
+            panel7.Location = new Point(220, 197);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(34, 10);
+            panel7.TabIndex = 16;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = SystemColors.HotTrack;
+            panel6.Location = new Point(179, 197);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(34, 10);
+            panel6.TabIndex = 15;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = SystemColors.HotTrack;
+            panel5.Location = new Point(136, 197);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(34, 10);
+            panel5.TabIndex = 14;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = SystemColors.HotTrack;
+            panel4.Location = new Point(97, 197);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(34, 10);
+            panel4.TabIndex = 13;
             // 
             // ProfitReport
             // 
