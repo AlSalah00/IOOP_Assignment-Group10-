@@ -35,7 +35,7 @@
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
-            UAccBtn = new Button();
+            ManageCustomersBtn = new Button();
             pictureBox1 = new PictureBox();
             ReceptionistPanel = new Panel();
             panel1.SuspendLayout();
@@ -51,7 +51,7 @@
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
-            panel1.Controls.Add(UAccBtn);
+            panel1.Controls.Add(ManageCustomersBtn);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -98,10 +98,11 @@
             button5.Name = "button5";
             button5.Size = new Size(313, 59);
             button5.TabIndex = 5;
-            button5.Text = " Option 4";
+            button5.Text = "Check-Out Customers";
             button5.TextAlign = ContentAlignment.MiddleLeft;
             button5.TextImageRelation = TextImageRelation.ImageBeforeText;
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -114,10 +115,11 @@
             button4.Name = "button4";
             button4.Size = new Size(313, 59);
             button4.TabIndex = 4;
-            button4.Text = " Option 5";
+            button4.Text = "Update Own Profile";
             button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.TextImageRelation = TextImageRelation.ImageBeforeText;
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -130,10 +132,11 @@
             button3.Name = "button3";
             button3.Size = new Size(313, 59);
             button3.TabIndex = 3;
-            button3.Text = " Option 3";
+            button3.Text = "Check-In Customers";
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.TextImageRelation = TextImageRelation.ImageBeforeText;
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -146,26 +149,28 @@
             button2.Name = "button2";
             button2.Size = new Size(313, 59);
             button2.TabIndex = 2;
-            button2.Text = " Option 2";
+            button2.Text = "Search For Reservation\r\n";
             button2.TextAlign = ContentAlignment.MiddleLeft;
             button2.TextImageRelation = TextImageRelation.ImageBeforeText;
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
-            // UAccBtn
+            // ManageCustomersBtn
             // 
-            UAccBtn.FlatAppearance.BorderSize = 0;
-            UAccBtn.FlatStyle = FlatStyle.Flat;
-            UAccBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UAccBtn.ForeColor = Color.White;
-            UAccBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            UAccBtn.Location = new Point(12, 216);
-            UAccBtn.Name = "UAccBtn";
-            UAccBtn.Size = new Size(313, 59);
-            UAccBtn.TabIndex = 1;
-            UAccBtn.Text = " Manage Customers";
-            UAccBtn.TextAlign = ContentAlignment.MiddleLeft;
-            UAccBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            UAccBtn.UseVisualStyleBackColor = true;
+            ManageCustomersBtn.FlatAppearance.BorderSize = 0;
+            ManageCustomersBtn.FlatStyle = FlatStyle.Flat;
+            ManageCustomersBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ManageCustomersBtn.ForeColor = Color.White;
+            ManageCustomersBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            ManageCustomersBtn.Location = new Point(12, 216);
+            ManageCustomersBtn.Name = "ManageCustomersBtn";
+            ManageCustomersBtn.Size = new Size(313, 59);
+            ManageCustomersBtn.TabIndex = 1;
+            ManageCustomersBtn.Text = " Manage Customers";
+            ManageCustomersBtn.TextAlign = ContentAlignment.MiddleLeft;
+            ManageCustomersBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            ManageCustomersBtn.UseVisualStyleBackColor = true;
+            ManageCustomersBtn.Click += UAccBtn_Click;
             // 
             // pictureBox1
             // 
@@ -193,6 +198,7 @@
             Controls.Add(panel1);
             Name = "ReceptionistPage";
             Text = "ReceptionistPage";
+            Load += ReceptionistPage_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -208,7 +214,7 @@
         private Button button4;
         private Button button3;
         private Button button2;
-        private Button UAccBtn;
+        private Button ManageCustomersBtn;
         private PictureBox pictureBox1;
         private Panel ReceptionistPanel;
     }
