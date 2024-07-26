@@ -38,12 +38,19 @@
             CHBGP = new CheckBox();
             CHBPF = new CheckBox();
             lblPrice = new Label();
-            txtPrice = new TextBox();
-            AddBtn = new Button();
-            EditBtn = new Button();
-            DelBtn = new Button();
+            AddRoomBtn = new Button();
+            EditRoomBtn = new Button();
+            DelRoomBtn = new Button();
             RoomInfoTable = new DataGridView();
+            lblRoomNo = new Label();
+            NoOfRoomsPicker = new NumericUpDown();
+            lblNoOfRooms = new Label();
+            txtRoomDesc = new TextBox();
+            lblRoomDesc = new Label();
+            txtPrice = new MaskedTextBox();
+            txtRoomNo = new MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)RoomInfoTable).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)NoOfRoomsPicker).BeginInit();
             SuspendLayout();
             // 
             // CBRoomType
@@ -147,58 +154,54 @@
             lblPrice.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPrice.Location = new Point(90, 292);
             lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(59, 28);
+            lblPrice.Size = new Size(156, 28);
             lblPrice.TabIndex = 9;
-            lblPrice.Text = "Price";
+            lblPrice.Text = "Price per Night";
             // 
-            // txtPrice
+            // AddRoomBtn
             // 
-            txtPrice.Location = new Point(90, 323);
-            txtPrice.Name = "txtPrice";
-            txtPrice.Size = new Size(147, 27);
-            txtPrice.TabIndex = 10;
+            AddRoomBtn.BackColor = SystemColors.HotTrack;
+            AddRoomBtn.FlatAppearance.BorderSize = 0;
+            AddRoomBtn.FlatStyle = FlatStyle.Flat;
+            AddRoomBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AddRoomBtn.ForeColor = Color.White;
+            AddRoomBtn.Location = new Point(90, 382);
+            AddRoomBtn.Name = "AddRoomBtn";
+            AddRoomBtn.Size = new Size(101, 36);
+            AddRoomBtn.TabIndex = 12;
+            AddRoomBtn.Text = "Add";
+            AddRoomBtn.UseVisualStyleBackColor = false;
+            AddRoomBtn.Click += AddRoomBtn_Click;
             // 
-            // AddBtn
+            // EditRoomBtn
             // 
-            AddBtn.BackColor = SystemColors.HotTrack;
-            AddBtn.FlatAppearance.BorderSize = 0;
-            AddBtn.FlatStyle = FlatStyle.Flat;
-            AddBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AddBtn.ForeColor = Color.White;
-            AddBtn.Location = new Point(90, 382);
-            AddBtn.Name = "AddBtn";
-            AddBtn.Size = new Size(101, 36);
-            AddBtn.TabIndex = 12;
-            AddBtn.Text = "Add";
-            AddBtn.UseVisualStyleBackColor = false;
+            EditRoomBtn.BackColor = SystemColors.HotTrack;
+            EditRoomBtn.FlatAppearance.BorderSize = 0;
+            EditRoomBtn.FlatStyle = FlatStyle.Flat;
+            EditRoomBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            EditRoomBtn.ForeColor = Color.White;
+            EditRoomBtn.Location = new Point(212, 382);
+            EditRoomBtn.Name = "EditRoomBtn";
+            EditRoomBtn.Size = new Size(101, 36);
+            EditRoomBtn.TabIndex = 13;
+            EditRoomBtn.Text = "Edit";
+            EditRoomBtn.UseVisualStyleBackColor = false;
+            EditRoomBtn.Click += EditRoomBtn_Click;
             // 
-            // EditBtn
+            // DelRoomBtn
             // 
-            EditBtn.BackColor = SystemColors.HotTrack;
-            EditBtn.FlatAppearance.BorderSize = 0;
-            EditBtn.FlatStyle = FlatStyle.Flat;
-            EditBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            EditBtn.ForeColor = Color.White;
-            EditBtn.Location = new Point(212, 382);
-            EditBtn.Name = "EditBtn";
-            EditBtn.Size = new Size(101, 36);
-            EditBtn.TabIndex = 13;
-            EditBtn.Text = "Edit";
-            EditBtn.UseVisualStyleBackColor = false;
-            // 
-            // DelBtn
-            // 
-            DelBtn.BackColor = Color.Red;
-            DelBtn.FlatAppearance.BorderSize = 0;
-            DelBtn.FlatStyle = FlatStyle.Flat;
-            DelBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            DelBtn.ForeColor = Color.White;
-            DelBtn.Location = new Point(334, 382);
-            DelBtn.Name = "DelBtn";
-            DelBtn.Size = new Size(101, 36);
-            DelBtn.TabIndex = 14;
-            DelBtn.Text = "Delete";
-            DelBtn.UseVisualStyleBackColor = false;
+            DelRoomBtn.BackColor = Color.Red;
+            DelRoomBtn.FlatAppearance.BorderSize = 0;
+            DelRoomBtn.FlatStyle = FlatStyle.Flat;
+            DelRoomBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DelRoomBtn.ForeColor = Color.White;
+            DelRoomBtn.Location = new Point(334, 382);
+            DelRoomBtn.Name = "DelRoomBtn";
+            DelRoomBtn.Size = new Size(101, 36);
+            DelRoomBtn.TabIndex = 14;
+            DelRoomBtn.Text = "Delete";
+            DelRoomBtn.UseVisualStyleBackColor = false;
+            DelRoomBtn.Click += DelRoomBtn_Click;
             // 
             // RoomInfoTable
             // 
@@ -210,17 +213,89 @@
             RoomInfoTable.RowHeadersWidth = 51;
             RoomInfoTable.Size = new Size(595, 164);
             RoomInfoTable.TabIndex = 15;
+            RoomInfoTable.SelectionChanged += RoomInfoTable_SelectionChanged;
+            // 
+            // lblRoomNo
+            // 
+            lblRoomNo.AutoSize = true;
+            lblRoomNo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRoomNo.Location = new Point(464, 64);
+            lblRoomNo.Name = "lblRoomNo";
+            lblRoomNo.Size = new Size(106, 28);
+            lblRoomNo.TabIndex = 17;
+            lblRoomNo.Text = "Room No.";
+            // 
+            // NoOfRoomsPicker
+            // 
+            NoOfRoomsPicker.Location = new Point(464, 177);
+            NoOfRoomsPicker.Maximum = new decimal(new int[] { 5, 0, 0, 0 });
+            NoOfRoomsPicker.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            NoOfRoomsPicker.Name = "NoOfRoomsPicker";
+            NoOfRoomsPicker.Size = new Size(147, 27);
+            NoOfRoomsPicker.TabIndex = 18;
+            NoOfRoomsPicker.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // lblNoOfRooms
+            // 
+            lblNoOfRooms.AutoSize = true;
+            lblNoOfRooms.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNoOfRooms.Location = new Point(464, 146);
+            lblNoOfRooms.Name = "lblNoOfRooms";
+            lblNoOfRooms.Size = new Size(132, 28);
+            lblNoOfRooms.TabIndex = 19;
+            lblNoOfRooms.Text = "№ of Rooms";
+            // 
+            // txtRoomDesc
+            // 
+            txtRoomDesc.Location = new Point(303, 323);
+            txtRoomDesc.Name = "txtRoomDesc";
+            txtRoomDesc.Size = new Size(382, 27);
+            txtRoomDesc.TabIndex = 20;
+            // 
+            // lblRoomDesc
+            // 
+            lblRoomDesc.AutoSize = true;
+            lblRoomDesc.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRoomDesc.Location = new Point(303, 292);
+            lblRoomDesc.Name = "lblRoomDesc";
+            lblRoomDesc.Size = new Size(182, 28);
+            lblRoomDesc.TabIndex = 21;
+            lblRoomDesc.Text = "Room Description";
+            // 
+            // txtPrice
+            // 
+            txtPrice.Location = new Point(90, 323);
+            txtPrice.Mask = "0000000000";
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new Size(156, 27);
+            txtPrice.TabIndex = 22;
+            txtPrice.ValidatingType = typeof(int);
+            // 
+            // txtRoomNo
+            // 
+            txtRoomNo.Location = new Point(464, 95);
+            txtRoomNo.Mask = "000";
+            txtRoomNo.Name = "txtRoomNo";
+            txtRoomNo.Size = new Size(125, 27);
+            txtRoomNo.TabIndex = 23;
+            txtRoomNo.ValidatingType = typeof(int);
             // 
             // RoomInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(RoomInfoTable);
-            Controls.Add(DelBtn);
-            Controls.Add(EditBtn);
-            Controls.Add(AddBtn);
+            Controls.Add(txtRoomNo);
             Controls.Add(txtPrice);
+            Controls.Add(lblRoomDesc);
+            Controls.Add(txtRoomDesc);
+            Controls.Add(lblNoOfRooms);
+            Controls.Add(NoOfRoomsPicker);
+            Controls.Add(lblRoomNo);
+            Controls.Add(RoomInfoTable);
+            Controls.Add(DelRoomBtn);
+            Controls.Add(EditRoomBtn);
+            Controls.Add(AddRoomBtn);
             Controls.Add(lblPrice);
             Controls.Add(CHBPF);
             Controls.Add(CHBGP);
@@ -234,6 +309,7 @@
             Name = "RoomInfo";
             Size = new Size(748, 641);
             ((System.ComponentModel.ISupportInitialize)RoomInfoTable).EndInit();
+            ((System.ComponentModel.ISupportInitialize)NoOfRoomsPicker).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -250,10 +326,16 @@
         private CheckBox CHBGP;
         private CheckBox CHBPF;
         private Label lblPrice;
-        private TextBox txtPrice;
-        private Button AddBtn;
-        private Button EditBtn;
-        private Button DelBtn;
+        private Button AddRoomBtn;
+        private Button EditRoomBtn;
+        private Button DelRoomBtn;
         private DataGridView RoomInfoTable;
+        private Label lblRoomNo;
+        private NumericUpDown NoOfRoomsPicker;
+        private Label lblNoOfRooms;
+        private TextBox txtRoomDesc;
+        private Label lblRoomDesc;
+        private MaskedTextBox txtPrice;
+        private MaskedTextBox txtRoomNo;
     }
 }
