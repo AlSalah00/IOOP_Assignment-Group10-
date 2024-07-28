@@ -47,8 +47,8 @@
             lblNoOfRooms = new Label();
             txtRoomDesc = new TextBox();
             lblRoomDesc = new Label();
-            txtPrice = new MaskedTextBox();
             txtRoomNo = new MaskedTextBox();
+            txtPrice = new TextBox();
             ((System.ComponentModel.ISupportInitialize)RoomInfoTable).BeginInit();
             ((System.ComponentModel.ISupportInitialize)NoOfRoomsPicker).BeginInit();
             SuspendLayout();
@@ -262,15 +262,6 @@
             lblRoomDesc.TabIndex = 21;
             lblRoomDesc.Text = "Room Description";
             // 
-            // txtPrice
-            // 
-            txtPrice.Location = new Point(90, 323);
-            txtPrice.Mask = "0000000000";
-            txtPrice.Name = "txtPrice";
-            txtPrice.Size = new Size(156, 27);
-            txtPrice.TabIndex = 22;
-            txtPrice.ValidatingType = typeof(int);
-            // 
             // txtRoomNo
             // 
             txtRoomNo.Location = new Point(464, 95);
@@ -280,13 +271,21 @@
             txtRoomNo.TabIndex = 23;
             txtRoomNo.ValidatingType = typeof(int);
             // 
+            // txtPrice
+            // 
+            txtPrice.Location = new Point(90, 323);
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new Size(156, 27);
+            txtPrice.TabIndex = 24;
+            txtPrice.KeyPress += txtPrice_KeyPress;
+            // 
             // RoomInfo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(txtRoomNo);
             Controls.Add(txtPrice);
+            Controls.Add(txtRoomNo);
             Controls.Add(lblRoomDesc);
             Controls.Add(txtRoomDesc);
             Controls.Add(lblNoOfRooms);
@@ -335,7 +334,7 @@
         private Label lblNoOfRooms;
         private TextBox txtRoomDesc;
         private Label lblRoomDesc;
-        private MaskedTextBox txtPrice;
         private MaskedTextBox txtRoomNo;
+        private TextBox txtPrice;
     }
 }

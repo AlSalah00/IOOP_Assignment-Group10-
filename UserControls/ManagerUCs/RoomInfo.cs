@@ -44,7 +44,7 @@ namespace IOOP_Assignment_Group10_.UserControls.ManagerUCs
         {
             string noOfRooms = NoOfRoomsPicker.Value.ToString();
             string roomDesc = txtRoomDesc.Text;
-            string amenities = "";
+            string amenities = string.Empty;
 
             if (CHBFreeWF.Checked)
             {
@@ -69,6 +69,10 @@ namespace IOOP_Assignment_Group10_.UserControls.ManagerUCs
             if (CHBPF.Checked)
             {
                 amenities += ", Pet-Friendly";
+            }
+            if (string.IsNullOrEmpty(amenities))
+            {
+                amenities += "None";
             }
 
             int roomNum = int.Parse(txtRoomNo.Text);
@@ -128,14 +132,59 @@ namespace IOOP_Assignment_Group10_.UserControls.ManagerUCs
 
                 txtRoomNo.Text = selectedRow.Cells[0].Value?.ToString();
                 CBRoomType.Text = selectedRow.Cells[1].Value?.ToString();
+                string? amenities = selectedRow.Cells[2].Value?.ToString();
                 txtPrice.Text = selectedRow.Cells[3].Value?.ToString();
                 txtRoomDesc.Text = selectedRow.Cells[4].Value?.ToString();
+
+                if (amenities != null && amenities.Contains("Free Wi-Fi", StringComparison.OrdinalIgnoreCase))
+                {
+                    CHBFreeWF.Checked = true;
+                }
+                else
+                    CHBFreeWF.Checked = false;
+
+                if (amenities != null && amenities.Contains("Free Breakfast", StringComparison.OrdinalIgnoreCase))
+                {
+                    CHBFreeBF.Checked = true;
+                }
+                else
+                    CHBFreeBF.Checked = false;
+
+                if (amenities != null && amenities.Contains("Air Conditioning", StringComparison.OrdinalIgnoreCase))
+                {
+                    CHBAC.Checked = true;
+                }
+                else
+                    CHBAC.Checked = false;
+
+                if (amenities != null && amenities.Contains("Laundry Services", StringComparison.OrdinalIgnoreCase))
+                {
+                    CHBLS.Checked = true;
+                }
+                else
+                    CHBLS.Checked = false;
+
+                if (amenities != null && amenities.Contains("Gym and Pool", StringComparison.OrdinalIgnoreCase))
+                {
+                    CHBGP.Checked = true;
+                }
+                else
+                    CHBGP.Checked = false;
+
+                if (amenities != null && amenities.Contains("Pet-Friendly", StringComparison.OrdinalIgnoreCase))
+                {
+                    CHBPF.Checked = true;
+                }
+                else
+                {
+                    CHBPF.Checked = false;
+                }
             }
         }
 
         private void EditRoomBtn_Click(object sender, EventArgs e)
         {
-            string amenities = "";
+            string amenities = string.Empty;
 
             if (CHBFreeWF.Checked)
             {
@@ -160,6 +209,10 @@ namespace IOOP_Assignment_Group10_.UserControls.ManagerUCs
             if (CHBPF.Checked)
             {
                 amenities += ", Pet-Friendly";
+            }
+            if (string.IsNullOrEmpty(amenities))
+            {
+                amenities += "None";
             }
 
             if (RoomInfoTable.SelectedRows.Count > 0)
@@ -187,6 +240,31 @@ namespace IOOP_Assignment_Group10_.UserControls.ManagerUCs
             }
             else
                 MessageBox.Show("Error: No room selected.");
+        }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (sender is TextBox txtBox)
+            {               
+                string currentText = txtPrice.Text;
+
+                // Allowing only numbers for price textbox
+                if (!char.IsDigit(ch) && ch != 8 && ch != 46)
+                {
+                    e.Handled = true;
+                }
+
+                else if (ch == 46)
+                {
+                    // Allow period only if there is no existing period in the text
+                    if (currentText.Contains("."))
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+            
         }
     }
 }
