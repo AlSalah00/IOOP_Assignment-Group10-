@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new ListBox();
+            lstHousekeeper = new ListBox();
             AssignBtn = new Button();
             monthCalendar1 = new MonthCalendar();
-            listBox2 = new ListBox();
+            lstRoomNum = new ListBox();
             SuspendLayout();
             // 
-            // listBox1
+            // lstHousekeeper
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(61, 268);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(626, 244);
-            listBox1.TabIndex = 0;
+            lstHousekeeper.FormattingEnabled = true;
+            lstHousekeeper.Location = new Point(61, 268);
+            lstHousekeeper.Name = "lstHousekeeper";
+            lstHousekeeper.Size = new Size(626, 244);
+            lstHousekeeper.TabIndex = 0;
             // 
             // AssignBtn
             // 
@@ -55,6 +55,7 @@
             AssignBtn.TabIndex = 10;
             AssignBtn.Text = "Assign";
             AssignBtn.UseVisualStyleBackColor = false;
+            AssignBtn.Click += AssignBtn_Click;
             // 
             // monthCalendar1
             // 
@@ -62,23 +63,23 @@
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 11;
             // 
-            // listBox2
+            // lstRoomNum
             // 
-            listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(357, 31);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(330, 204);
-            listBox2.TabIndex = 12;
+            lstRoomNum.FormattingEnabled = true;
+            lstRoomNum.Location = new Point(357, 31);
+            lstRoomNum.Name = "lstRoomNum";
+            lstRoomNum.Size = new Size(330, 204);
+            lstRoomNum.TabIndex = 12;
             // 
             // RoomCSH
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(listBox2);
+            Controls.Add(lstRoomNum);
             Controls.Add(monthCalendar1);
             Controls.Add(AssignBtn);
-            Controls.Add(listBox1);
+            Controls.Add(lstHousekeeper);
             Name = "RoomCSH";
             Size = new Size(748, 641);
             ResumeLayout(false);
@@ -86,9 +87,9 @@
 
         #endregion
 
-        private ListBox listBox1;
+        private ListBox lstHousekeeper;
         private Button AssignBtn;
         private MonthCalendar monthCalendar1;
-        private ListBox listBox2;
+        private ListBox lstRoomNum;
     }
 }
