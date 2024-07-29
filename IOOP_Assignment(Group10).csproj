@@ -26,7 +26,6 @@
 
   <ItemGroup>
     <Folder Include="UserControls\CustomerUCs\" />
-    <Folder Include="UserControls\HousekeepingUCs\" />
   </ItemGroup>
 
   <ItemGroup>
