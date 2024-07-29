@@ -14,7 +14,7 @@ namespace IOOP_Assignment_Group10_.Classes
     {
         private string username;
         private int roomNum;
-        private string date;
+        private DateTime date;
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
         public string Username
@@ -23,7 +23,7 @@ namespace IOOP_Assignment_Group10_.Classes
             set { username = value; }
         }
 
-        public string Date
+        public DateTime Date
         {
             get { return date; }
             set { date = value; }
@@ -35,7 +35,7 @@ namespace IOOP_Assignment_Group10_.Classes
             set { roomNum = value; }
         }
 
-        public CleaningSchedule(string username, int roomNum, string date)
+        public CleaningSchedule(string username, int roomNum, DateTime date)
         {
             this.username = username;
             this.roomNum = roomNum;
@@ -66,6 +66,25 @@ namespace IOOP_Assignment_Group10_.Classes
             }
             con.Close();
 
+        }
+
+        public static List<CleaningSchedule> viewAll()
+        {
+            List<CleaningSchedule> schedules = new List<CleaningSchedule>();
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select username, roomNum, date from CleaningSchedule", con);
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                string username = rd.GetString(0);
+                int roomNum = rd.GetInt32(1);
+                DateTime date = rd.GetDateTime(2);
+
+                CleaningSchedule schedule = new CleaningSchedule(username, roomNum, date);
+                schedules.Add(schedule);
+            }
+            con.Close();
+            return schedules;
         }
     }
 }
