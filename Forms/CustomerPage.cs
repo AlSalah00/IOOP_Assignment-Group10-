@@ -12,9 +12,15 @@ namespace IOOP_Assignment_Group10_.Forms
 {
     public partial class CustomerPage : Form
     {
-        public CustomerPage()
+        public CustomerPage(string n)
         {
             InitializeComponent();
+            Name = n;
+        }
+
+        private void CustomerPage_Load(object sender, EventArgs e)
+        {
+            lblIdentityCus.Text = $"Welcome, {Name}";
         }
     }
 }

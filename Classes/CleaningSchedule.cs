@@ -42,29 +42,48 @@ namespace IOOP_Assignment_Group10_.Classes
             this.date = date;
         }
 
-        public void assign()
+        public bool ScheduleExists(string username, DateTime date)
         {
             con.Open();
-            string query = "INSERT INTO CleaningSchedule (username, roomNum, date) VALUES (@username, @roomNum, @date)";
-
+            string query = "SELECT COUNT(*) FROM CleaningSchedule WHERE username = @username AND date = @date";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
                 cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@roomNum", roomNum);
                 cmd.Parameters.AddWithValue("@date", date);
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("Cleaning schedule assigned successfully.");
-                }
-                else
-                {
-                    MessageBox.Show("Error: Failed to assign.");
-                }
+                int count = (int)cmd.ExecuteScalar();
+                con.Close();
+                return count > 0;
             }
-            con.Close();
+        }
+
+        public void assign()
+        {
+            if (ScheduleExists(username, date))
+            {
+                con.Open();
+                string query = "INSERT INTO CleaningSchedule (username, roomNum, date) VALUES (@username, @roomNum, @date)";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@roomNum", roomNum);
+                    cmd.Parameters.AddWithValue("@date", date);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Cleaning schedule assigned successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error: Failed to assign.");
+                    }
+                }
+                con.Close();
+            }
+            else
+                MessageBox.Show("Error: This housekeeper is already assigned to this date.");
 
         }
 

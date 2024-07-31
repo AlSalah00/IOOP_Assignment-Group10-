@@ -12,9 +12,20 @@ namespace IOOP_Assignment_Group10_.Forms
 {
     public partial class HousekeepingPage : Form
     {
-        public HousekeepingPage()
+        public HousekeepingPage(string n)
         {
             InitializeComponent();
+            Name = n;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void HousekeepingPage_Load(object sender, EventArgs e)
+        {
+            lblIdentityHK.Text = $"Welcome, {Name}";
         }
     }
 }

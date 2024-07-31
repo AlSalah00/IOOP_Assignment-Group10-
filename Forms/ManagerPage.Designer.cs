@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
+            lblIdentity = new Label();
             LOBtn_M = new Button();
             PRBtn = new Button();
             ROBtn = new Button();
@@ -46,7 +46,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Navy;
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(lblIdentity);
             panel1.Controls.Add(LOBtn_M);
             panel1.Controls.Add(PRBtn);
             panel1.Controls.Add(ROBtn);
@@ -61,16 +61,15 @@
             panel1.Size = new Size(328, 685);
             panel1.TabIndex = 0;
             // 
-            // label1
+            // lblIdentity
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(81, 181);
-            label1.Name = "label1";
-            label1.Size = new Size(140, 23);
-            label1.TabIndex = 8;
-            label1.Text = "Welcome! (user)";
+            lblIdentity.AutoSize = true;
+            lblIdentity.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblIdentity.ForeColor = Color.White;
+            lblIdentity.Location = new Point(81, 181);
+            lblIdentity.Name = "lblIdentity";
+            lblIdentity.Size = new Size(0, 23);
+            lblIdentity.TabIndex = 8;
             // 
             // LOBtn_M
             // 
@@ -241,7 +240,7 @@
         private Button CRBtn;
         private Button RCSBtn;
         private Button RoomInfBtn;
-        private Label label1;
+        private Label lblIdentity;
         private Panel ManagerPanel;
     }
 }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
+            lblIdentityCus = new Label();
             button7 = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            UAccBtn = new Button();
+            RVRTBtn = new Button();
+            UpdateProfileBtnCus = new Button();
+            MNGReservationBtn = new Button();
+            RoomDTLBtn = new Button();
+            searchRoomBtn = new Button();
             pictureBox1 = new PictureBox();
             CustomerPanel = new Panel();
             panel1.SuspendLayout();
@@ -45,13 +45,13 @@
             // panel1
             // 
             panel1.BackColor = Color.Navy;
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(lblIdentityCus);
             panel1.Controls.Add(button7);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(UAccBtn);
+            panel1.Controls.Add(RVRTBtn);
+            panel1.Controls.Add(UpdateProfileBtnCus);
+            panel1.Controls.Add(MNGReservationBtn);
+            panel1.Controls.Add(RoomDTLBtn);
+            panel1.Controls.Add(searchRoomBtn);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -59,16 +59,15 @@
             panel1.Size = new Size(328, 685);
             panel1.TabIndex = 1;
             // 
-            // label1
+            // lblIdentityCus
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(81, 181);
-            label1.Name = "label1";
-            label1.Size = new Size(140, 23);
-            label1.TabIndex = 8;
-            label1.Text = "Welcome! (user)";
+            lblIdentityCus.AutoSize = true;
+            lblIdentityCus.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblIdentityCus.ForeColor = Color.White;
+            lblIdentityCus.Location = new Point(81, 181);
+            lblIdentityCus.Name = "lblIdentityCus";
+            lblIdentityCus.Size = new Size(0, 23);
+            lblIdentityCus.TabIndex = 8;
             // 
             // button7
             // 
@@ -78,94 +77,99 @@
             button7.ForeColor = Color.White;
             button7.Image = Properties.Resources.logout;
             button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(12, 541);
+            button7.Location = new Point(3, 541);
             button7.Name = "button7";
-            button7.Size = new Size(313, 59);
+            button7.Size = new Size(322, 59);
             button7.TabIndex = 7;
             button7.Text = " Logout";
             button7.TextAlign = ContentAlignment.MiddleLeft;
             button7.TextImageRelation = TextImageRelation.ImageBeforeText;
             button7.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // RVRTBtn
             // 
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = Color.White;
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(12, 411);
-            button5.Name = "button5";
-            button5.Size = new Size(313, 59);
-            button5.TabIndex = 5;
-            button5.Text = " Option 4";
-            button5.TextAlign = ContentAlignment.MiddleLeft;
-            button5.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button5.UseVisualStyleBackColor = true;
+            RVRTBtn.FlatAppearance.BorderSize = 0;
+            RVRTBtn.FlatStyle = FlatStyle.Flat;
+            RVRTBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RVRTBtn.ForeColor = Color.White;
+            RVRTBtn.Image = Properties.Resources.rate;
+            RVRTBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            RVRTBtn.Location = new Point(3, 411);
+            RVRTBtn.Name = "RVRTBtn";
+            RVRTBtn.Size = new Size(322, 59);
+            RVRTBtn.TabIndex = 5;
+            RVRTBtn.Text = " Reviews / Ratings";
+            RVRTBtn.TextAlign = ContentAlignment.MiddleLeft;
+            RVRTBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            RVRTBtn.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // UpdateProfileBtnCus
             // 
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.White;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(12, 476);
-            button4.Name = "button4";
-            button4.Size = new Size(313, 59);
-            button4.TabIndex = 4;
-            button4.Text = " Option 5";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button4.UseVisualStyleBackColor = true;
+            UpdateProfileBtnCus.FlatAppearance.BorderSize = 0;
+            UpdateProfileBtnCus.FlatStyle = FlatStyle.Flat;
+            UpdateProfileBtnCus.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UpdateProfileBtnCus.ForeColor = Color.White;
+            UpdateProfileBtnCus.Image = Properties.Resources.update2;
+            UpdateProfileBtnCus.ImageAlign = ContentAlignment.MiddleLeft;
+            UpdateProfileBtnCus.Location = new Point(3, 476);
+            UpdateProfileBtnCus.Name = "UpdateProfileBtnCus";
+            UpdateProfileBtnCus.Size = new Size(322, 59);
+            UpdateProfileBtnCus.TabIndex = 4;
+            UpdateProfileBtnCus.Text = " Update Profile";
+            UpdateProfileBtnCus.TextAlign = ContentAlignment.MiddleLeft;
+            UpdateProfileBtnCus.TextImageRelation = TextImageRelation.ImageBeforeText;
+            UpdateProfileBtnCus.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // MNGReservationBtn
             // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(12, 346);
-            button3.Name = "button3";
-            button3.Size = new Size(313, 59);
-            button3.TabIndex = 3;
-            button3.Text = " Option 3";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = true;
+            MNGReservationBtn.FlatAppearance.BorderSize = 0;
+            MNGReservationBtn.FlatStyle = FlatStyle.Flat;
+            MNGReservationBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            MNGReservationBtn.ForeColor = Color.White;
+            MNGReservationBtn.Image = Properties.Resources.reservation;
+            MNGReservationBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            MNGReservationBtn.Location = new Point(3, 346);
+            MNGReservationBtn.Name = "MNGReservationBtn";
+            MNGReservationBtn.Size = new Size(322, 59);
+            MNGReservationBtn.TabIndex = 3;
+            MNGReservationBtn.Text = " Manage Reservations";
+            MNGReservationBtn.TextAlign = ContentAlignment.MiddleLeft;
+            MNGReservationBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            MNGReservationBtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // RoomDTLBtn
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(12, 281);
-            button2.Name = "button2";
-            button2.Size = new Size(313, 59);
-            button2.TabIndex = 2;
-            button2.Text = " Option 2";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = true;
+            RoomDTLBtn.FlatAppearance.BorderSize = 0;
+            RoomDTLBtn.FlatStyle = FlatStyle.Flat;
+            RoomDTLBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RoomDTLBtn.ForeColor = Color.White;
+            RoomDTLBtn.Image = Properties.Resources.room;
+            RoomDTLBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            RoomDTLBtn.Location = new Point(3, 281);
+            RoomDTLBtn.Name = "RoomDTLBtn";
+            RoomDTLBtn.Size = new Size(322, 59);
+            RoomDTLBtn.TabIndex = 2;
+            RoomDTLBtn.Text = " Room Details";
+            RoomDTLBtn.TextAlign = ContentAlignment.MiddleLeft;
+            RoomDTLBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            RoomDTLBtn.UseVisualStyleBackColor = true;
             // 
-            // UAccBtn
+            // searchRoomBtn
             // 
-            UAccBtn.FlatAppearance.BorderSize = 0;
-            UAccBtn.FlatStyle = FlatStyle.Flat;
-            UAccBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UAccBtn.ForeColor = Color.White;
-            UAccBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            UAccBtn.Location = new Point(12, 216);
-            UAccBtn.Name = "UAccBtn";
-            UAccBtn.Size = new Size(313, 59);
-            UAccBtn.TabIndex = 1;
-            UAccBtn.Text = " Option 1";
-            UAccBtn.TextAlign = ContentAlignment.MiddleLeft;
-            UAccBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            UAccBtn.UseVisualStyleBackColor = true;
+            searchRoomBtn.FlatAppearance.BorderSize = 0;
+            searchRoomBtn.FlatStyle = FlatStyle.Flat;
+            searchRoomBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            searchRoomBtn.ForeColor = Color.White;
+            searchRoomBtn.Image = Properties.Resources.search1;
+            searchRoomBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            searchRoomBtn.Location = new Point(3, 216);
+            searchRoomBtn.Name = "searchRoomBtn";
+            searchRoomBtn.Size = new Size(322, 59);
+            searchRoomBtn.TabIndex = 1;
+            searchRoomBtn.Text = " Search for Rooms";
+            searchRoomBtn.TextAlign = ContentAlignment.MiddleLeft;
+            searchRoomBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            searchRoomBtn.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -193,6 +197,7 @@
             Controls.Add(panel1);
             Name = "CustomerPage";
             Text = "CustomerPage";
+            Load += CustomerPage_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -202,13 +207,13 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
+        private Label lblIdentityCus;
         private Button button7;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button UAccBtn;
+        private Button RVRTBtn;
+        private Button UpdateProfileBtnCus;
+        private Button MNGReservationBtn;
+        private Button RoomDTLBtn;
+        private Button searchRoomBtn;
         private PictureBox pictureBox1;
         private Panel CustomerPanel;
     }

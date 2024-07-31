@@ -34,9 +34,9 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            button1 = new Button();
+            txtUsername = new TextBox();
+            txtPassword = new TextBox();
+            LoginBtn = new Button();
             linkLabel1 = new LinkLabel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -109,33 +109,35 @@
             label3.TabIndex = 3;
             label3.Text = "Password";
             // 
-            // textBox1
+            // txtUsername
             // 
-            textBox1.Location = new Point(445, 150);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(373, 27);
-            textBox1.TabIndex = 4;
+            txtUsername.Location = new Point(445, 150);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(373, 27);
+            txtUsername.TabIndex = 4;
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.Location = new Point(445, 231);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(373, 27);
-            textBox2.TabIndex = 5;
+            txtPassword.Location = new Point(445, 231);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '•';
+            txtPassword.Size = new Size(373, 27);
+            txtPassword.TabIndex = 5;
             // 
-            // button1
+            // LoginBtn
             // 
-            button1.BackColor = SystemColors.HotTrack;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(445, 290);
-            button1.Name = "button1";
-            button1.Size = new Size(373, 45);
-            button1.TabIndex = 6;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = false;
+            LoginBtn.BackColor = SystemColors.HotTrack;
+            LoginBtn.FlatAppearance.BorderSize = 0;
+            LoginBtn.FlatStyle = FlatStyle.Flat;
+            LoginBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LoginBtn.ForeColor = Color.White;
+            LoginBtn.Location = new Point(445, 290);
+            LoginBtn.Name = "LoginBtn";
+            LoginBtn.Size = new Size(373, 45);
+            LoginBtn.TabIndex = 6;
+            LoginBtn.Text = "Login";
+            LoginBtn.UseVisualStyleBackColor = false;
+            LoginBtn.Click += button1_Click;
             // 
             // linkLabel1
             // 
@@ -154,9 +156,9 @@
             BackColor = Color.White;
             ClientSize = new Size(858, 471);
             Controls.Add(linkLabel1);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(LoginBtn);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -177,9 +179,9 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Button button1;
+        private TextBox txtUsername;
+        private TextBox txtPassword;
+        private Button LoginBtn;
         private LinkLabel linkLabel1;
         private Label label4;
     }

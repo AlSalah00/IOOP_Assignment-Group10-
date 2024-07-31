@@ -18,9 +18,10 @@ namespace IOOP_Assignment_Group10_
         private Color highlight = ColorTranslator.FromHtml("#0066cc");
         private Color defaultColor = Color.Navy;
         private Button[] buttons;
-        public ManagerPage()
+        public ManagerPage(string n)
         {
             InitializeComponent();
+            Name = n;
             ManageUsers mu = new ManageUsers();
             addUserControl(mu);
 
@@ -65,7 +66,7 @@ namespace IOOP_Assignment_Group10_
         }
         private void ManagerPage_Load(object sender, EventArgs e)
         {
-
+            lblIdentity.Text = $"Welcome, {Name}";
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
+            lblIdentityHK = new Label();
             button7 = new Button();
             button5 = new Button();
             button4 = new Button();
@@ -45,7 +45,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Navy;
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(lblIdentityHK);
             panel1.Controls.Add(button7);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
@@ -58,17 +58,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(328, 685);
             panel1.TabIndex = 3;
+            panel1.Paint += panel1_Paint;
             // 
-            // label1
+            // lblIdentityHK
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(81, 181);
-            label1.Name = "label1";
-            label1.Size = new Size(140, 23);
-            label1.TabIndex = 8;
-            label1.Text = "Welcome! (user)";
+            lblIdentityHK.AutoSize = true;
+            lblIdentityHK.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblIdentityHK.ForeColor = Color.White;
+            lblIdentityHK.Location = new Point(81, 181);
+            lblIdentityHK.Name = "lblIdentityHK";
+            lblIdentityHK.Size = new Size(0, 23);
+            lblIdentityHK.TabIndex = 8;
             // 
             // button7
             // 
@@ -78,9 +78,9 @@
             button7.ForeColor = Color.White;
             button7.Image = Properties.Resources.logout;
             button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(12, 541);
+            button7.Location = new Point(3, 541);
             button7.Name = "button7";
-            button7.Size = new Size(313, 59);
+            button7.Size = new Size(322, 59);
             button7.TabIndex = 7;
             button7.Text = " Logout";
             button7.TextAlign = ContentAlignment.MiddleLeft;
@@ -93,11 +93,11 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button5.ForeColor = Color.White;
-            button5.Image = Properties.Resources.mop;
+            button5.Image = Properties.Resources.cleaning;
             button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(12, 411);
+            button5.Location = new Point(3, 411);
             button5.Name = "button5";
-            button5.Size = new Size(313, 59);
+            button5.Size = new Size(322, 59);
             button5.TabIndex = 5;
             button5.Text = "Cleaning Supplies";
             button5.TextAlign = ContentAlignment.MiddleLeft;
@@ -112,9 +112,9 @@
             button4.ForeColor = Color.White;
             button4.Image = Properties.Resources.update3;
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(12, 476);
+            button4.Location = new Point(3, 476);
             button4.Name = "button4";
-            button4.Size = new Size(313, 59);
+            button4.Size = new Size(322, 59);
             button4.TabIndex = 4;
             button4.Text = " Update Profile";
             button4.TextAlign = ContentAlignment.MiddleLeft;
@@ -127,13 +127,13 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.White;
-            button3.Image = Properties.Resources.cleaning1;
+            button3.Image = Properties.Resources.mop;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(12, 346);
+            button3.Location = new Point(3, 346);
             button3.Name = "button3";
-            button3.Size = new Size(313, 59);
+            button3.Size = new Size(322, 59);
             button3.TabIndex = 3;
-            button3.Text = "Room Cleanness";
+            button3.Text = "Room Cleanliness";
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.TextImageRelation = TextImageRelation.ImageBeforeText;
             button3.UseVisualStyleBackColor = true;
@@ -142,13 +142,13 @@
             // 
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
             button2.Image = Properties.Resources.reservations;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(12, 281);
+            button2.Location = new Point(3, 281);
             button2.Name = "button2";
-            button2.Size = new Size(313, 59);
+            button2.Size = new Size(322, 59);
             button2.TabIndex = 2;
             button2.Text = " Upcoming Room Reservations";
             button2.TextAlign = ContentAlignment.MiddleLeft;
@@ -163,9 +163,9 @@
             UAccBtn.ForeColor = Color.White;
             UAccBtn.Image = Properties.Resources.schedule;
             UAccBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            UAccBtn.Location = new Point(12, 216);
+            UAccBtn.Location = new Point(3, 216);
             UAccBtn.Name = "UAccBtn";
-            UAccBtn.Size = new Size(313, 59);
+            UAccBtn.Size = new Size(322, 59);
             UAccBtn.TabIndex = 1;
             UAccBtn.Text = " Room cleaning Schedule";
             UAccBtn.TextAlign = ContentAlignment.MiddleLeft;
@@ -198,6 +198,7 @@
             Controls.Add(panel1);
             Name = "HousekeepingPage";
             Text = "HousekeepingPage";
+            Load += HousekeepingPage_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -207,7 +208,7 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
+        private Label lblIdentityHK;
         private Button button7;
         private Button button5;
         private Button button4;

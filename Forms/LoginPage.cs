@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using IOOP_Assignment_Group10_.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +19,29 @@ namespace IOOP_Assignment_Group10_
         public LoginPage()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string status;
+
+            if (!string.IsNullOrEmpty(txtUsername.Text) ||
+                !string.IsNullOrEmpty(txtPassword.Text))
+            {
+                User u1 = new User(txtUsername.Text, txtPassword.Text);
+                status = u1.Login(txtUsername.Text, txtPassword.Text);
+
+                if (status != null)
+                {
+                    this.Close();
+                    MessageBox.Show(status);
+                }
+                else
+                {                   
+                    txtUsername.Clear();
+                    txtPassword.Clear();
+                }              
+            }
         }
     }
 }

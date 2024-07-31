@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
+            lblIdentityRCP = new Label();
             button7 = new Button();
             button5 = new Button();
             button4 = new Button();
@@ -45,7 +45,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Navy;
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(lblIdentityRCP);
             panel1.Controls.Add(button7);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
@@ -59,16 +59,15 @@
             panel1.Size = new Size(328, 685);
             panel1.TabIndex = 2;
             // 
-            // label1
+            // lblIdentityRCP
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(81, 181);
-            label1.Name = "label1";
-            label1.Size = new Size(140, 23);
-            label1.TabIndex = 8;
-            label1.Text = "Welcome! (user)";
+            lblIdentityRCP.AutoSize = true;
+            lblIdentityRCP.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblIdentityRCP.ForeColor = Color.White;
+            lblIdentityRCP.Location = new Point(81, 181);
+            lblIdentityRCP.Name = "lblIdentityRCP";
+            lblIdentityRCP.Size = new Size(0, 23);
+            lblIdentityRCP.TabIndex = 8;
             // 
             // button7
             // 
@@ -208,7 +207,7 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
+        private Label lblIdentityRCP;
         private Button button7;
         private Button button5;
         private Button button4;

@@ -29,8 +29,8 @@ namespace IOOP_Assignment_Group10_.UserControls
             UsersTable.AutoGenerateColumns = false; // Disable auto generation of columns
             UsersTable.Columns.Clear();
             UsersTable.Columns.Add("Username", "Username");
-            UsersTable.Columns.Add("Email", "Email");
             UsersTable.Columns.Add("Password", "Password");
+            UsersTable.Columns.Add("Email", "Email");
             UsersTable.Columns.Add("Role", "Role");
 
             // Retrieving user details from the database

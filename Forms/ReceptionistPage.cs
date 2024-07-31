@@ -14,14 +14,15 @@ namespace IOOP_Assignment_Group10_.Forms
 {
     public partial class ReceptionistPage : Form
     {
-        public ReceptionistPage()
+        public ReceptionistPage(string n)
         {
             InitializeComponent();
+            Name = n;
         }
 
         private void ReceptionistPage_Load(object sender, EventArgs e)
         {
-
+            lblIdentityRCP.Text = $"Welcome, {Name}";
         }
         private void addUserControl(UserControl userControl)
         {
