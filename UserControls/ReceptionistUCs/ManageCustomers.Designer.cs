@@ -47,18 +47,20 @@
             UsersTable.BackgroundColor = Color.White;
             UsersTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             UsersTable.GridColor = Color.Black;
-            UsersTable.Location = new Point(89, 437);
+            UsersTable.Location = new Point(78, 328);
+            UsersTable.Margin = new Padding(3, 2, 3, 2);
             UsersTable.Name = "UsersTable";
             UsersTable.RowHeadersWidth = 51;
-            UsersTable.Size = new Size(571, 160);
+            UsersTable.Size = new Size(500, 120);
             UsersTable.TabIndex = 25;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(89, 239);
+            txtPassword.Location = new Point(78, 179);
+            txtPassword.Margin = new Padding(3, 2, 3, 2);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '•';
-            txtPassword.Size = new Size(316, 27);
+            txtPassword.Size = new Size(277, 23);
             txtPassword.TabIndex = 24;
             // 
             // DelUserBtn
@@ -68,9 +70,10 @@
             DelUserBtn.FlatStyle = FlatStyle.Flat;
             DelUserBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DelUserBtn.ForeColor = Color.White;
-            DelUserBtn.Location = new Point(211, 377);
+            DelUserBtn.Location = new Point(185, 283);
+            DelUserBtn.Margin = new Padding(3, 2, 3, 2);
             DelUserBtn.Name = "DelUserBtn";
-            DelUserBtn.Size = new Size(101, 36);
+            DelUserBtn.Size = new Size(88, 27);
             DelUserBtn.TabIndex = 23;
             DelUserBtn.Text = "Delete";
             DelUserBtn.UseVisualStyleBackColor = false;
@@ -82,34 +85,37 @@
             AddUserBtn.FlatStyle = FlatStyle.Flat;
             AddUserBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AddUserBtn.ForeColor = Color.White;
-            AddUserBtn.Location = new Point(89, 377);
+            AddUserBtn.Location = new Point(78, 283);
+            AddUserBtn.Margin = new Padding(3, 2, 3, 2);
             AddUserBtn.Name = "AddUserBtn";
-            AddUserBtn.Size = new Size(101, 36);
+            AddUserBtn.Size = new Size(88, 27);
             AddUserBtn.TabIndex = 22;
             AddUserBtn.Text = "Add";
             AddUserBtn.UseVisualStyleBackColor = false;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(89, 157);
+            txtEmail.Location = new Point(78, 118);
+            txtEmail.Margin = new Padding(3, 2, 3, 2);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(316, 27);
+            txtEmail.Size = new Size(277, 23);
             txtEmail.TabIndex = 18;
             // 
             // txtUserName
             // 
-            txtUserName.Location = new Point(89, 75);
+            txtUserName.Location = new Point(78, 56);
+            txtUserName.Margin = new Padding(3, 2, 3, 2);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(316, 27);
+            txtUserName.Size = new Size(277, 23);
             txtUserName.TabIndex = 17;
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPassword.Location = new Point(89, 208);
+            lblPassword.Location = new Point(78, 156);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(101, 28);
+            lblPassword.Size = new Size(82, 21);
             lblPassword.TabIndex = 16;
             lblPassword.Text = "Password";
             // 
@@ -117,9 +123,9 @@
             // 
             lblEmail.AutoSize = true;
             lblEmail.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEmail.Location = new Point(89, 126);
+            lblEmail.Location = new Point(78, 94);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(64, 28);
+            lblEmail.Size = new Size(53, 21);
             lblEmail.TabIndex = 15;
             lblEmail.Text = "Email";
             // 
@@ -127,32 +133,33 @@
             // 
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUsername.Location = new Point(89, 44);
+            lblUsername.Location = new Point(78, 33);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(106, 28);
+            lblUsername.Size = new Size(87, 21);
             lblUsername.TabIndex = 14;
             lblUsername.Text = "Username";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(89, 315);
+            textBox1.Location = new Point(78, 236);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(316, 27);
+            textBox1.Size = new Size(277, 23);
             textBox1.TabIndex = 26;
             // 
             // lblPhoneNumber
             // 
             lblPhoneNumber.AutoSize = true;
             lblPhoneNumber.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblPhoneNumber.Location = new Point(89, 284);
+            lblPhoneNumber.Location = new Point(78, 213);
             lblPhoneNumber.Name = "lblPhoneNumber";
-            lblPhoneNumber.Size = new Size(148, 28);
+            lblPhoneNumber.Size = new Size(122, 21);
             lblPhoneNumber.TabIndex = 27;
             lblPhoneNumber.Text = "PhoneNumber";
             // 
             // ManageCustomers
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(lblPhoneNumber);
@@ -166,8 +173,10 @@
             Controls.Add(lblPassword);
             Controls.Add(lblEmail);
             Controls.Add(lblUsername);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ManageCustomers";
-            Size = new Size(748, 641);
+            Size = new Size(654, 481);
+            Load += ManageCustomers_Load;
             ((System.ComponentModel.ISupportInitialize)UsersTable).EndInit();
             ResumeLayout(false);
             PerformLayout();

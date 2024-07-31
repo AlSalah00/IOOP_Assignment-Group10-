@@ -16,5 +16,10 @@ namespace IOOP_Assignment_Group10_.UserControls.ReceptionistUCs
         {
             InitializeComponent();
         }
+
+        private void ManageCustomers_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

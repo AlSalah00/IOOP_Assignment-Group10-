@@ -34,19 +34,23 @@
             // listBox1
             // 
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(57, 58);
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(50, 44);
+            listBox1.Margin = new Padding(3, 2, 3, 2);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(634, 524);
+            listBox1.Size = new Size(555, 394);
             listBox1.TabIndex = 1;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // CustomerReviews
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(listBox1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "CustomerReviews";
-            Size = new Size(748, 641);
+            Size = new Size(654, 481);
             ResumeLayout(false);
         }
 

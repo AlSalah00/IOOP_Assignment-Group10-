@@ -57,8 +57,9 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(328, 685);
+            panel1.Size = new Size(287, 514);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -66,9 +67,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(81, 181);
+            label1.Location = new Point(71, 136);
             label1.Name = "label1";
-            label1.Size = new Size(140, 23);
+            label1.Size = new Size(119, 19);
             label1.TabIndex = 8;
             label1.Text = "Welcome! (user)";
             // 
@@ -80,9 +81,10 @@
             LOBtn_M.ForeColor = Color.White;
             LOBtn_M.Image = Properties.Resources.logout;
             LOBtn_M.ImageAlign = ContentAlignment.MiddleLeft;
-            LOBtn_M.Location = new Point(3, 606);
+            LOBtn_M.Location = new Point(3, 454);
+            LOBtn_M.Margin = new Padding(3, 2, 3, 2);
             LOBtn_M.Name = "LOBtn_M";
-            LOBtn_M.Size = new Size(322, 59);
+            LOBtn_M.Size = new Size(282, 44);
             LOBtn_M.TabIndex = 7;
             LOBtn_M.Text = " Logout";
             LOBtn_M.TextAlign = ContentAlignment.MiddleLeft;
@@ -97,9 +99,10 @@
             PRBtn.ForeColor = Color.White;
             PRBtn.Image = Properties.Resources.report;
             PRBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            PRBtn.Location = new Point(3, 541);
+            PRBtn.Location = new Point(3, 406);
+            PRBtn.Margin = new Padding(3, 2, 3, 2);
             PRBtn.Name = "PRBtn";
-            PRBtn.Size = new Size(322, 59);
+            PRBtn.Size = new Size(282, 44);
             PRBtn.TabIndex = 6;
             PRBtn.Text = " Profit Report";
             PRBtn.TextAlign = ContentAlignment.MiddleLeft;
@@ -115,9 +118,10 @@
             ROBtn.ForeColor = Color.White;
             ROBtn.Image = Properties.Resources.occupied;
             ROBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            ROBtn.Location = new Point(3, 411);
+            ROBtn.Location = new Point(3, 308);
+            ROBtn.Margin = new Padding(3, 2, 3, 2);
             ROBtn.Name = "ROBtn";
-            ROBtn.Size = new Size(322, 59);
+            ROBtn.Size = new Size(282, 44);
             ROBtn.TabIndex = 5;
             ROBtn.Text = "   Room Occupancy";
             ROBtn.TextAlign = ContentAlignment.MiddleLeft;
@@ -133,9 +137,10 @@
             CRBtn.ForeColor = Color.White;
             CRBtn.Image = Properties.Resources.review;
             CRBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            CRBtn.Location = new Point(3, 476);
+            CRBtn.Location = new Point(3, 357);
+            CRBtn.Margin = new Padding(3, 2, 3, 2);
             CRBtn.Name = "CRBtn";
-            CRBtn.Size = new Size(322, 59);
+            CRBtn.Size = new Size(282, 44);
             CRBtn.TabIndex = 4;
             CRBtn.Text = " Customers Reviews";
             CRBtn.TextAlign = ContentAlignment.MiddleLeft;
@@ -151,9 +156,10 @@
             RCSBtn.ForeColor = Color.White;
             RCSBtn.Image = Properties.Resources.calendar;
             RCSBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            RCSBtn.Location = new Point(3, 346);
+            RCSBtn.Location = new Point(3, 260);
+            RCSBtn.Margin = new Padding(3, 2, 3, 2);
             RCSBtn.Name = "RCSBtn";
-            RCSBtn.Size = new Size(322, 59);
+            RCSBtn.Size = new Size(282, 44);
             RCSBtn.TabIndex = 3;
             RCSBtn.Text = " Room Cleaning Schedule";
             RCSBtn.TextAlign = ContentAlignment.MiddleLeft;
@@ -169,9 +175,10 @@
             RoomInfBtn.ForeColor = Color.White;
             RoomInfBtn.Image = Properties.Resources.bed;
             RoomInfBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            RoomInfBtn.Location = new Point(3, 281);
+            RoomInfBtn.Location = new Point(3, 211);
+            RoomInfBtn.Margin = new Padding(3, 2, 3, 2);
             RoomInfBtn.Name = "RoomInfBtn";
-            RoomInfBtn.Size = new Size(322, 59);
+            RoomInfBtn.Size = new Size(282, 44);
             RoomInfBtn.TabIndex = 2;
             RoomInfBtn.Text = " Room Information";
             RoomInfBtn.TextAlign = ContentAlignment.MiddleLeft;
@@ -187,9 +194,10 @@
             UAccBtn.ForeColor = Color.White;
             UAccBtn.Image = Properties.Resources.user21;
             UAccBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            UAccBtn.Location = new Point(3, 216);
+            UAccBtn.Location = new Point(3, 162);
+            UAccBtn.Margin = new Padding(3, 2, 3, 2);
             UAccBtn.Name = "UAccBtn";
-            UAccBtn.Size = new Size(322, 59);
+            UAccBtn.Size = new Size(282, 44);
             UAccBtn.TabIndex = 1;
             UAccBtn.Text = " Users Accounts";
             UAccBtn.TextAlign = ContentAlignment.MiddleLeft;
@@ -200,27 +208,31 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Hotel_Logo3;
-            pictureBox1.Location = new Point(81, 24);
+            pictureBox1.Location = new Point(71, 18);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(145, 145);
+            pictureBox1.Size = new Size(127, 109);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // ManagerPanel
             // 
-            ManagerPanel.Location = new Point(334, 24);
+            ManagerPanel.Location = new Point(292, 18);
+            ManagerPanel.Margin = new Padding(3, 2, 3, 2);
             ManagerPanel.Name = "ManagerPanel";
-            ManagerPanel.Size = new Size(748, 641);
+            ManagerPanel.Size = new Size(654, 481);
             ManagerPanel.TabIndex = 1;
+            ManagerPanel.Paint += ManagerPanel_Paint;
             // 
             // ManagerPage
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1094, 685);
+            ClientSize = new Size(957, 514);
             Controls.Add(ManagerPanel);
             Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ManagerPage";
             Text = "ManagerPage";
             Load += ManagerPage_Load;

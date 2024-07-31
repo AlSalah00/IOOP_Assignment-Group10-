@@ -103,5 +103,10 @@ namespace IOOP_Assignment_Group10_
             ProfitReport pr = new ProfitReport();
             addUserControl(pr);
         }
+
+        private void ManagerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

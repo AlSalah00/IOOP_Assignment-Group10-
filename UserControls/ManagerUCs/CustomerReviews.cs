@@ -16,5 +16,10 @@ namespace IOOP_Assignment_Group10_.UserControls.ManagerUCs
         {
             InitializeComponent();
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
