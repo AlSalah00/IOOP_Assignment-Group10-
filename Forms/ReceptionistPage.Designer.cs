@@ -30,7 +30,7 @@
         {
             panel1 = new Panel();
             lblIdentityRCP = new Label();
-            button7 = new Button();
+            LOBtn_RCP = new Button();
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
@@ -46,7 +46,7 @@
             // 
             panel1.BackColor = Color.Navy;
             panel1.Controls.Add(lblIdentityRCP);
-            panel1.Controls.Add(button7);
+            panel1.Controls.Add(LOBtn_RCP);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
@@ -69,22 +69,23 @@
             lblIdentityRCP.Size = new Size(0, 23);
             lblIdentityRCP.TabIndex = 8;
             // 
-            // button7
+            // LOBtn_RCP
             // 
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button7.ForeColor = Color.White;
-            button7.Image = Properties.Resources.logout;
-            button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(12, 541);
-            button7.Name = "button7";
-            button7.Size = new Size(313, 59);
-            button7.TabIndex = 7;
-            button7.Text = " Logout";
-            button7.TextAlign = ContentAlignment.MiddleLeft;
-            button7.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button7.UseVisualStyleBackColor = true;
+            LOBtn_RCP.FlatAppearance.BorderSize = 0;
+            LOBtn_RCP.FlatStyle = FlatStyle.Flat;
+            LOBtn_RCP.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LOBtn_RCP.ForeColor = Color.White;
+            LOBtn_RCP.Image = Properties.Resources.logout;
+            LOBtn_RCP.ImageAlign = ContentAlignment.MiddleLeft;
+            LOBtn_RCP.Location = new Point(12, 541);
+            LOBtn_RCP.Name = "LOBtn_RCP";
+            LOBtn_RCP.Size = new Size(313, 59);
+            LOBtn_RCP.TabIndex = 7;
+            LOBtn_RCP.Text = " Logout";
+            LOBtn_RCP.TextAlign = ContentAlignment.MiddleLeft;
+            LOBtn_RCP.TextImageRelation = TextImageRelation.ImageBeforeText;
+            LOBtn_RCP.UseVisualStyleBackColor = true;
+            LOBtn_RCP.Click += LOBtn_RCP_Click;
             // 
             // button5
             // 
@@ -208,7 +209,7 @@
 
         private Panel panel1;
         private Label lblIdentityRCP;
-        private Button button7;
+        private Button LOBtn_RCP;
         private Button button5;
         private Button button4;
         private Button button3;

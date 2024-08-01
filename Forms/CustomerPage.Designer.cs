@@ -30,7 +30,7 @@
         {
             panel1 = new Panel();
             lblIdentityCus = new Label();
-            button7 = new Button();
+            LOBtn_Cus = new Button();
             RVRTBtn = new Button();
             UpdateProfileBtnCus = new Button();
             MNGReservationBtn = new Button();
@@ -46,7 +46,7 @@
             // 
             panel1.BackColor = Color.Navy;
             panel1.Controls.Add(lblIdentityCus);
-            panel1.Controls.Add(button7);
+            panel1.Controls.Add(LOBtn_Cus);
             panel1.Controls.Add(RVRTBtn);
             panel1.Controls.Add(UpdateProfileBtnCus);
             panel1.Controls.Add(MNGReservationBtn);
@@ -69,22 +69,23 @@
             lblIdentityCus.Size = new Size(0, 23);
             lblIdentityCus.TabIndex = 8;
             // 
-            // button7
+            // LOBtn_Cus
             // 
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button7.ForeColor = Color.White;
-            button7.Image = Properties.Resources.logout;
-            button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(3, 541);
-            button7.Name = "button7";
-            button7.Size = new Size(322, 59);
-            button7.TabIndex = 7;
-            button7.Text = " Logout";
-            button7.TextAlign = ContentAlignment.MiddleLeft;
-            button7.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button7.UseVisualStyleBackColor = true;
+            LOBtn_Cus.FlatAppearance.BorderSize = 0;
+            LOBtn_Cus.FlatStyle = FlatStyle.Flat;
+            LOBtn_Cus.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LOBtn_Cus.ForeColor = Color.White;
+            LOBtn_Cus.Image = Properties.Resources.logout;
+            LOBtn_Cus.ImageAlign = ContentAlignment.MiddleLeft;
+            LOBtn_Cus.Location = new Point(3, 541);
+            LOBtn_Cus.Name = "LOBtn_Cus";
+            LOBtn_Cus.Size = new Size(322, 59);
+            LOBtn_Cus.TabIndex = 7;
+            LOBtn_Cus.Text = " Logout";
+            LOBtn_Cus.TextAlign = ContentAlignment.MiddleLeft;
+            LOBtn_Cus.TextImageRelation = TextImageRelation.ImageBeforeText;
+            LOBtn_Cus.UseVisualStyleBackColor = true;
+            LOBtn_Cus.Click += LOBtn_Cus_Click;
             // 
             // RVRTBtn
             // 
@@ -102,6 +103,7 @@
             RVRTBtn.TextAlign = ContentAlignment.MiddleLeft;
             RVRTBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             RVRTBtn.UseVisualStyleBackColor = true;
+            RVRTBtn.Click += RVRTBtn_Click;
             // 
             // UpdateProfileBtnCus
             // 
@@ -119,6 +121,7 @@
             UpdateProfileBtnCus.TextAlign = ContentAlignment.MiddleLeft;
             UpdateProfileBtnCus.TextImageRelation = TextImageRelation.ImageBeforeText;
             UpdateProfileBtnCus.UseVisualStyleBackColor = true;
+            UpdateProfileBtnCus.Click += UpdateProfileBtnCus_Click;
             // 
             // MNGReservationBtn
             // 
@@ -136,6 +139,7 @@
             MNGReservationBtn.TextAlign = ContentAlignment.MiddleLeft;
             MNGReservationBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             MNGReservationBtn.UseVisualStyleBackColor = true;
+            MNGReservationBtn.Click += MNGReservationBtn_Click;
             // 
             // RoomDTLBtn
             // 
@@ -153,6 +157,7 @@
             RoomDTLBtn.TextAlign = ContentAlignment.MiddleLeft;
             RoomDTLBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             RoomDTLBtn.UseVisualStyleBackColor = true;
+            RoomDTLBtn.Click += RoomDTLBtn_Click;
             // 
             // searchRoomBtn
             // 
@@ -170,6 +175,7 @@
             searchRoomBtn.TextAlign = ContentAlignment.MiddleLeft;
             searchRoomBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
             searchRoomBtn.UseVisualStyleBackColor = true;
+            searchRoomBtn.Click += searchRoomBtn_Click;
             // 
             // pictureBox1
             // 
@@ -208,7 +214,7 @@
 
         private Panel panel1;
         private Label lblIdentityCus;
-        private Button button7;
+        private Button LOBtn_Cus;
         private Button RVRTBtn;
         private Button UpdateProfileBtnCus;
         private Button MNGReservationBtn;

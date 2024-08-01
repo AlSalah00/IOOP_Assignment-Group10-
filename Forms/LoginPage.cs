@@ -29,7 +29,7 @@ namespace IOOP_Assignment_Group10_
                 !string.IsNullOrEmpty(txtPassword.Text))
             {
                 User u1 = new User(txtUsername.Text, txtPassword.Text);
-                status = u1.Login(txtUsername.Text, txtPassword.Text);
+                status = u1.Login(txtUsername.Text, txtPassword.Text);               
 
                 if (status != null)
                 {

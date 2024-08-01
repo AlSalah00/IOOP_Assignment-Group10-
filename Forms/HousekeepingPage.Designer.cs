@@ -30,7 +30,7 @@
         {
             panel1 = new Panel();
             lblIdentityHK = new Label();
-            button7 = new Button();
+            LOBtn_HK = new Button();
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
@@ -46,7 +46,7 @@
             // 
             panel1.BackColor = Color.Navy;
             panel1.Controls.Add(lblIdentityHK);
-            panel1.Controls.Add(button7);
+            panel1.Controls.Add(LOBtn_HK);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
@@ -70,22 +70,23 @@
             lblIdentityHK.Size = new Size(0, 23);
             lblIdentityHK.TabIndex = 8;
             // 
-            // button7
+            // LOBtn_HK
             // 
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button7.ForeColor = Color.White;
-            button7.Image = Properties.Resources.logout;
-            button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(3, 541);
-            button7.Name = "button7";
-            button7.Size = new Size(322, 59);
-            button7.TabIndex = 7;
-            button7.Text = " Logout";
-            button7.TextAlign = ContentAlignment.MiddleLeft;
-            button7.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button7.UseVisualStyleBackColor = true;
+            LOBtn_HK.FlatAppearance.BorderSize = 0;
+            LOBtn_HK.FlatStyle = FlatStyle.Flat;
+            LOBtn_HK.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LOBtn_HK.ForeColor = Color.White;
+            LOBtn_HK.Image = Properties.Resources.logout;
+            LOBtn_HK.ImageAlign = ContentAlignment.MiddleLeft;
+            LOBtn_HK.Location = new Point(3, 541);
+            LOBtn_HK.Name = "LOBtn_HK";
+            LOBtn_HK.Size = new Size(322, 59);
+            LOBtn_HK.TabIndex = 7;
+            LOBtn_HK.Text = " Logout";
+            LOBtn_HK.TextAlign = ContentAlignment.MiddleLeft;
+            LOBtn_HK.TextImageRelation = TextImageRelation.ImageBeforeText;
+            LOBtn_HK.UseVisualStyleBackColor = true;
+            LOBtn_HK.Click += LOBtn_HK_Click;
             // 
             // button5
             // 
@@ -209,7 +210,7 @@
 
         private Panel panel1;
         private Label lblIdentityHK;
-        private Button button7;
+        private Button LOBtn_HK;
         private Button button5;
         private Button button4;
         private Button button3;

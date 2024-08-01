@@ -61,5 +61,12 @@ namespace IOOP_Assignment_Group10_.Forms
             UpdateReceptionistProfile update = new UpdateReceptionistProfile();
             addUserControl(update);
         }
+
+        private void LOBtn_RCP_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginPage login = new LoginPage();
+            login.ShowDialog();
+        }
     }
 }

@@ -87,6 +87,7 @@
             LOBtn_M.TextAlign = ContentAlignment.MiddleLeft;
             LOBtn_M.TextImageRelation = TextImageRelation.ImageBeforeText;
             LOBtn_M.UseVisualStyleBackColor = true;
+            LOBtn_M.Click += LOBtn_M_Click;
             // 
             // PRBtn
             // 

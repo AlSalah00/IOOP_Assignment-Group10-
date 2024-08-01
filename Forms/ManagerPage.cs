@@ -104,5 +104,12 @@ namespace IOOP_Assignment_Group10_
             ProfitReport pr = new ProfitReport();
             addUserControl(pr);
         }
+
+        private void LOBtn_M_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginPage login = new LoginPage();
+            login.ShowDialog();
+        }
     }
 }

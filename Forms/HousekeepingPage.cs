@@ -27,5 +27,12 @@ namespace IOOP_Assignment_Group10_.Forms
         {
             lblIdentityHK.Text = $"Welcome, {Name}";
         }
+
+        private void LOBtn_HK_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginPage login = new LoginPage();
+            login.ShowDialog();
+        }
     }
 }
