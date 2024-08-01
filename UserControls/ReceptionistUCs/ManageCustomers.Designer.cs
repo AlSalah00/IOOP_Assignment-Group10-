@@ -37,8 +37,6 @@
             lblPassword = new Label();
             lblEmail = new Label();
             lblUsername = new Label();
-            textBox1 = new TextBox();
-            lblPhoneNumber = new Label();
             ((System.ComponentModel.ISupportInitialize)UsersTable).BeginInit();
             SuspendLayout();
             // 
@@ -47,7 +45,7 @@
             UsersTable.BackgroundColor = Color.White;
             UsersTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             UsersTable.GridColor = Color.Black;
-            UsersTable.Location = new Point(89, 437);
+            UsersTable.Location = new Point(89, 389);
             UsersTable.Name = "UsersTable";
             UsersTable.RowHeadersWidth = 51;
             UsersTable.Size = new Size(571, 160);
@@ -68,12 +66,13 @@
             DelUserBtn.FlatStyle = FlatStyle.Flat;
             DelUserBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DelUserBtn.ForeColor = Color.White;
-            DelUserBtn.Location = new Point(211, 377);
+            DelUserBtn.Location = new Point(210, 325);
             DelUserBtn.Name = "DelUserBtn";
             DelUserBtn.Size = new Size(101, 36);
             DelUserBtn.TabIndex = 23;
             DelUserBtn.Text = "Delete";
             DelUserBtn.UseVisualStyleBackColor = false;
+            DelUserBtn.Click += DelUserBtn_Click;
             // 
             // AddUserBtn
             // 
@@ -82,12 +81,13 @@
             AddUserBtn.FlatStyle = FlatStyle.Flat;
             AddUserBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AddUserBtn.ForeColor = Color.White;
-            AddUserBtn.Location = new Point(89, 377);
+            AddUserBtn.Location = new Point(89, 325);
             AddUserBtn.Name = "AddUserBtn";
             AddUserBtn.Size = new Size(101, 36);
             AddUserBtn.TabIndex = 22;
             AddUserBtn.Text = "Add";
             AddUserBtn.UseVisualStyleBackColor = false;
+            AddUserBtn.Click += AddUserBtn_Click;
             // 
             // txtEmail
             // 
@@ -133,30 +133,11 @@
             lblUsername.TabIndex = 14;
             lblUsername.Text = "Username";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(89, 315);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(316, 27);
-            textBox1.TabIndex = 26;
-            // 
-            // lblPhoneNumber
-            // 
-            lblPhoneNumber.AutoSize = true;
-            lblPhoneNumber.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblPhoneNumber.Location = new Point(89, 284);
-            lblPhoneNumber.Name = "lblPhoneNumber";
-            lblPhoneNumber.Size = new Size(148, 28);
-            lblPhoneNumber.TabIndex = 27;
-            lblPhoneNumber.Text = "PhoneNumber";
-            // 
             // ManageCustomers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(lblPhoneNumber);
-            Controls.Add(textBox1);
             Controls.Add(UsersTable);
             Controls.Add(txtPassword);
             Controls.Add(DelUserBtn);
