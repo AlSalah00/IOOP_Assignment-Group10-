@@ -18,7 +18,10 @@ namespace IOOP_Assignment_Group10_.Forms
         {
             InitializeComponent();
             Name = n;
+            ManageCustomers mc = new ManageCustomers();
+            addUserControl(mc);
         }
+
 
         private void ReceptionistPage_Load(object sender, EventArgs e)
         {

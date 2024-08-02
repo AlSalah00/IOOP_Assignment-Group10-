@@ -149,6 +149,7 @@
             Controls.Add(lblUsername);
             Name = "ManageCustomers";
             Size = new Size(748, 641);
+            Load += ManageCustomers_Load;
             ((System.ComponentModel.ISupportInitialize)UsersTable).EndInit();
             ResumeLayout(false);
             PerformLayout();

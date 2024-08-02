@@ -24,17 +24,17 @@ namespace IOOP_Assignment_Group10_.UserControls.ReceptionistUCs
             UsersTable.AutoGenerateColumns = false; // Disable auto generation of columns
             UsersTable.Columns.Clear();
             UsersTable.Columns.Add("Username", "Username");
-            UsersTable.Columns.Add("Password", "Password");
             UsersTable.Columns.Add("Email", "Email");
-            UsersTable.Columns.Add("Role", "Role");
+            UsersTable.Columns.Add("Password", "Password");
 
             // Retrieving user details from the database
-            List<User> users = User.viewAll();
+            List<User> allUsers = User.viewAll();
+            var Customer = allUsers.Where(u => u.Role == "Customer").ToList();
 
             // Populating DataGridView with user details
-            foreach (User user in users)
+            foreach (User user in Customer)
             {
-                UsersTable.Rows.Add(user.Username, user.Password, user.Email, user.Role);
+                UsersTable.Rows.Add(user.Username, user.Password, user.Email);
             }
         }
 
@@ -64,7 +64,7 @@ namespace IOOP_Assignment_Group10_.UserControls.ReceptionistUCs
 
 
 
-        private void AddUserBtn_Click_1(object sender, EventArgs e)
+        private void AddUserBtn_Click_1(object sender, EventArgs e)//IGNORE
         {
             // Checking if text boxes are empty
             if (string.IsNullOrEmpty(txtUserName.Text) ||
@@ -121,7 +121,8 @@ namespace IOOP_Assignment_Group10_.UserControls.ReceptionistUCs
                 MessageBox.Show("Error: No user selected.");
 
         }
-        private void ManageUsers_Load(object sender, EventArgs e)
+
+        private void ManageCustomers_Load(object sender, EventArgs e)
         {
             RefreshTable();
         }
