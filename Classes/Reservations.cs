@@ -16,7 +16,11 @@ namespace IOOP_Assignment_Group10_.Classes
         private decimal totalCharges;
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
         
-
+        public string ResID
+        {
+            get { return resID; }
+            set { resID = value; }
+        }
 
         public string Username
         {
@@ -52,6 +56,12 @@ namespace IOOP_Assignment_Group10_.Classes
             get { return status; }
             set { status = value; }
         }
+
+        public string generateID()
+        {
+            return $"R1{new Random().Next(1000, 9999)}";
+        }
+
         public Reservations(string resID, string username, int roomNum, DateTime checkinDate, DateTime checkoutDate, decimal totalCharges, string status)
         {
             this.resID = resID;
@@ -69,6 +79,7 @@ namespace IOOP_Assignment_Group10_.Classes
         {
             con.Open();
             string query = "INSERT INTO Reservations (resID, username, roomNum, checkInDate, checkOutDate, totalCharges, status) VALUES (@resID, @username, @roomNum, @checkinDate, @checkoutDate, @totalCharges, @status)";
+            string resID = generateID();
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
@@ -100,19 +111,30 @@ namespace IOOP_Assignment_Group10_.Classes
         public  void EditReservation()
         {
             con.Open();
-            string query = "UPDATE Reservations SET username = @username, roomNum = @roomNum, checkInDate = @checkinDate, checkOutDate = @checkoutDate, totalCharges = @totalCharges, status = @status WHERE ID = @ID";
+            string query = "UPDATE Reservations SET username = @username, roomNum = @roomNum, checkInDate = @checkinDate, checkOutDate = @checkoutDate, totalCharges = @totalCharges, status = @status WHERE resID = @resID";
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
+                cmd.Parameters.AddWithValue("@resID", resID);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@roomNum", roomNum);
                 cmd.Parameters.AddWithValue("@checkinDate", checkinDate);
                 cmd.Parameters.AddWithValue("@checkoutDate", checkoutDate);
                 cmd.Parameters.AddWithValue("@totalCharges", totalCharges);
+                cmd.Parameters.AddWithValue("@status", status);
 
-                cmd.ExecuteNonQuery();
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Reservation updated successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Error: Failed to update the reservation. The reservation may not exist.");
+                }
             }
-
             con.Close();
-            MessageBox.Show("Reservation edited successfully.");
         }
 
         // Delete an existing reservation
@@ -167,7 +189,7 @@ namespace IOOP_Assignment_Group10_.Classes
         public void checkInCustomer()
         {
             con.Open();
-            string query = "UPDATE Reservations SET resID = @resID, username = @username, roomNum = @roomNum, checkinDate = @checkinDate, checkoutDate = @checkoutDate, totalCharges = @totalCharges, status = @status";
+            string query = "UPDATE Reservations SET username = @username, roomNum = @roomNum, checkinDate = @checkinDate, checkoutDate = @checkoutDate, totalCharges = @totalCharges, status = @status WHERE resID = @resID";
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
@@ -186,7 +208,7 @@ namespace IOOP_Assignment_Group10_.Classes
                 }
                 else
                 {
-                    MessageBox.Show("Error: Failed Check-in Customer. The Reservation may not exist.");
+                    MessageBox.Show("Error: Failed to check-in customer. The reservation may not exist.");
                 }
             }
             con.Close();
@@ -195,7 +217,7 @@ namespace IOOP_Assignment_Group10_.Classes
         public void CheckOutCustomer()
         {
             con.Open();
-            string query = "UPDATE Reservations SET resID = @resID, username = @username, roomNum = @roomNum, checkinDate = @checkinDate, checkoutDate = @checkoutDate, totalCharges = @totalCharges, status = @status";
+            string query = "UPDATE Reservations SET username = @username, roomNum = @roomNum, checkinDate = @checkinDate, checkoutDate = @checkoutDate, totalCharges = @totalCharges, status = @status WHERE resID = @resID";
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
@@ -214,30 +236,12 @@ namespace IOOP_Assignment_Group10_.Classes
                 }
                 else
                 {
-                    MessageBox.Show("Error: Failed Check-out Customer. The Reservation may not exist.");
+                    MessageBox.Show("Error: Failed to check-out customer. The reservation may not exist.");
                 }
             }
             con.Close();
 
         }
-        public void GetRowCount()
-        {
-            int rowCount = 0;
-            string query = "SELECT COUNT(*) FROM Reservations";
-
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
-            {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    rowCount = (int)cmd.ExecuteScalar();
-                }
-            }
-
-            int newIdNumber = rowCount + 1;
-            
-        }
-
 
     }
 }

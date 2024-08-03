@@ -31,11 +31,11 @@
             panel1 = new Panel();
             lblIdentityHK = new Label();
             LOBtn_HK = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            UAccBtn = new Button();
+            ClnSuppsBtn = new Button();
+            UpdateProfileHKBtn = new Button();
+            RoomClnsBtn = new Button();
+            URRBtn = new Button();
+            RoomCSCHBtn = new Button();
             pictureBox1 = new PictureBox();
             HousekeepingPanel = new Panel();
             panel1.SuspendLayout();
@@ -47,11 +47,11 @@
             panel1.BackColor = Color.Navy;
             panel1.Controls.Add(lblIdentityHK);
             panel1.Controls.Add(LOBtn_HK);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(UAccBtn);
+            panel1.Controls.Add(ClnSuppsBtn);
+            panel1.Controls.Add(UpdateProfileHKBtn);
+            panel1.Controls.Add(RoomClnsBtn);
+            panel1.Controls.Add(URRBtn);
+            panel1.Controls.Add(RoomCSCHBtn);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -88,90 +88,95 @@
             LOBtn_HK.UseVisualStyleBackColor = true;
             LOBtn_HK.Click += LOBtn_HK_Click;
             // 
-            // button5
+            // ClnSuppsBtn
             // 
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = Color.White;
-            button5.Image = Properties.Resources.cleaning;
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(3, 411);
-            button5.Name = "button5";
-            button5.Size = new Size(322, 59);
-            button5.TabIndex = 5;
-            button5.Text = "Cleaning Supplies";
-            button5.TextAlign = ContentAlignment.MiddleLeft;
-            button5.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button5.UseVisualStyleBackColor = true;
+            ClnSuppsBtn.FlatAppearance.BorderSize = 0;
+            ClnSuppsBtn.FlatStyle = FlatStyle.Flat;
+            ClnSuppsBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ClnSuppsBtn.ForeColor = Color.White;
+            ClnSuppsBtn.Image = Properties.Resources.cleaning;
+            ClnSuppsBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            ClnSuppsBtn.Location = new Point(3, 411);
+            ClnSuppsBtn.Name = "ClnSuppsBtn";
+            ClnSuppsBtn.Size = new Size(322, 59);
+            ClnSuppsBtn.TabIndex = 5;
+            ClnSuppsBtn.Text = "Cleaning Supplies";
+            ClnSuppsBtn.TextAlign = ContentAlignment.MiddleLeft;
+            ClnSuppsBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            ClnSuppsBtn.UseVisualStyleBackColor = true;
+            ClnSuppsBtn.Click += ClnSuppsBtn_Click;
             // 
-            // button4
+            // UpdateProfileHKBtn
             // 
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.White;
-            button4.Image = Properties.Resources.update3;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(3, 476);
-            button4.Name = "button4";
-            button4.Size = new Size(322, 59);
-            button4.TabIndex = 4;
-            button4.Text = " Update Profile";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button4.UseVisualStyleBackColor = true;
+            UpdateProfileHKBtn.FlatAppearance.BorderSize = 0;
+            UpdateProfileHKBtn.FlatStyle = FlatStyle.Flat;
+            UpdateProfileHKBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UpdateProfileHKBtn.ForeColor = Color.White;
+            UpdateProfileHKBtn.Image = Properties.Resources.update3;
+            UpdateProfileHKBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            UpdateProfileHKBtn.Location = new Point(3, 476);
+            UpdateProfileHKBtn.Name = "UpdateProfileHKBtn";
+            UpdateProfileHKBtn.Size = new Size(322, 59);
+            UpdateProfileHKBtn.TabIndex = 4;
+            UpdateProfileHKBtn.Text = " Update Profile";
+            UpdateProfileHKBtn.TextAlign = ContentAlignment.MiddleLeft;
+            UpdateProfileHKBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            UpdateProfileHKBtn.UseVisualStyleBackColor = true;
+            UpdateProfileHKBtn.Click += UpdateProfileHKBtn_Click;
             // 
-            // button3
+            // RoomClnsBtn
             // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Image = Properties.Resources.mop;
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(3, 346);
-            button3.Name = "button3";
-            button3.Size = new Size(322, 59);
-            button3.TabIndex = 3;
-            button3.Text = "Room Cleanliness";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = true;
+            RoomClnsBtn.FlatAppearance.BorderSize = 0;
+            RoomClnsBtn.FlatStyle = FlatStyle.Flat;
+            RoomClnsBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RoomClnsBtn.ForeColor = Color.White;
+            RoomClnsBtn.Image = Properties.Resources.mop;
+            RoomClnsBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            RoomClnsBtn.Location = new Point(3, 346);
+            RoomClnsBtn.Name = "RoomClnsBtn";
+            RoomClnsBtn.Size = new Size(322, 59);
+            RoomClnsBtn.TabIndex = 3;
+            RoomClnsBtn.Text = "Room Cleanliness";
+            RoomClnsBtn.TextAlign = ContentAlignment.MiddleLeft;
+            RoomClnsBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            RoomClnsBtn.UseVisualStyleBackColor = true;
+            RoomClnsBtn.Click += RoomClnsBtn_Click;
             // 
-            // button2
+            // URRBtn
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = Properties.Resources.reservations;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(3, 281);
-            button2.Name = "button2";
-            button2.Size = new Size(322, 59);
-            button2.TabIndex = 2;
-            button2.Text = " Upcoming Room Reservations";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = true;
+            URRBtn.FlatAppearance.BorderSize = 0;
+            URRBtn.FlatStyle = FlatStyle.Flat;
+            URRBtn.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            URRBtn.ForeColor = Color.White;
+            URRBtn.Image = Properties.Resources.reservations;
+            URRBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            URRBtn.Location = new Point(3, 281);
+            URRBtn.Name = "URRBtn";
+            URRBtn.Size = new Size(322, 59);
+            URRBtn.TabIndex = 2;
+            URRBtn.Text = " Upcoming Room Reservations";
+            URRBtn.TextAlign = ContentAlignment.MiddleLeft;
+            URRBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            URRBtn.UseVisualStyleBackColor = true;
+            URRBtn.Click += URRBtn_Click;
             // 
-            // UAccBtn
+            // RoomCSCHBtn
             // 
-            UAccBtn.FlatAppearance.BorderSize = 0;
-            UAccBtn.FlatStyle = FlatStyle.Flat;
-            UAccBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UAccBtn.ForeColor = Color.White;
-            UAccBtn.Image = Properties.Resources.schedule;
-            UAccBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            UAccBtn.Location = new Point(3, 216);
-            UAccBtn.Name = "UAccBtn";
-            UAccBtn.Size = new Size(322, 59);
-            UAccBtn.TabIndex = 1;
-            UAccBtn.Text = " Room cleaning Schedule";
-            UAccBtn.TextAlign = ContentAlignment.MiddleLeft;
-            UAccBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            UAccBtn.UseVisualStyleBackColor = true;
+            RoomCSCHBtn.FlatAppearance.BorderSize = 0;
+            RoomCSCHBtn.FlatStyle = FlatStyle.Flat;
+            RoomCSCHBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RoomCSCHBtn.ForeColor = Color.White;
+            RoomCSCHBtn.Image = Properties.Resources.schedule;
+            RoomCSCHBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            RoomCSCHBtn.Location = new Point(3, 216);
+            RoomCSCHBtn.Name = "RoomCSCHBtn";
+            RoomCSCHBtn.Size = new Size(322, 59);
+            RoomCSCHBtn.TabIndex = 1;
+            RoomCSCHBtn.Text = " Room cleaning Schedule";
+            RoomCSCHBtn.TextAlign = ContentAlignment.MiddleLeft;
+            RoomCSCHBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            RoomCSCHBtn.UseVisualStyleBackColor = true;
+            RoomCSCHBtn.Click += RoomCSCHBtn_Click;
             // 
             // pictureBox1
             // 
@@ -211,11 +216,11 @@
         private Panel panel1;
         private Label lblIdentityHK;
         private Button LOBtn_HK;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button UAccBtn;
+        private Button ClnSuppsBtn;
+        private Button UpdateProfileHKBtn;
+        private Button RoomClnsBtn;
+        private Button URRBtn;
+        private Button RoomCSCHBtn;
         private PictureBox pictureBox1;
         private Panel HousekeepingPanel;
     }

@@ -67,7 +67,7 @@ namespace IOOP_Assignment_Group10_.Classes
         }
 
         // Checking if user already exists
-        private bool UserExists(string username)
+        private bool UserIsUnique(string username)
         {           
             con.Open();           
             string query = "SELECT COUNT(*) FROM Users WHERE username = @username";
@@ -82,7 +82,7 @@ namespace IOOP_Assignment_Group10_.Classes
         }
         public void addUser()
         {
-            if (UserExists(username))
+            if (UserIsUnique(username))
             {
 
                 con.Open();
@@ -138,6 +138,31 @@ namespace IOOP_Assignment_Group10_.Classes
                 }
             }
 
+            con.Close();
+        }
+
+        public void updateProfile()
+        {
+            con.Open();
+            string query = "UPDATE users SET username = @username, password = @password, email = @email";
+
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@password", password);
+                cmd.Parameters.AddWithValue("@email", email);
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Profile updated successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Error: Failed to update the profile.");
+                }
+            }
             con.Close();
         }
 

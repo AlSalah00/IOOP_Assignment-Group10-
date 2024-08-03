@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace IOOP_Assignment_Group10_.Classes
 {
@@ -74,59 +75,59 @@ namespace IOOP_Assignment_Group10_.Classes
             this.status = string.Empty;
         }
 
+
+        private bool RoomIsUnique(int roomNum)
+        {
+            con.Open();
+            string query = "SELECT COUNT(*) FROM rooms WHERE roomNum = @roomNum";
+
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@roomNum", roomNum);
+                int count = (int)cmd.ExecuteScalar();
+                con.Close();
+                return count == 0; // If count is 0, roomNum is unique otherwise, it exists
+            }
+        }
+
         public void addRoom()
         {
-            con.Open();
-            string query = "INSERT INTO rooms (roomNum, roomType, amenities, price, roomDetails, status) VALUES (@roomNum, @roomType, @amenities, @price, @roomDetails, @status)";
-
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            if (RoomIsUnique(roomNum))
             {
-                cmd.Parameters.AddWithValue("@roomNum", roomNum);
-                cmd.Parameters.AddWithValue("@roomType", roomType);
-                cmd.Parameters.AddWithValue("@amenities", amenities);
-                cmd.Parameters.AddWithValue("@price", price);
-                cmd.Parameters.AddWithValue("@roomDetails", roomDetails);
-                cmd.Parameters.AddWithValue("status", status);
+                con.Open();
+                string query = "INSERT INTO rooms (roomNum, roomType, amenities, price, roomDetails, status) VALUES (@roomNum, @roomType, @amenities, @price, @roomDetails, @status)";
 
-                int rowsAffected = cmd.ExecuteNonQuery();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@roomNum", roomNum);
+                    cmd.Parameters.AddWithValue("@roomType", roomType);
+                    cmd.Parameters.AddWithValue("@amenities", amenities);
+                    cmd.Parameters.AddWithValue("@price", price);
+                    cmd.Parameters.AddWithValue("@roomDetails", roomDetails);
+                    cmd.Parameters.AddWithValue("status", status);
 
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("Room added successfully.");
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Room added successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error: Failed to add a new room.");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Error: Failed to add a new room.");
-                }
+                con.Close();
             }
-            con.Close();
+            else
+            {
+                MessageBox.Show("Error: Room already exists.");
+            }
         }
 
-        public string GetRoomStatus(string roomNum)
+
+        public void editRoom(int roomNum, string roomType, string amenities, decimal price, string roomDetails, string status)
         {
-            string status = "";
-            con.Open();
-            string query = "SELECT status FROM rooms WHERE roomNum = @roomNum";
-
-            using (SqlCommand cmd = new SqlCommand(query, con))
-            {
-                cmd.Parameters.AddWithValue("@roomNum", roomNum);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    status = reader["status"].ToString();
-                }
-                reader.Close();
-            }
-            con.Close();
-            return status;
-        }
-
-        public void editRoom(int roomNum, string roomType, string amenities, decimal price, string roomDetails)
-        {
-            string currentStatus = GetRoomStatus(roomNum.ToString());
-
             con.Open();
             string query = "UPDATE rooms SET roomType = @roomType, amenities = @amenities, price = @price, roomDetails = @roomDetails, status = @status WHERE roomNum = @roomNum";
 
@@ -137,7 +138,7 @@ namespace IOOP_Assignment_Group10_.Classes
                 cmd.Parameters.AddWithValue("@amenities", amenities);
                 cmd.Parameters.AddWithValue("@price", price);
                 cmd.Parameters.AddWithValue("@roomDetails", roomDetails);
-                cmd.Parameters.AddWithValue("@status", currentStatus);
+                cmd.Parameters.AddWithValue("@status", status);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
 

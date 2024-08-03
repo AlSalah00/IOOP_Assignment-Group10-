@@ -220,16 +220,18 @@ namespace IOOP_Assignment_Group10_.UserControls.ManagerUCs
                 DataGridViewRow selectedRow = RoomInfoTable.SelectedRows[0];
 
                 object value = selectedRow.Cells[0].Value;
+                object value2 = selectedRow.Cells[5].Value;
 
-                if (value != null && value is int intValue)
+                if (value != null && value is int && value2 != null && value2 is string stringValue2)
                 {
 
                     int roomNum = (int)value;
+                    string status = stringValue2;
 
                     if (roomNum > 0)
                     {
                         Room r1 = new Room(roomNum);
-                        r1.editRoom(roomNum, CBRoomType.Text, amenities, decimal.Parse(txtPrice.Text), txtRoomDesc.Text);
+                        r1.editRoom(roomNum, CBRoomType.Text, amenities, decimal.Parse(txtPrice.Text), txtRoomDesc.Text, status);
                         RefreshTable();
                     }
                     else
