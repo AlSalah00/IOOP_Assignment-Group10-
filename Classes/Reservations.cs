@@ -14,6 +14,7 @@ namespace IOOP_Assignment_Group10_.Classes
         private DateTime checkoutDate;
         private string status;
         private decimal totalCharges;
+        private string payment;
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
         
         public string ResID
@@ -57,12 +58,18 @@ namespace IOOP_Assignment_Group10_.Classes
             set { status = value; }
         }
 
+        public string Payment
+        {
+            get { return payment; }
+            set { payment = value; }
+        }
+
         public string generateID()
         {
             return $"R1{new Random().Next(1000, 9999)}";
         }
 
-        public Reservations(string resID, string username, int roomNum, DateTime checkinDate, DateTime checkoutDate, decimal totalCharges, string status)
+        public Reservations(string resID, string username, int roomNum, DateTime checkinDate, DateTime checkoutDate, decimal totalCharges, string status, string payment)
         {
             this.resID = resID;
             this.username = username;
@@ -71,6 +78,7 @@ namespace IOOP_Assignment_Group10_.Classes
             this.checkoutDate = checkoutDate;
             this.totalCharges = totalCharges;
             this.status = status;
+            this.payment = payment;
         }
 
 
@@ -78,7 +86,7 @@ namespace IOOP_Assignment_Group10_.Classes
         public  void AddReservation()
         {
             con.Open();
-            string query = "INSERT INTO Reservations (resID, username, roomNum, checkInDate, checkOutDate, totalCharges, status) VALUES (@resID, @username, @roomNum, @checkinDate, @checkoutDate, @totalCharges, @status)";
+            string query = "INSERT INTO Reservations (resID, username, roomNum, checkInDate, checkOutDate, totalCharges, status, payment) VALUES (@resID, @username, @roomNum, @checkinDate, @checkoutDate, @totalCharges, @status, @payment)";
             string resID = generateID();
 
             using (SqlCommand cmd = new SqlCommand(query, con))
@@ -90,6 +98,7 @@ namespace IOOP_Assignment_Group10_.Classes
                 cmd.Parameters.AddWithValue("@checkoutDate", checkoutDate);
                 cmd.Parameters.AddWithValue("@totalCharges", totalCharges);
                 cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@payment", payment);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -111,7 +120,7 @@ namespace IOOP_Assignment_Group10_.Classes
         public  void EditReservation()
         {
             con.Open();
-            string query = "UPDATE Reservations SET username = @username, roomNum = @roomNum, checkInDate = @checkinDate, checkOutDate = @checkoutDate, totalCharges = @totalCharges, status = @status WHERE resID = @resID";
+            string query = "UPDATE Reservations SET username = @username, roomNum = @roomNum, checkInDate = @checkinDate, checkOutDate = @checkoutDate, totalCharges = @totalCharges, status = @status payment = @payment WHERE resID = @resID";
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
@@ -122,6 +131,7 @@ namespace IOOP_Assignment_Group10_.Classes
                 cmd.Parameters.AddWithValue("@checkoutDate", checkoutDate);
                 cmd.Parameters.AddWithValue("@totalCharges", totalCharges);
                 cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@payment", payment);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -168,7 +178,7 @@ namespace IOOP_Assignment_Group10_.Classes
             List<Reservations> reservations = new List<Reservations>();
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("select resID, username , roomNum, checkinDate,checkoutDate,totalCharges,status from Reservations", con);
+            SqlCommand cmd = new SqlCommand("select resID, username , roomNum, checkinDate, checkoutDate, totalCharges, status, payment from Reservations", con);
             SqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
             {
@@ -179,8 +189,9 @@ namespace IOOP_Assignment_Group10_.Classes
                 DateTime checkoutDate = rd.GetDateTime(4);
                 Decimal totalCharges = rd.GetDecimal(5);
                 string status = rd.GetString(6);
+                string payment = rd.GetString(7);
 
-                Reservations Res = new Reservations(resID, username, roomNum, checkinDate, checkoutDate, totalCharges, status);
+                Reservations Res = new Reservations(resID, username, roomNum, checkinDate, checkoutDate, totalCharges, status, payment);
                 reservations.Add(Res);
             }
             con.Close();
@@ -189,7 +200,7 @@ namespace IOOP_Assignment_Group10_.Classes
         public void checkInCustomer()
         {
             con.Open();
-            string query = "UPDATE Reservations SET username = @username, roomNum = @roomNum, checkinDate = @checkinDate, checkoutDate = @checkoutDate, totalCharges = @totalCharges, status = @status WHERE resID = @resID";
+            string query = "UPDATE Reservations SET username = @username, roomNum = @roomNum, checkinDate = @checkinDate, checkoutDate = @checkoutDate, totalCharges = @totalCharges, status = @status payment = @payment WHERE resID = @resID";
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
@@ -199,6 +210,7 @@ namespace IOOP_Assignment_Group10_.Classes
                 cmd.Parameters.AddWithValue("@checkoutDate", checkoutDate);
                 cmd.Parameters.AddWithValue("@totalCharges", totalCharges);
                 cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@payment", payment);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -217,7 +229,7 @@ namespace IOOP_Assignment_Group10_.Classes
         public void CheckOutCustomer()
         {
             con.Open();
-            string query = "UPDATE Reservations SET username = @username, roomNum = @roomNum, checkinDate = @checkinDate, checkoutDate = @checkoutDate, totalCharges = @totalCharges, status = @status WHERE resID = @resID";
+            string query = "UPDATE Reservations SET username = @username, roomNum = @roomNum, checkinDate = @checkinDate, checkoutDate = @checkoutDate, totalCharges = @totalCharges, status = @status payment = @payment WHERE resID = @resID";
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
@@ -227,6 +239,7 @@ namespace IOOP_Assignment_Group10_.Classes
                 cmd.Parameters.AddWithValue("@checkoutDate", checkoutDate);
                 cmd.Parameters.AddWithValue("@totalCharges", totalCharges);
                 cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@payment", payment);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
 
