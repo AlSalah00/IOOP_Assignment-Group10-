@@ -65,11 +65,11 @@
             // 
             lblPayable.AutoSize = true;
             lblPayable.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPayable.Location = new Point(447, 510);
+            lblPayable.Location = new Point(88, 63);
             lblPayable.Name = "lblPayable";
-            lblPayable.Size = new Size(173, 28);
+            lblPayable.Size = new Size(198, 28);
             lblPayable.TabIndex = 29;
-            lblPayable.Text = "Payable Amount:";
+            lblPayable.Text = "Check-In Customers";
             // 
             // CheckInCUS
             // 

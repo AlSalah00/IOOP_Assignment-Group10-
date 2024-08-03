@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblPayable = new Label();
+            LBLCheckout = new Label();
             pendingReservationsTBL = new DataGridView();
             ChekoutLBL = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pendingReservationsTBL).BeginInit();
             SuspendLayout();
             // 
-            // lblPayable
+            // LBLCheckout
             // 
-            lblPayable.AutoSize = true;
-            lblPayable.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPayable.Location = new Point(462, 541);
-            lblPayable.Name = "lblPayable";
-            lblPayable.Size = new Size(173, 28);
-            lblPayable.TabIndex = 32;
-            lblPayable.Text = "Payable Amount:";
+            LBLCheckout.AutoSize = true;
+            LBLCheckout.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LBLCheckout.Location = new Point(88, 63);
+            LBLCheckout.Name = "LBLCheckout";
+            LBLCheckout.Size = new Size(308, 28);
+            LBLCheckout.TabIndex = 32;
+            LBLCheckout.Text = "Check-out and Collect payment";
             // 
             // pendingReservationsTBL
             // 
             pendingReservationsTBL.BackgroundColor = Color.White;
             pendingReservationsTBL.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             pendingReservationsTBL.GridColor = Color.Black;
-            pendingReservationsTBL.Location = new Point(103, 295);
+            pendingReservationsTBL.Location = new Point(88, 264);
             pendingReservationsTBL.Name = "pendingReservationsTBL";
             pendingReservationsTBL.RowHeadersWidth = 51;
             pendingReservationsTBL.Size = new Size(571, 160);
@@ -62,20 +63,36 @@
             ChekoutLBL.FlatStyle = FlatStyle.Flat;
             ChekoutLBL.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ChekoutLBL.ForeColor = Color.White;
-            ChekoutLBL.Location = new Point(103, 533);
+            ChekoutLBL.Location = new Point(88, 502);
             ChekoutLBL.Name = "ChekoutLBL";
-            ChekoutLBL.Size = new Size(101, 36);
+            ChekoutLBL.Size = new Size(111, 36);
             ChekoutLBL.TabIndex = 33;
-            ChekoutLBL.Text = "Delete";
+            ChekoutLBL.Text = "Check Out";
             ChekoutLBL.UseVisualStyleBackColor = false;
+            ChekoutLBL.Click += ChekoutLBL_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.OliveDrab;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(276, 502);
+            button1.Name = "button1";
+            button1.Size = new Size(120, 36);
+            button1.TabIndex = 34;
+            button1.Text = "Collect";
+            button1.UseVisualStyleBackColor = false;
             // 
             // CheckOutCUS
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(button1);
             Controls.Add(ChekoutLBL);
-            Controls.Add(lblPayable);
+            Controls.Add(LBLCheckout);
             Controls.Add(pendingReservationsTBL);
             Name = "CheckOutCUS";
             Size = new Size(748, 641);
@@ -86,8 +103,9 @@
 
         #endregion
 
-        private Label lblPayable;
+        private Label LBLCheckout;
         private DataGridView pendingReservationsTBL;
         private Button ChekoutLBL;
+        private Button button1;
     }
 }

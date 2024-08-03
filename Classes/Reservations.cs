@@ -348,6 +348,33 @@ namespace IOOP_Assignment_Group10_.Classes
             }
             con.Close();
         }
+        public static List<Reservations> SearchReservationByResID(string resID)
+        {
+            List<Reservations> reservations = new List<Reservations>();
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT resID, username, roomNum, checkInDate, checkOutDate, totalCharges, status, payment FROM Reservations WHERE resID = @resID", con);
+            cmd.Parameters.AddWithValue("@resID", resID);
+
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                string id = rd.GetString(0);
+                string username = rd.GetString(1);
+                int roomNum = rd.GetInt32(2);
+                DateTime checkinDate = rd.GetDateTime(3);
+                DateTime checkoutDate = rd.GetDateTime(4);
+                decimal totalCharges = rd.GetDecimal(5);
+                string status = rd.GetString(6);
+                string payment = rd.GetString(7);
+
+                Reservations res = new Reservations(id, username, roomNum, checkinDate, checkoutDate, totalCharges, status, payment);
+                reservations.Add(res);
+            }
+            con.Close();
+            return reservations;
+        }
+
     }
 }
 

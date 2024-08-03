@@ -29,13 +29,15 @@ namespace IOOP_Assignment_Group10_.UserControls.ReceptionistUCs
             ReservationsTBL.Columns.Add("checkOutDate", "checkOutDate");
             ReservationsTBL.Columns.Add("totalCharges", "totalCharges");
             ReservationsTBL.Columns.Add("status", "status");
+            ReservationsTBL.Columns.Add("payment", "payment");
+
 
             List<Reservations> allres = Reservations.ViewAllReservations();
             var pending = allres.Where(u => u.Status == "Pending").ToList();
 
             foreach (Reservations reservations in pending)
             {
-                ReservationsTBL.Rows.Add(reservations.ResID, reservations.Username, reservations.RoomNum, reservations.CheckinDate, reservations.CheckoutDate, reservations.TotalCharges, reservations.Status);
+                ReservationsTBL.Rows.Add(reservations.ResID, reservations.Username, reservations.RoomNum, reservations.CheckinDate, reservations.CheckoutDate, reservations.TotalCharges, reservations.Status, reservations.Payment);
             }
         }
 
