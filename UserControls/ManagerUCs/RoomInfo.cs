@@ -248,7 +248,7 @@ namespace IOOP_Assignment_Group10_.UserControls.ManagerUCs
         {
             char ch = e.KeyChar;
             if (sender is TextBox txtBox)
-            {               
+            {
                 string currentText = txtPrice.Text;
 
                 // Allowing only numbers for price textbox
@@ -266,7 +266,12 @@ namespace IOOP_Assignment_Group10_.UserControls.ManagerUCs
                     }
                 }
             }
-            
+
+        }
+
+        private void RoomInfoTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

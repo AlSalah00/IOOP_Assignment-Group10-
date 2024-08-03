@@ -37,20 +37,23 @@
             ViewRoomTable.BackgroundColor = Color.White;
             ViewRoomTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ViewRoomTable.GridColor = Color.Black;
-            ViewRoomTable.Location = new Point(110, 218);
+            ViewRoomTable.Location = new Point(96, 164);
+            ViewRoomTable.Margin = new Padding(3, 2, 3, 2);
             ViewRoomTable.Name = "ViewRoomTable";
             ViewRoomTable.RowHeadersWidth = 51;
-            ViewRoomTable.Size = new Size(529, 205);
+            ViewRoomTable.Size = new Size(463, 154);
             ViewRoomTable.TabIndex = 27;
+            ViewRoomTable.CellContentClick += ViewRoomTable_CellContentClick;
             // 
             // ViewRoom
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(ViewRoomTable);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ViewRoom";
-            Size = new Size(748, 641);
+            Size = new Size(654, 481);
             ((System.ComponentModel.ISupportInitialize)ViewRoomTable).EndInit();
             ResumeLayout(false);
         }

@@ -28,18 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
+            SearchGrid = new DataGridView();
+            AddResBtn = new Button();
+            ((System.ComponentModel.ISupportInitialize)SearchGrid).BeginInit();
             SuspendLayout();
+            // 
+            // SearchGrid
+            // 
+            SearchGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            SearchGrid.Location = new Point(214, 103);
+            SearchGrid.Name = "SearchGrid";
+            SearchGrid.Size = new Size(240, 150);
+            SearchGrid.TabIndex = 0;
+            // 
+            // AddResBtn
+            // 
+            AddResBtn.BackColor = SystemColors.HotTrack;
+            AddResBtn.FlatStyle = FlatStyle.Flat;
+            AddResBtn.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AddResBtn.ForeColor = Color.White;
+            AddResBtn.Location = new Point(284, 279);
+            AddResBtn.Name = "AddResBtn";
+            AddResBtn.Size = new Size(101, 36);
+            AddResBtn.TabIndex = 1;
+            AddResBtn.Text = "Reserve";
+            AddResBtn.UseVisualStyleBackColor = false;
+            AddResBtn.Click += AddResBtn_Click;
             // 
             // SearchRooms
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(AddResBtn);
+            Controls.Add(SearchGrid);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "SearchRooms";
-            Size = new Size(748, 641);
+            Size = new Size(654, 481);
+            ((System.ComponentModel.ISupportInitialize)SearchGrid).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView SearchGrid;
+        private Button AddResBtn;
     }
 }

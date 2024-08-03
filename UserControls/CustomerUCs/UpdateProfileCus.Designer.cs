@@ -31,9 +31,7 @@
             lblUsername = new Label();
             txtUserName = new TextBox();
             lblPassword = new Label();
-            lblEmail = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtPassword = new TextBox();
             UpdateBtn = new Button();
             SuspendLayout();
             // 
@@ -41,52 +39,37 @@
             // 
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUsername.Location = new Point(61, 64);
+            lblUsername.Location = new Point(53, 48);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(106, 28);
+            lblUsername.Size = new Size(87, 21);
             lblUsername.TabIndex = 23;
             lblUsername.Text = "Username";
             // 
             // txtUserName
             // 
-            txtUserName.Location = new Point(61, 95);
+            txtUserName.Location = new Point(53, 71);
+            txtUserName.Margin = new Padding(3, 2, 3, 2);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(316, 27);
+            txtUserName.Size = new Size(277, 23);
             txtUserName.TabIndex = 24;
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPassword.Location = new Point(61, 146);
+            lblPassword.Location = new Point(53, 110);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(101, 28);
+            lblPassword.Size = new Size(82, 21);
             lblPassword.TabIndex = 25;
             lblPassword.Text = "Password";
             // 
-            // lblEmail
+            // txtPassword
             // 
-            lblEmail.AutoSize = true;
-            lblEmail.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEmail.Location = new Point(61, 228);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(64, 28);
-            lblEmail.TabIndex = 26;
-            lblEmail.Text = "Email";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(61, 177);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(316, 27);
-            textBox1.TabIndex = 27;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(61, 259);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(316, 27);
-            textBox2.TabIndex = 28;
+            txtPassword.Location = new Point(53, 133);
+            txtPassword.Margin = new Padding(3, 2, 3, 2);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(277, 23);
+            txtPassword.TabIndex = 27;
             // 
             // UpdateBtn
             // 
@@ -95,27 +78,28 @@
             UpdateBtn.FlatStyle = FlatStyle.Flat;
             UpdateBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             UpdateBtn.ForeColor = Color.White;
-            UpdateBtn.Location = new Point(61, 314);
+            UpdateBtn.Location = new Point(53, 184);
+            UpdateBtn.Margin = new Padding(3, 2, 3, 2);
             UpdateBtn.Name = "UpdateBtn";
-            UpdateBtn.Size = new Size(101, 36);
+            UpdateBtn.Size = new Size(88, 27);
             UpdateBtn.TabIndex = 29;
             UpdateBtn.Text = "Update";
             UpdateBtn.UseVisualStyleBackColor = false;
+            UpdateBtn.Click += UpdateBtn_Click;
             // 
             // UpdateProfileCus
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(UpdateBtn);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(lblEmail);
+            Controls.Add(txtPassword);
             Controls.Add(lblPassword);
             Controls.Add(txtUserName);
             Controls.Add(lblUsername);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "UpdateProfileCus";
-            Size = new Size(748, 641);
+            Size = new Size(654, 481);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -125,9 +109,7 @@
         private Label lblUsername;
         private TextBox txtUserName;
         private Label lblPassword;
-        private Label lblEmail;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtPassword;
         private Button UpdateBtn;
     }
 }
