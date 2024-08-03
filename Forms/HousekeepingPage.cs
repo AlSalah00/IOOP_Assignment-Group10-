@@ -46,7 +46,7 @@ namespace IOOP_Assignment_Group10_.Forms
 
         private void RoomCSCHBtn_Click(object sender, EventArgs e)
         {
-            RoomCSCH_HK rcsch = new RoomCSCH_HK();
+            RoomCSCH_HK rcsch = new RoomCSCH_HK(Name);
             addUserControl(rcsch);
         }
 
@@ -58,7 +58,7 @@ namespace IOOP_Assignment_Group10_.Forms
 
         private void RoomClnsBtn_Click(object sender, EventArgs e)
         {
-            RoomCleanliness rcln = new RoomCleanliness();
+            RoomCleanliness rcln = new RoomCleanliness(Name);
             addUserControl(rcln);
         }
 

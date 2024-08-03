@@ -82,6 +82,25 @@ namespace IOOP_Assignment_Group10_.Classes
         }
 
 
+        public Reservations(string resID, int roomNum)
+        {
+            this.resID = resID;
+            this.roomNum = roomNum;
+            this.username = string.Empty;
+            this.status = string.Empty;
+            this.payment = string.Empty;
+        }
+
+
+        public Reservations(string resID)
+        {
+            this.resID = resID;
+            this.username = string.Empty;
+            this.status = string.Empty;
+            this.payment = string.Empty;
+        }
+
+
         // Add a new reservation
         public  void AddReservation()
         {
@@ -116,22 +135,19 @@ namespace IOOP_Assignment_Group10_.Classes
             
         }
 
+
         // Edit an existing reservation
-        public  void EditReservation()
+        public  void EditReservation(DateTime checkinDate, DateTime checkoutDate, decimal totalCharges)
         {
             con.Open();
-            string query = "UPDATE Reservations SET username = @username, roomNum = @roomNum, checkInDate = @checkinDate, checkOutDate = @checkoutDate, totalCharges = @totalCharges, status = @status payment = @payment WHERE resID = @resID";
+            string query = "UPDATE Reservations SET checkInDate = @checkinDate, checkOutDate = @checkoutDate, totalCharges = @totalCharges WHERE resID = @resID";
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
                 cmd.Parameters.AddWithValue("@resID", resID);
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@roomNum", roomNum);
                 cmd.Parameters.AddWithValue("@checkinDate", checkinDate);
                 cmd.Parameters.AddWithValue("@checkoutDate", checkoutDate);
                 cmd.Parameters.AddWithValue("@totalCharges", totalCharges);
-                cmd.Parameters.AddWithValue("@status", status);
-                cmd.Parameters.AddWithValue("@payment", payment);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -147,15 +163,16 @@ namespace IOOP_Assignment_Group10_.Classes
             con.Close();
         }
 
+
         // Delete an existing reservation
-        public void DeleteReservation()
+        public void deleteReservation()
         {
             con.Open();
-            string query = "DELETE FROM Reservations WHERE roomNum = @roomNum";
+            string query = "DELETE FROM Reservations WHERE resID = @resID";
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                cmd.Parameters.AddWithValue("@roomNum", roomNum);
+                cmd.Parameters.AddWithValue("@resID", resID);
                 int rowsAffected = cmd.ExecuteNonQuery();
 
                 if (rowsAffected > 0)
@@ -171,6 +188,7 @@ namespace IOOP_Assignment_Group10_.Classes
             con.Close();
 
         }
+
 
         // View all reservations
         public static List<Reservations> ViewAllReservations()
@@ -197,82 +215,139 @@ namespace IOOP_Assignment_Group10_.Classes
             con.Close();
             return reservations;
         }
-        public void checkInCustomer()
+
+
+        // Check-in customers
+        public void checkInCustomer(string resStatus, string roomStatus)
         {
             con.Open();
 
-            // Update the Reservations table
+            SqlTransaction transaction = con.BeginTransaction();
+
+            bool success = true;
+
+            // Update reservation status
             string query1 = "UPDATE Reservations SET status = @status WHERE resID = @resID";
 
-            // Update the rooms table
-            string query2 = "UPDATE rooms SET status = @roomStatus WHERE roomNum = @roomNum";
-
-            using (SqlCommand cmd1 = new SqlCommand(query1, con))
+            using (SqlCommand cmd1 = new SqlCommand(query1, con, transaction))
             {
                 cmd1.Parameters.AddWithValue("@resID", resID);
-                cmd1.Parameters.AddWithValue("@status", "checked in");
+                cmd1.Parameters.AddWithValue("@status", resStatus);
 
                 int rowsAffected1 = cmd1.ExecuteNonQuery();
 
-                if (rowsAffected1 > 0)
+                if (rowsAffected1 <= 0)
                 {
-                    using (SqlCommand cmd2 = new SqlCommand(query2, con))
-                    {
-                        cmd2.Parameters.AddWithValue("@roomNum", roomNum);
-                        cmd2.Parameters.AddWithValue("@roomStatus", "occupied");
-
-                        int rowsAffected2 = cmd2.ExecuteNonQuery();
-
-                        if (rowsAffected2 > 0)
-                        {
-                            MessageBox.Show("Check-in successful and room status updated to occupied.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Check-in successful but failed to update room status.");
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Error: Failed to check-in customer. The reservation may not exist.");
+                    success = false; // Mark as failure if no rows affected
                 }
             }
 
-            con.Close();
-        }
-    }
-}
+            // Update room status
+            string query2 = "UPDATE rooms SET status = @status WHERE roomNum = @roomNum";
+            using (SqlCommand cmd2 = new SqlCommand(query2, con, transaction))
+            {
+                cmd2.Parameters.AddWithValue("@roomNum", roomNum);
+                cmd2.Parameters.AddWithValue("@status", roomStatus);
 
-public void CheckOutCustomer()
+                int rowsAffected2 = cmd2.ExecuteNonQuery();
+
+                if (rowsAffected2 <= 0)
+                {
+                    success = false; // Mark as failure if no rows affected
+                }
+            }
+
+            if (success)
+            {
+                transaction.Commit();
+                MessageBox.Show("Check-in successful. Status for room and reservation updated.");
+            }
+            else
+            {
+                transaction.Rollback();
+                MessageBox.Show("Error: Failed to update room status. Transaction rolled back.");
+            }
+            con.Close();
+
+        }
+
+        // Check-out customers
+        public void checkOutCustomer(string resStatus, string roomStatus)
         {
             con.Open();
-            string query = "UPDATE Reservations SET username = @username, roomNum = @roomNum, checkinDate = @checkinDate, checkoutDate = @checkoutDate, totalCharges = @totalCharges, status = @status payment = @payment WHERE resID = @resID";
+
+            SqlTransaction transaction = con.BeginTransaction();
+
+            bool success = true;
+
+            // Update reservation status
+            string query1 = "UPDATE Reservations SET status = @status WHERE resID = @resID";
+
+            using (SqlCommand cmd1 = new SqlCommand(query1, con, transaction))
+            {
+                cmd1.Parameters.AddWithValue("@resID", resID);
+                cmd1.Parameters.AddWithValue("@status", resStatus);
+
+                int rowsAffected1 = cmd1.ExecuteNonQuery();
+
+                if (rowsAffected1 <= 0)
+                {
+                    success = false; // Mark as failure if no rows affected
+                }
+            }
+
+            // Update room status
+            string query2 = "UPDATE rooms SET status = @status WHERE roomNum = @roomNum";
+            using (SqlCommand cmd2 = new SqlCommand(query2, con, transaction))
+            {
+                cmd2.Parameters.AddWithValue("@roomNum", roomNum);
+                cmd2.Parameters.AddWithValue("@status", roomStatus);
+
+                int rowsAffected2 = cmd2.ExecuteNonQuery();
+
+                if (rowsAffected2 <= 0)
+                {
+                    success = false; // Mark as failure if no rows affected
+                }
+            }
+
+            if (success)
+            {
+                transaction.Commit();
+                MessageBox.Show("Check-in successful. Status for room and reservation updated.");
+            }
+            else
+            {
+                transaction.Rollback();
+                MessageBox.Show("Error: Failed to update room status. Transaction rolled back.");
+            }
+            con.Close();
+
+        }
+
+
+        public void collectPayment(string payment)
+        {
+            con.Open();
+
+            string query = "UPDATE Reservations SET payment = @payment WHERE resID = @resID";
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
                 cmd.Parameters.AddWithValue("@resID", resID);
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@checkinDate", checkinDate);
-                cmd.Parameters.AddWithValue("@checkoutDate", checkoutDate);
-                cmd.Parameters.AddWithValue("@totalCharges", totalCharges);
-                cmd.Parameters.AddWithValue("@status", status);
                 cmd.Parameters.AddWithValue("@payment", payment);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
 
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show("Check-out successful.");
+                    MessageBox.Show("Payment collected successfully.");
                 }
                 else
-                {
-                    MessageBox.Show("Error: Failed to check-out customer. The reservation may not exist.");
-                }
+                    MessageBox.Show("Error: Failed to collect payment.");
             }
             con.Close();
-
         }
-
     }
 }
+

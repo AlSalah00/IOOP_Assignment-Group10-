@@ -49,12 +49,14 @@ namespace IOOP_Assignment_Group10_.UserControls.ManagerUCs
             CleaningScheduleTable.Columns.Add("Housekeeper", "Housekeeper");
             CleaningScheduleTable.Columns.Add("RoomNum", "RoomNum");
             CleaningScheduleTable.Columns.Add("Date", "Date");
+            CleaningScheduleTable.Columns.Add("Status", "Status");
+            CleaningScheduleTable.Columns.Add("Issues", "Issues");
 
             List<CleaningSchedule> schedules = CleaningSchedule.viewAll();
 
             foreach (CleaningSchedule schedule in schedules)
             {
-                CleaningScheduleTable.Rows.Add(schedule.Username, schedule.RoomNum, schedule.Date);
+                CleaningScheduleTable.Rows.Add(schedule.Username, schedule.RoomNum, schedule.Date, schedule.Status, schedule.Issues);
             }
         }
         private void AssignBtn_Click(object sender, EventArgs e)
@@ -65,7 +67,7 @@ namespace IOOP_Assignment_Group10_.UserControls.ManagerUCs
                 string? username = lstHousekeeper.SelectedItem.ToString();
                 if (int.TryParse(lstRoomNum.SelectedItem?.ToString(), out int roomNum) && username != null)
                 {
-                    CleaningSchedule csch = new CleaningSchedule(username, roomNum, date);
+                    CleaningSchedule csch = new CleaningSchedule(username, roomNum, date, "Dirty", "None");
                     csch.assign();
                     RefreshTable();
                 }

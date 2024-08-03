@@ -42,7 +42,7 @@ namespace IOOP_Assignment_Group10_.Classes
             set { role = value; }
         }
 
-        public User(string username, string email, string password, string role)
+        public User(string username, string password, string email, string role)
         {
             this.username = username;
             this.password = password;
@@ -144,26 +144,32 @@ namespace IOOP_Assignment_Group10_.Classes
         public void updateProfile()
         {
             con.Open();
-            string query = "UPDATE users SET username = @username, password = @password, email = @email";
+            string query = "UPDATE users SET username = @username, password = @password WHERE username = @username";
 
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            if (UserIsUnique(username))
             {
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@password", password);
-                cmd.Parameters.AddWithValue("@email", email);
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    MessageBox.Show("Profile updated successfully.");
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Profile updated successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error: Failed to update the profile.");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Error: Failed to update the profile.");
-                }
+                con.Close();
             }
-            con.Close();
+            else
+            {
+                MessageBox.Show("Error: User already exists.");
+            }
         }
 
         public static List<User> viewAll()

@@ -28,46 +28,107 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            textBox1 = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            RoomsTBL = new DataGridView();
+            txtIssues = new TextBox();
+            lblIssues = new Label();
+            CleanRB = new RadioButton();
+            DirtyRB = new RadioButton();
+            ConfirmBtn = new Button();
+            ((System.ComponentModel.ISupportInitialize)RoomsTBL).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // RoomsTBL
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = Color.Black;
-            dataGridView1.Location = new Point(112, 112);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(453, 297);
-            dataGridView1.TabIndex = 2;
+            RoomsTBL.BackgroundColor = Color.White;
+            RoomsTBL.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            RoomsTBL.GridColor = Color.Black;
+            RoomsTBL.Location = new Point(61, 180);
+            RoomsTBL.Name = "RoomsTBL";
+            RoomsTBL.RowHeadersWidth = 51;
+            RoomsTBL.Size = new Size(504, 207);
+            RoomsTBL.TabIndex = 2;
             // 
-            // textBox1
+            // txtIssues
             // 
-            textBox1.Location = new Point(186, 450);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(228, 27);
-            textBox1.TabIndex = 3;
+            txtIssues.Location = new Point(61, 95);
+            txtIssues.Name = "txtIssues";
+            txtIssues.Size = new Size(465, 27);
+            txtIssues.TabIndex = 3;
             // 
-            // RoomCleannes
+            // lblIssues
+            // 
+            lblIssues.AutoSize = true;
+            lblIssues.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblIssues.Location = new Point(61, 64);
+            lblIssues.Name = "lblIssues";
+            lblIssues.Size = new Size(170, 28);
+            lblIssues.TabIndex = 4;
+            lblIssues.Text = "Issues (Optional)";
+            // 
+            // CleanRB
+            // 
+            CleanRB.AutoSize = true;
+            CleanRB.Checked = true;
+            CleanRB.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CleanRB.Location = new Point(61, 418);
+            CleanRB.Name = "CleanRB";
+            CleanRB.Size = new Size(75, 27);
+            CleanRB.TabIndex = 9;
+            CleanRB.TabStop = true;
+            CleanRB.Text = "Clean";
+            CleanRB.UseVisualStyleBackColor = true;
+            // 
+            // DirtyRB
+            // 
+            DirtyRB.AutoSize = true;
+            DirtyRB.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DirtyRB.Location = new Point(156, 418);
+            DirtyRB.Name = "DirtyRB";
+            DirtyRB.Size = new Size(72, 27);
+            DirtyRB.TabIndex = 10;
+            DirtyRB.Text = "Dirty";
+            DirtyRB.UseVisualStyleBackColor = true;
+            // 
+            // ConfirmBtn
+            // 
+            ConfirmBtn.BackColor = SystemColors.HotTrack;
+            ConfirmBtn.FlatAppearance.BorderSize = 0;
+            ConfirmBtn.FlatStyle = FlatStyle.Flat;
+            ConfirmBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ConfirmBtn.ForeColor = Color.White;
+            ConfirmBtn.Location = new Point(61, 471);
+            ConfirmBtn.Name = "ConfirmBtn";
+            ConfirmBtn.Size = new Size(101, 36);
+            ConfirmBtn.TabIndex = 11;
+            ConfirmBtn.Text = "Confirm";
+            ConfirmBtn.UseVisualStyleBackColor = false;
+            ConfirmBtn.Click += ConfirmBtn_Click;
+            // 
+            // RoomCleanliness
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(textBox1);
-            Controls.Add(dataGridView1);
-            Name = "RoomCleannes";
+            Controls.Add(ConfirmBtn);
+            Controls.Add(DirtyRB);
+            Controls.Add(CleanRB);
+            Controls.Add(lblIssues);
+            Controls.Add(txtIssues);
+            Controls.Add(RoomsTBL);
+            Name = "RoomCleanliness";
             Size = new Size(748, 641);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)RoomsTBL).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private TextBox textBox1;
+        private DataGridView RoomsTBL;
+        private TextBox txtIssues;
+        private Label lblIssues;
+        private RadioButton CleanRB;
+        private RadioButton DirtyRB;
+        private Button ConfirmBtn;
     }
 }

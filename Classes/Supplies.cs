@@ -93,24 +93,31 @@ namespace IOOP_Assignment_Group10_.Classes
             con.Open();
             string query = "UPDATE CleaningSupps SET itemName = @itemName, quantity = @quantity, itemPrice = @itemPrice WHERE itemName = @itemName";
 
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            if (ItemIsUnique(itemName))
             {
-                cmd.Parameters.AddWithValue("@itemName", itemName);
-                cmd.Parameters.AddWithValue("@quantity", quantity);
-                cmd.Parameters.AddWithValue("@itemPrice", itemPrice);
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    MessageBox.Show("Item updated successfully.");
+                    cmd.Parameters.AddWithValue("@itemName", itemName);
+                    cmd.Parameters.AddWithValue("@quantity", quantity);
+                    cmd.Parameters.AddWithValue("@itemPrice", itemPrice);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Item updated successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error: Failed to update the item. The item may not exist.");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Error: Failed to update the item. The item may not exist.");
-                }
+                con.Close();
             }
-            con.Close();
+            else
+            {
+                MessageBox.Show("Error: Item already exists.");
+            }
         }
 
 

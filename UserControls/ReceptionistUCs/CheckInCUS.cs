@@ -38,5 +38,35 @@ namespace IOOP_Assignment_Group10_.UserControls.ReceptionistUCs
                 ReservationsTBL.Rows.Add(reservations.ResID, reservations.Username, reservations.RoomNum, reservations.CheckinDate, reservations.CheckoutDate, reservations.TotalCharges, reservations.Status);
             }
         }
+
+        private void CheckInBtn_Click(object sender, EventArgs e)
+        {
+            if (ReservationsTBL.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = ReservationsTBL.SelectedRows[0];
+
+                object value = selectedRow.Cells[0].Value;
+                object value2 = selectedRow.Cells[2].Value;
+
+                if (value != null && value is string strValue && value2 != null && value2 is int)
+                {
+                    string resID = strValue;
+                    int roomNum = (int)value2;
+
+                    if (!string.IsNullOrEmpty(resID))
+                    {
+                        Reservations res = new Reservations(resID, roomNum);
+                        res.checkInCustomer("Checked-in", "Occupied");
+                        RefreshTable();
+                    }
+                    else
+                        MessageBox.Show("Error: Unable to check-in.");
+                }
+                else
+                    MessageBox.Show("Error: Selected row is empty.");
+            }
+            else
+                MessageBox.Show("Error: No reservation selected.");
+        }
     }
 }

@@ -126,32 +126,38 @@ namespace IOOP_Assignment_Group10_.Classes
         }
 
 
-        public void editRoom(int roomNum, string roomType, string amenities, decimal price, string roomDetails, string status)
+        public void editRoom(int roomNum, string roomType, string amenities, decimal price, string roomDetails)
         {
             con.Open();
-            string query = "UPDATE rooms SET roomType = @roomType, amenities = @amenities, price = @price, roomDetails = @roomDetails, status = @status WHERE roomNum = @roomNum";
+            string query = "UPDATE rooms SET roomNum = @roomNum, roomType = @roomType, amenities = @amenities, price = @price, roomDetails = @roomDetails WHERE roomNum = @roomNum";
 
-            using (SqlCommand cmd = new SqlCommand(query, con))
+            if (RoomIsUnique(roomNum))
             {
-                cmd.Parameters.AddWithValue("@roomNum", roomNum);
-                cmd.Parameters.AddWithValue("@roomType", roomType);
-                cmd.Parameters.AddWithValue("@amenities", amenities);
-                cmd.Parameters.AddWithValue("@price", price);
-                cmd.Parameters.AddWithValue("@roomDetails", roomDetails);
-                cmd.Parameters.AddWithValue("@status", status);
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    MessageBox.Show("Room updated successfully.");
+                    cmd.Parameters.AddWithValue("@roomNum", roomNum);
+                    cmd.Parameters.AddWithValue("@roomType", roomType);
+                    cmd.Parameters.AddWithValue("@amenities", amenities);
+                    cmd.Parameters.AddWithValue("@price", price);
+                    cmd.Parameters.AddWithValue("@roomDetails", roomDetails);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Room updated successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error: Failed to update the room. The room may not exist.");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Error: Failed to update the room. The room may not exist.");
-                }
+                con.Close();
             }
-            con.Close();
+            else
+            {
+                MessageBox.Show("Error: Room already exists.");
+            }
         }
 
         public void deleteRoom()

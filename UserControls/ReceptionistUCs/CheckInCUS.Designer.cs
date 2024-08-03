@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             ReservationsTBL = new DataGridView();
-            AddUserBtn = new Button();
+            CheckInBtn = new Button();
             lblPayable = new Label();
             ((System.ComponentModel.ISupportInitialize)ReservationsTBL).BeginInit();
             SuspendLayout();
@@ -45,20 +45,21 @@
             ReservationsTBL.Size = new Size(571, 160);
             ReservationsTBL.TabIndex = 26;
             // 
-            // AddUserBtn
+            // CheckInBtn
             // 
-            AddUserBtn.BackColor = SystemColors.HotTrack;
-            AddUserBtn.CausesValidation = false;
-            AddUserBtn.FlatAppearance.BorderSize = 0;
-            AddUserBtn.FlatStyle = FlatStyle.Flat;
-            AddUserBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AddUserBtn.ForeColor = Color.White;
-            AddUserBtn.Location = new Point(88, 502);
-            AddUserBtn.Name = "AddUserBtn";
-            AddUserBtn.Size = new Size(101, 36);
-            AddUserBtn.TabIndex = 27;
-            AddUserBtn.Text = "Check In";
-            AddUserBtn.UseVisualStyleBackColor = false;
+            CheckInBtn.BackColor = SystemColors.HotTrack;
+            CheckInBtn.CausesValidation = false;
+            CheckInBtn.FlatAppearance.BorderSize = 0;
+            CheckInBtn.FlatStyle = FlatStyle.Flat;
+            CheckInBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CheckInBtn.ForeColor = Color.White;
+            CheckInBtn.Location = new Point(88, 502);
+            CheckInBtn.Name = "CheckInBtn";
+            CheckInBtn.Size = new Size(101, 36);
+            CheckInBtn.TabIndex = 27;
+            CheckInBtn.Text = "Check In";
+            CheckInBtn.UseVisualStyleBackColor = false;
+            CheckInBtn.Click += CheckInBtn_Click;
             // 
             // lblPayable
             // 
@@ -76,7 +77,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(lblPayable);
-            Controls.Add(AddUserBtn);
+            Controls.Add(CheckInBtn);
             Controls.Add(ReservationsTBL);
             Name = "CheckInCUS";
             Size = new Size(748, 641);
@@ -88,7 +89,7 @@
         #endregion
 
         private DataGridView ReservationsTBL;
-        private Button AddUserBtn;
+        private Button CheckInBtn;
         private Label lblPayable;
     }
 }

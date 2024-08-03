@@ -28,35 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            RoomCSCHTable = new DataGridView();
+            lblUCSCH = new Label();
+            ((System.ComponentModel.ISupportInitialize)RoomCSCHTable).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // RoomCSCHTable
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = Color.Black;
-            dataGridView1.Location = new Point(144, 136);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(453, 297);
-            dataGridView1.TabIndex = 0;
+            RoomCSCHTable.BackgroundColor = Color.White;
+            RoomCSCHTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            RoomCSCHTable.GridColor = Color.Black;
+            RoomCSCHTable.Location = new Point(248, 161);
+            RoomCSCHTable.Name = "RoomCSCHTable";
+            RoomCSCHTable.RowHeadersWidth = 51;
+            RoomCSCHTable.Size = new Size(253, 318);
+            RoomCSCHTable.TabIndex = 0;
             // 
-            // RoomCSH_HK
+            // lblUCSCH
+            // 
+            lblUCSCH.AutoSize = true;
+            lblUCSCH.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUCSCH.Location = new Point(61, 64);
+            lblUCSCH.Name = "lblUCSCH";
+            lblUCSCH.Size = new Size(287, 28);
+            lblUCSCH.TabIndex = 2;
+            lblUCSCH.Text = "Upcoming Cleaning Schedule";
+            // 
+            // RoomCSCH_HK
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(dataGridView1);
-            Name = "RoomCSH_HK";
+            Controls.Add(lblUCSCH);
+            Controls.Add(RoomCSCHTable);
+            Name = "RoomCSCH_HK";
             Size = new Size(748, 641);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)RoomCSCHTable).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView RoomCSCHTable;
+        private Label lblUCSCH;
     }
 }
