@@ -61,7 +61,7 @@ namespace IOOP_Assignment_Group10_.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-            UpdateReceptionistProfile update = new UpdateReceptionistProfile();
+            Editcustomers update = new Editcustomers();
             addUserControl(update);
         }
 

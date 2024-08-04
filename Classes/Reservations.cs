@@ -374,6 +374,21 @@ namespace IOOP_Assignment_Group10_.Classes
             con.Close();
             return reservations;
         }
+        public void AddToProfitTable(decimal amount)
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
+            {
+                con.Open();
+                string query = "INSERT INTO ProfitTable (amount, date) VALUES (@amount, @date)";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@amount", amount);
+                    cmd.Parameters.AddWithValue("@date", DateTime.Now);
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
+            }
+        }
 
     }
 }
