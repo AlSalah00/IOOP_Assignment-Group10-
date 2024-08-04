@@ -16,5 +16,10 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
         {
             InitializeComponent();
         }
+
+        private void SendBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

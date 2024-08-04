@@ -41,7 +41,7 @@ namespace IOOP_Assignment_Group10_.Forms
 
         private void searchRoomBtn_Click(object sender, EventArgs e)
         {
-            SearchRooms sr = new SearchRooms();
+            SearchRooms sr = new SearchRooms(Name);
             addUserControl(sr);
         }
 

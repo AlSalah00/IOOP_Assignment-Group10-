@@ -16,9 +16,10 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
         public ViewRoom()
         {
             InitializeComponent();
+            RefreshTable();
         }
 
-        private void ViewRoomTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void RefreshTable()
         {
             ViewRoomTable.AutoGenerateColumns = false;
             ViewRoomTable.Columns.Clear();
@@ -35,6 +36,12 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
             {
                 ViewRoomTable.Rows.Add(room.RoomNum, room.RoomType, room.Amenities, room.Price, room.RoomDetails, room.Status);
             }
+        }
+
+
+        private void ViewRoomTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
 
         }
     }
