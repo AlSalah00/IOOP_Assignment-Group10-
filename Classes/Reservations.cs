@@ -15,6 +15,7 @@ namespace IOOP_Assignment_Group10_.Classes
         private string status;
         private decimal totalCharges;
         private string payment;
+        private decimal profit;
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
         
         public string ResID
@@ -64,6 +65,14 @@ namespace IOOP_Assignment_Group10_.Classes
             set { payment = value; }
         }
 
+
+        public decimal Profit
+        {
+            get { return profit; }
+            set { profit = value; }
+        }
+
+
         public string generateID()
         {
             return $"R1{new Random().Next(1000, 9999)}";
@@ -100,6 +109,13 @@ namespace IOOP_Assignment_Group10_.Classes
             this.payment = string.Empty;
         }
 
+        public Reservations()
+        {
+            this.resID = string.Empty;
+            this.username = string.Empty;
+            this.status = string.Empty;
+            this.payment = string.Empty;
+        }
 
         // Add a new reservation
         public  void AddReservation()
@@ -314,7 +330,7 @@ namespace IOOP_Assignment_Group10_.Classes
             if (success)
             {
                 transaction.Commit();
-                MessageBox.Show("Check-in successful. Status for room and reservation updated.");
+                MessageBox.Show("Check-out successful. Status for room and reservation updated.");
             }
             else
             {
@@ -348,46 +364,27 @@ namespace IOOP_Assignment_Group10_.Classes
             }
             con.Close();
         }
-        public static List<Reservations> SearchReservationByResID(string resID)
+        
+        public void updateProfit(decimal profit)
         {
-            List<Reservations> reservations = new List<Reservations>();
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("SELECT resID, username, roomNum, checkInDate, checkOutDate, totalCharges, status, payment FROM Reservations WHERE resID = @resID", con);
-            cmd.Parameters.AddWithValue("@resID", resID);
+            string query = "UPDATE Profit SET profit = @profit";
 
-            SqlDataReader rd = cmd.ExecuteReader();
-            while (rd.Read())
+            using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                string id = rd.GetString(0);
-                string username = rd.GetString(1);
-                int roomNum = rd.GetInt32(2);
-                DateTime checkinDate = rd.GetDateTime(3);
-                DateTime checkoutDate = rd.GetDateTime(4);
-                decimal totalCharges = rd.GetDecimal(5);
-                string status = rd.GetString(6);
-                string payment = rd.GetString(7);
+                cmd.Parameters.AddWithValue("@profit", profit);
 
-                Reservations res = new Reservations(id, username, roomNum, checkinDate, checkoutDate, totalCharges, status, payment);
-                reservations.Add(res);
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Payment collected successfully.");
+                }
+                else
+                    MessageBox.Show("Error: Failed to update profit.");
             }
             con.Close();
-            return reservations;
-        }
-        public void AddToProfitTable(decimal amount)
-        {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
-            {
-                con.Open();
-                string query = "INSERT INTO ProfitTable (amount, date) VALUES (@amount, @date)";
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@amount", amount);
-                    cmd.Parameters.AddWithValue("@date", DateTime.Now);
-                    cmd.ExecuteNonQuery();
-                }
-                con.Close();
-            }
         }
 
     }

@@ -34,9 +34,9 @@ namespace IOOP_Assignment_Group10_.UserControls.ReceptionistUCs
             ReservationsTBL.Columns.Add("payment", "payment");
 
             List<Reservations> allres = Reservations.ViewAllReservations();
-            var pending = allres.Where(u => u.Status == "Pending").ToList();
+            var checkedIn = allres.Where(u => u.Status == "Checked-in" || u.Status == "Checked-out" && u.Payment == "Uncompleted").ToList();
 
-            foreach (Reservations reservations in pending)
+            foreach (Reservations reservations in checkedIn)
             {
                 ReservationsTBL.Rows.Add(reservations.ResID, reservations.Username, reservations.RoomNum, reservations.CheckinDate, reservations.CheckoutDate, reservations.TotalCharges, reservations.Status, reservations.Payment);
             }
@@ -59,7 +59,7 @@ namespace IOOP_Assignment_Group10_.UserControls.ReceptionistUCs
                     if (!string.IsNullOrEmpty(resID))
                     {
                         Reservations res = new Reservations(resID, roomNum);
-                        res.checkOutCustomer("Checked-out", "available");
+                        res.checkOutCustomer("Checked-out", "Available");
                         RefreshTable();
                     }
                     else
@@ -78,59 +78,31 @@ namespace IOOP_Assignment_Group10_.UserControls.ReceptionistUCs
             {
                 DataGridViewRow selectedRow = ReservationsTBL.SelectedRows[0];
 
-                string resID = selectedRow.Cells["resID"].Value?.ToString();
-                decimal totalCharges = Convert.ToDecimal(selectedRow.Cells["totalCharges"].Value);
+                object value = selectedRow.Cells[0].Value;
+                object value2 = selectedRow.Cells[5].Value;
 
-                if (!string.IsNullOrEmpty(resID))
+                if (value2 != null && value2 is decimal && value != null && value is string strValue)
                 {
-                    var reservations = Reservations.SearchReservationByResID(resID);
-                    var res = reservations.FirstOrDefault();
 
-                    if (res != null)
+                    string resID = strValue.ToString();
+                    decimal payment = (decimal)value2;
+
+                    if (payment > 0)
                     {
-                        res.collectPayment("Collected");
-                        AddToProfitTable(totalCharges);
+                        Reservations res = new Reservations(resID);
+                        res.updateProfit(payment);
+                        res.collectPayment("Completed");
                         RefreshTable();
                     }
                     else
-                    {
-                        MessageBox.Show("Error: Reservation not found.");
-                    }
+                        MessageBox.Show("Error: Unable to update profit.");
                 }
                 else
-                {
-                    MessageBox.Show("Error: Reservation ID is missing.");
-                }
+                    MessageBox.Show("Error: Selected row is empty.");
             }
             else
-            {
                 MessageBox.Show("Error: No reservation selected.");
-            }
         }
-        private void AddToProfitTable(decimal totalCharges)
-        {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString()))
-            {
-                con.Open();
-                string query = "INSERT INTO ProfitTable (amount, date) VALUES (@amount, @date)";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@amount", totalCharges);
-                    cmd.Parameters.AddWithValue("@date", DateTime.Now);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Profit updated successfully.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error: Failed to update profit.");
-                    }
-                }
-            }
-        }
+       
     }
 }
