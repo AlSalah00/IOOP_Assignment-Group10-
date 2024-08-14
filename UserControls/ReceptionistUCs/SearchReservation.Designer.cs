@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             SearchBTN = new Button();
-            ReservationsTBL = new DataGridView();
-            txtResID = new TextBox();
-            lblPayable = new Label();
+            txtCusName = new TextBox();
+            lblCusName = new Label();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)ReservationsTBL).BeginInit();
+            ReservationsTable = new DataGridView();
+            lblRoomNo = new Label();
+            txtRoomNum = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)ReservationsTable).BeginInit();
             SuspendLayout();
             // 
             // SearchBTN
@@ -43,7 +45,7 @@
             SearchBTN.FlatStyle = FlatStyle.Flat;
             SearchBTN.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             SearchBTN.ForeColor = Color.White;
-            SearchBTN.Location = new Point(88, 502);
+            SearchBTN.Location = new Point(61, 561);
             SearchBTN.Name = "SearchBTN";
             SearchBTN.Size = new Size(101, 36);
             SearchBTN.TabIndex = 13;
@@ -51,58 +53,77 @@
             SearchBTN.UseVisualStyleBackColor = false;
             SearchBTN.Click += SearchBTN_Click;
             // 
-            // ReservationsTBL
+            // txtCusName
             // 
-            ReservationsTBL.BackgroundColor = Color.White;
-            ReservationsTBL.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ReservationsTBL.GridColor = Color.Black;
-            ReservationsTBL.Location = new Point(88, 264);
-            ReservationsTBL.Name = "ReservationsTBL";
-            ReservationsTBL.RowHeadersWidth = 51;
-            ReservationsTBL.Size = new Size(571, 160);
-            ReservationsTBL.TabIndex = 27;
+            txtCusName.Location = new Point(61, 177);
+            txtCusName.Name = "txtCusName";
+            txtCusName.Size = new Size(313, 27);
+            txtCusName.TabIndex = 28;
             // 
-            // txtResID
+            // lblCusName
             // 
-            txtResID.Location = new Point(272, 150);
-            txtResID.Name = "txtResID";
-            txtResID.Size = new Size(209, 27);
-            txtResID.TabIndex = 28;
-            // 
-            // lblPayable
-            // 
-            lblPayable.AutoSize = true;
-            lblPayable.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPayable.Location = new Point(95, 146);
-            lblPayable.Name = "lblPayable";
-            lblPayable.Size = new Size(146, 28);
-            lblPayable.TabIndex = 30;
-            lblPayable.Text = "ReservationID";
-            lblPayable.Click += lblPayable_Click;
+            lblCusName.AutoSize = true;
+            lblCusName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCusName.Location = new Point(61, 146);
+            lblCusName.Name = "lblCusName";
+            lblCusName.Size = new Size(300, 28);
+            lblCusName.TabIndex = 30;
+            lblCusName.Text = "Search by Customer Username";
+            lblCusName.Click += lblPayable_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(95, 39);
+            label1.Location = new Point(61, 64);
             label1.Name = "label1";
             label1.Size = new Size(313, 28);
             label1.TabIndex = 31;
             label1.Text = "Search for existing reservations";
+            // 
+            // ReservationsTable
+            // 
+            ReservationsTable.BackgroundColor = Color.White;
+            ReservationsTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ReservationsTable.GridColor = Color.Black;
+            ReservationsTable.Location = new Point(61, 375);
+            ReservationsTable.Name = "ReservationsTable";
+            ReservationsTable.RowHeadersWidth = 51;
+            ReservationsTable.Size = new Size(530, 160);
+            ReservationsTable.TabIndex = 32;
+            // 
+            // lblRoomNo
+            // 
+            lblRoomNo.AutoSize = true;
+            lblRoomNo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRoomNo.Location = new Point(61, 251);
+            lblRoomNo.Name = "lblRoomNo";
+            lblRoomNo.Size = new Size(204, 28);
+            lblRoomNo.TabIndex = 33;
+            lblRoomNo.Text = "Search by Room No.";
+            // 
+            // txtRoomNum
+            // 
+            txtRoomNum.Location = new Point(61, 282);
+            txtRoomNum.Name = "txtRoomNum";
+            txtRoomNum.Size = new Size(204, 27);
+            txtRoomNum.TabIndex = 34;
             // 
             // SearchReservation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(txtRoomNum);
+            Controls.Add(lblRoomNo);
+            Controls.Add(ReservationsTable);
             Controls.Add(label1);
-            Controls.Add(lblPayable);
-            Controls.Add(txtResID);
-            Controls.Add(ReservationsTBL);
+            Controls.Add(lblCusName);
+            Controls.Add(txtCusName);
             Controls.Add(SearchBTN);
             Name = "SearchReservation";
             Size = new Size(748, 641);
-            ((System.ComponentModel.ISupportInitialize)ReservationsTBL).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ReservationsTable).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -110,9 +131,11 @@
         #endregion
 
         private Button SearchBTN;
-        private DataGridView ReservationsTBL;
-        private TextBox txtResID;
-        private Label lblPayable;
+        private TextBox txtCusName;
+        private Label lblCusName;
         private Label label1;
+        private DataGridView ReservationsTable;
+        private Label lblRoomNo;
+        private TextBox txtRoomNum;
     }
 }

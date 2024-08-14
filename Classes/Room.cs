@@ -128,11 +128,10 @@ namespace IOOP_Assignment_Group10_.Classes
 
         public void editRoom(int roomNum, string roomType, string amenities, decimal price, string roomDetails)
         {
-            con.Open();
+            
             string query = "UPDATE rooms SET roomNum = @roomNum, roomType = @roomType, amenities = @amenities, price = @price, roomDetails = @roomDetails WHERE roomNum = @roomNum";
 
-            if (RoomIsUnique(roomNum))
-            {
+                con.Open();
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@roomNum", roomNum);
@@ -153,11 +152,6 @@ namespace IOOP_Assignment_Group10_.Classes
                     }
                 }
                 con.Close();
-            }
-            else
-            {
-                MessageBox.Show("Error: Room already exists.");
-            }
         }
 
         public void deleteRoom()

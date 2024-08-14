@@ -39,36 +39,35 @@
             // 
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUsername.Location = new Point(53, 48);
+            lblUsername.Location = new Point(61, 64);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(87, 21);
+            lblUsername.Size = new Size(106, 28);
             lblUsername.TabIndex = 23;
             lblUsername.Text = "Username";
             // 
             // txtUserName
             // 
-            txtUserName.Location = new Point(53, 71);
-            txtUserName.Margin = new Padding(3, 2, 3, 2);
+            txtUserName.Location = new Point(61, 95);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(277, 23);
+            txtUserName.Size = new Size(316, 27);
             txtUserName.TabIndex = 24;
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPassword.Location = new Point(53, 110);
+            lblPassword.Location = new Point(61, 147);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(82, 21);
+            lblPassword.Size = new Size(101, 28);
             lblPassword.TabIndex = 25;
             lblPassword.Text = "Password";
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(53, 133);
-            txtPassword.Margin = new Padding(3, 2, 3, 2);
+            txtPassword.Location = new Point(61, 177);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(277, 23);
+            txtPassword.PasswordChar = '•';
+            txtPassword.Size = new Size(316, 27);
             txtPassword.TabIndex = 27;
             // 
             // UpdateBtn
@@ -78,10 +77,9 @@
             UpdateBtn.FlatStyle = FlatStyle.Flat;
             UpdateBtn.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             UpdateBtn.ForeColor = Color.White;
-            UpdateBtn.Location = new Point(53, 184);
-            UpdateBtn.Margin = new Padding(3, 2, 3, 2);
+            UpdateBtn.Location = new Point(61, 245);
             UpdateBtn.Name = "UpdateBtn";
-            UpdateBtn.Size = new Size(88, 27);
+            UpdateBtn.Size = new Size(101, 36);
             UpdateBtn.TabIndex = 29;
             UpdateBtn.Text = "Update";
             UpdateBtn.UseVisualStyleBackColor = false;
@@ -89,7 +87,7 @@
             // 
             // UpdateProfileCus
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(UpdateBtn);
@@ -97,9 +95,8 @@
             Controls.Add(lblPassword);
             Controls.Add(txtUserName);
             Controls.Add(lblUsername);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "UpdateProfileCus";
-            Size = new Size(654, 481);
+            Size = new Size(747, 641);
             ResumeLayout(false);
             PerformLayout();
         }

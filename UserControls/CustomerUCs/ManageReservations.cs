@@ -19,9 +19,10 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
 {
     public partial class ManageReservations : UserControl
     {
-        public ManageReservations()
+        public ManageReservations(string n)
         {
             InitializeComponent();
+            Name = n;
             RefreshTable();
         }
 
@@ -49,10 +50,50 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            
+            if (ReservationsTable.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = ReservationsTable.SelectedRows[0];
+
+                object value = selectedRow.Cells[0].Value;
+                object value2 = selectedRow.Cells[0].Value;
+
+                if (value != null && value is string strValue && value2 != null && value2 is decimal)
+                {
+                    string resID = strValue;
+                    decimal total = (decimal)value2;
+                    DateTime checkin = CheckInDatePicker.Value.Date;
+                    DateTime checkOut = CheckOutPicker.Value.Date;
+
+                    if (!string.IsNullOrEmpty(resID))
+                    {
+                        Reservations res = new Reservations(resID);
+                        res.EditReservation(checkin, checkOut, total);
+                        RefreshTable();
+                    }
+                }
+            }
+        }
+
+        private void CancelBtn_Click(object sender, EventArgs e)
+        {
+            if (ReservationsTable.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = ReservationsTable.SelectedRows[0];
+
+                object value = selectedRow.Cells[0].Value;
+
+                if (value != null && value is string strValue)
+                {
+                    string resID = strValue;
 
 
-            
+                    if (!string.IsNullOrEmpty(resID))
+                    {
+                        Reservations res = new Reservations(resID);
+                        res.deleteReservation();
+                    }
+                }
+            }
         }
     }
 

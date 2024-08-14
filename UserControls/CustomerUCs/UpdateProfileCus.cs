@@ -13,15 +13,26 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
 {
     public partial class UpdateProfileCus : UserControl
     {
-        public UpdateProfileCus()
+        public UpdateProfileCus(string n)
         {
             InitializeComponent();
+            Name = n;
         }
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            User u1 = new User(txtUserName.Text, txtPassword.Text);
-            u1.updateProfile();
+            string newUsername = txtUserName.Text;
+            string newPassword = txtPassword.Text;
+
+            if (!string.IsNullOrEmpty(newUsername) && !string.IsNullOrEmpty(newPassword))
+            {
+                User u1 = new User(Name);
+                u1.updateProfile(newUsername, newPassword);
+            }
+            else
+                MessageBox.Show("Error: Please fill all fields.");
+            txtUserName.Clear();
+            txtPassword.Clear();
         }
     }
 }

@@ -31,10 +31,10 @@
             panel1 = new Panel();
             lblIdentityRCP = new Label();
             LOBtn_RCP = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
+            checkOutBtn = new Button();
+            UpdateProfileBtn_Rec = new Button();
+            CheckInBtn = new Button();
+            SearchForResBtn = new Button();
             ManageCustomersBtn = new Button();
             pictureBox1 = new PictureBox();
             ReceptionistPanel = new Panel();
@@ -47,10 +47,10 @@
             panel1.BackColor = Color.Navy;
             panel1.Controls.Add(lblIdentityRCP);
             panel1.Controls.Add(LOBtn_RCP);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(checkOutBtn);
+            panel1.Controls.Add(UpdateProfileBtn_Rec);
+            panel1.Controls.Add(CheckInBtn);
+            panel1.Controls.Add(SearchForResBtn);
             panel1.Controls.Add(ManageCustomersBtn);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
@@ -87,77 +87,77 @@
             LOBtn_RCP.UseVisualStyleBackColor = true;
             LOBtn_RCP.Click += LOBtn_RCP_Click;
             // 
-            // button5
+            // checkOutBtn
             // 
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = Color.White;
-            button5.Image = Properties.Resources.check_out;
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(3, 411);
-            button5.Name = "button5";
-            button5.Size = new Size(322, 59);
-            button5.TabIndex = 5;
-            button5.Text = " Check-Out Customers";
-            button5.TextAlign = ContentAlignment.MiddleLeft;
-            button5.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            checkOutBtn.FlatAppearance.BorderSize = 0;
+            checkOutBtn.FlatStyle = FlatStyle.Flat;
+            checkOutBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            checkOutBtn.ForeColor = Color.White;
+            checkOutBtn.Image = Properties.Resources.check_out;
+            checkOutBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            checkOutBtn.Location = new Point(3, 411);
+            checkOutBtn.Name = "checkOutBtn";
+            checkOutBtn.Size = new Size(322, 59);
+            checkOutBtn.TabIndex = 5;
+            checkOutBtn.Text = " Check-Out Customers";
+            checkOutBtn.TextAlign = ContentAlignment.MiddleLeft;
+            checkOutBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            checkOutBtn.UseVisualStyleBackColor = true;
+            checkOutBtn.Click += button5_Click;
             // 
-            // button4
+            // UpdateProfileBtn_Rec
             // 
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.White;
-            button4.Image = Properties.Resources.update;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(3, 476);
-            button4.Name = "button4";
-            button4.Size = new Size(322, 59);
-            button4.TabIndex = 4;
-            button4.Text = " Update Profile";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            UpdateProfileBtn_Rec.FlatAppearance.BorderSize = 0;
+            UpdateProfileBtn_Rec.FlatStyle = FlatStyle.Flat;
+            UpdateProfileBtn_Rec.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UpdateProfileBtn_Rec.ForeColor = Color.White;
+            UpdateProfileBtn_Rec.Image = Properties.Resources.update;
+            UpdateProfileBtn_Rec.ImageAlign = ContentAlignment.MiddleLeft;
+            UpdateProfileBtn_Rec.Location = new Point(3, 476);
+            UpdateProfileBtn_Rec.Name = "UpdateProfileBtn_Rec";
+            UpdateProfileBtn_Rec.Size = new Size(322, 59);
+            UpdateProfileBtn_Rec.TabIndex = 4;
+            UpdateProfileBtn_Rec.Text = " Update Profile";
+            UpdateProfileBtn_Rec.TextAlign = ContentAlignment.MiddleLeft;
+            UpdateProfileBtn_Rec.TextImageRelation = TextImageRelation.ImageBeforeText;
+            UpdateProfileBtn_Rec.UseVisualStyleBackColor = true;
+            UpdateProfileBtn_Rec.Click += button4_Click;
             // 
-            // button3
+            // CheckInBtn
             // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Image = Properties.Resources.check_in;
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(3, 346);
-            button3.Name = "button3";
-            button3.Size = new Size(322, 59);
-            button3.TabIndex = 3;
-            button3.Text = " Check-In Customers";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            CheckInBtn.FlatAppearance.BorderSize = 0;
+            CheckInBtn.FlatStyle = FlatStyle.Flat;
+            CheckInBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CheckInBtn.ForeColor = Color.White;
+            CheckInBtn.Image = Properties.Resources.check_in;
+            CheckInBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            CheckInBtn.Location = new Point(3, 346);
+            CheckInBtn.Name = "CheckInBtn";
+            CheckInBtn.Size = new Size(322, 59);
+            CheckInBtn.TabIndex = 3;
+            CheckInBtn.Text = " Check-In Customers";
+            CheckInBtn.TextAlign = ContentAlignment.MiddleLeft;
+            CheckInBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            CheckInBtn.UseVisualStyleBackColor = true;
+            CheckInBtn.Click += button3_Click;
             // 
-            // button2
+            // SearchForResBtn
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = Properties.Resources.search;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(3, 281);
-            button2.Name = "button2";
-            button2.Size = new Size(322, 59);
-            button2.TabIndex = 2;
-            button2.Text = " Search For Reservation\r\n";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            SearchForResBtn.FlatAppearance.BorderSize = 0;
+            SearchForResBtn.FlatStyle = FlatStyle.Flat;
+            SearchForResBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SearchForResBtn.ForeColor = Color.White;
+            SearchForResBtn.Image = Properties.Resources.search;
+            SearchForResBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            SearchForResBtn.Location = new Point(3, 281);
+            SearchForResBtn.Name = "SearchForResBtn";
+            SearchForResBtn.Size = new Size(322, 59);
+            SearchForResBtn.TabIndex = 2;
+            SearchForResBtn.Text = " Search For Reservation\r\n";
+            SearchForResBtn.TextAlign = ContentAlignment.MiddleLeft;
+            SearchForResBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            SearchForResBtn.UseVisualStyleBackColor = true;
+            SearchForResBtn.Click += button2_Click;
             // 
             // ManageCustomersBtn
             // 
@@ -215,10 +215,10 @@
         private Panel panel1;
         private Label lblIdentityRCP;
         private Button LOBtn_RCP;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
+        private Button checkOutBtn;
+        private Button UpdateProfileBtn_Rec;
+        private Button CheckInBtn;
+        private Button SearchForResBtn;
         private Button ManageCustomersBtn;
         private PictureBox pictureBox1;
         private Panel ReceptionistPanel;

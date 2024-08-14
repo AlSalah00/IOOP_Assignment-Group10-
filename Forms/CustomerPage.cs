@@ -13,10 +13,49 @@ namespace IOOP_Assignment_Group10_.Forms
 {
     public partial class CustomerPage : Form
     {
+
+        private Color highlight = ColorTranslator.FromHtml("#0066cc");
+        private Color defaultColor = Color.Navy;
+        private Button[] buttons;
+
         public CustomerPage(string n)
         {
             InitializeComponent();
             Name = n;
+            SearchRooms sr = new SearchRooms(Name);
+            addUserControl(sr);
+
+            buttons = new Button[] { searchRoomBtn, RoomDTLBtn, MNGReservationBtn, RVRTBtn, UpdateProfileBtnCus, LOBtn_Cus,};
+
+            foreach (Button btn in buttons)
+            {
+                btn.Click += Button_Click;
+            }
+
+            HighlightButton(searchRoomBtn);
+        }
+
+
+        private void Button_Click(object? sender, EventArgs e)
+        {
+
+            if (sender is Button clickedButton)
+            {
+                // Reset all buttons to default color
+                foreach (Button btn in buttons)
+                {
+                    btn.BackColor = defaultColor;
+                }
+
+                // Highlight the clicked button
+                HighlightButton(clickedButton);
+            }
+
+        }
+
+        private void HighlightButton(Button button)
+        {
+            button.BackColor = highlight;
         }
 
         private void addUserControl(UserControl userControl)
@@ -53,19 +92,19 @@ namespace IOOP_Assignment_Group10_.Forms
 
         private void MNGReservationBtn_Click(object sender, EventArgs e)
         {
-            ManageReservations mr = new ManageReservations();
+            ManageReservations mr = new ManageReservations(Name);
             addUserControl(mr);
         }
 
         private void RVRTBtn_Click(object sender, EventArgs e)
         {
-            SendReview sr = new SendReview();
+            SendReview sr = new SendReview(Name);
             addUserControl(sr);
         }
 
         private void UpdateProfileBtnCus_Click(object sender, EventArgs e)
         {
-            UpdateProfileCus upc = new UpdateProfileCus();
+            UpdateProfileCus upc = new UpdateProfileCus(Name);
             addUserControl(upc);
         }
     }

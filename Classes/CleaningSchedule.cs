@@ -69,50 +69,57 @@ namespace IOOP_Assignment_Group10_.Classes
             this.issues = string.Empty;
         }
 
-        public bool ScheduleExists(string username, DateTime date)
+        private bool ScheduleExists(string username, DateTime date)
         {
+            bool exists = false;
             con.Open();
             string query = "SELECT COUNT(*) FROM CleaningSchedule WHERE username = @username AND date = @date";
+
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@date", date);
+
                 int count = (int)cmd.ExecuteScalar();
-                con.Close();
-                return count > 0;
+                exists = (count > 0);
             }
+            con.Close();
+
+            return exists;
         }
+
 
         public void assign()
         {
             if (ScheduleExists(username, date))
             {
-                con.Open();
-                string query = "INSERT INTO CleaningSchedule (username, roomNum, date, status, issues) VALUES (@username, @roomNum, @date, @status, @issues)";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@roomNum", roomNum);
-                    cmd.Parameters.AddWithValue("@date", date);
-                    cmd.Parameters.AddWithValue("@status", status);
-                    cmd.Parameters.AddWithValue("@issues", issues);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Cleaning schedule assigned successfully.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error: Failed to assign.");
-                    }
-                }
-                con.Close();
-            }
-            else
                 MessageBox.Show("Error: This housekeeper is already assigned to this date.");
+                return;
+            }
+
+            con.Open();
+            string query = "INSERT INTO CleaningSchedule (username, roomNum, date, status, issues) VALUES (@username, @roomNum, @date, @status, @issues)";
+
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@roomNum", roomNum);
+                cmd.Parameters.AddWithValue("@date", date);
+                cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@issues", issues);
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Cleaning schedule assigned successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Error: Failed to assign.");
+                }
+            }
+            con.Close();
 
         }
 

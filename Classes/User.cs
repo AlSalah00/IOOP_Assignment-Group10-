@@ -58,6 +58,14 @@ namespace IOOP_Assignment_Group10_.Classes
             role = string.Empty;
         }
 
+        public User()
+        {
+            username = string.Empty;
+            password = string.Empty;
+            email = string.Empty;
+            role = string.Empty;
+        }
+
         public User(string username, string password)
         {
             this.username = username;
@@ -68,8 +76,8 @@ namespace IOOP_Assignment_Group10_.Classes
 
         // Checking if user already exists
         private bool UserIsUnique(string username)
-        {           
-            con.Open();           
+        {
+            con.Open();
             string query = "SELECT COUNT(*) FROM Users WHERE username = @username";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
@@ -77,7 +85,7 @@ namespace IOOP_Assignment_Group10_.Classes
                 int count = (int)cmd.ExecuteScalar();
                 con.Close();
                 return count == 0; // If count is 0, username is unique otherwise, it exists
-            }            
+            }
 
         }
         public void addUser()
@@ -110,9 +118,9 @@ namespace IOOP_Assignment_Group10_.Classes
                 }
                 con.Close();
             }
-            else 
+            else
             {
-                MessageBox.Show("Error: User already exists.");                
+                MessageBox.Show("Error: User already exists.");
             }
         }
 
@@ -141,35 +149,31 @@ namespace IOOP_Assignment_Group10_.Classes
             con.Close();
         }
 
-        public void updateProfile()
+        public void updateProfile(string newUsername, string newPassword)
         {
             con.Open();
-            string query = "UPDATE users SET username = @username, password = @password WHERE username = @username";
+            string query = "UPDATE users SET username = @newUsername, password = @newPassword WHERE username = @username";
 
-            if (UserIsUnique(username))
+
+            using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                cmd.Parameters.AddWithValue("@newUsername", newUsername);
+                cmd.Parameters.AddWithValue("@newPassword", newPassword);
+                cmd.Parameters.AddWithValue("@username", username);
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
                 {
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@password", password);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Profile updated successfully.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error: Failed to update the profile.");
-                    }
+                    MessageBox.Show("Profile updated successfully.");
                 }
-                con.Close();
+                else
+                {
+                    MessageBox.Show("Error: Failed to update the profile.");
+                }
             }
-            else
-            {
-                MessageBox.Show("Error: User already exists.");
-            }
+            con.Close();
+
         }
 
         public static List<User> viewAll()
@@ -194,7 +198,7 @@ namespace IOOP_Assignment_Group10_.Classes
 
         public string Login(string username, string password)
         {
-            string status = string.Empty;
+            string status = "Error: An unexpected error ouccurred.";
             con.Open();
 
             string query = "SELECT COUNT(*) FROM users WHERE username = @username AND password = @password";
@@ -220,7 +224,6 @@ namespace IOOP_Assignment_Group10_.Classes
                             if (reader.Read())
                             {
                                 string? userRole = reader["role"].ToString();
-
                                 con.Close();
 
                                 if (userRole == "Customer")
@@ -243,10 +246,13 @@ namespace IOOP_Assignment_Group10_.Classes
                                     ManagerPage mp = new ManagerPage(username);
                                     mp.ShowDialog();
                                 }
+
+                                return string.Empty;
                             }
                             else
                             {
                                 status = "Error: Could not retrieve user role.";
+                                con.Close();
                             }
                         }
                     }
@@ -254,11 +260,12 @@ namespace IOOP_Assignment_Group10_.Classes
                 else
                 {
                     status = "Error: Incorrect username/password.";
+                    con.Close();
                 }
             }
-            return status = "Login Successful.";
-
+            con.Close();
+            return status;
         }
-       
+
     }
 }

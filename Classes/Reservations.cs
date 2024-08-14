@@ -369,22 +369,66 @@ namespace IOOP_Assignment_Group10_.Classes
         {
             con.Open();
 
-            string query = "UPDATE Profit SET profit = @profit";
+            decimal currentProfit = 0;
+            string query = "SELECT profit FROM Profit";
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                cmd.Parameters.AddWithValue("@profit", profit);
-
-                int rowsAffected = cmd.ExecuteNonQuery();
-
-                if (rowsAffected > 0)
+                object result = cmd.ExecuteScalar();
+                if (result != null && result != DBNull.Value)
                 {
-                    MessageBox.Show("Payment collected successfully.");
+                    currentProfit = Convert.ToDecimal(result);
+                }
+            }
+
+            decimal updatedProfit = currentProfit + profit;
+            string query2 = "UPDATE Profit SET profit = @profit";
+
+            if (updatedProfit > 0)
+            {
+
+                using (SqlCommand cmd2 = new SqlCommand(query2, con))
+                {
+                    cmd2.Parameters.AddWithValue("@profit", updatedProfit);
+
+                    int rowsAffected = cmd2.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Profit updated successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error: Failed to update profit.");
+                    }
+                }
+            }
+            else
+                MessageBox.Show("Error: Failed to retrieve old profit");
+
+            con.Close();
+        }
+
+        public string getProfit()
+        {
+            con.Open();
+            string value = string.Empty;
+
+            string query = "SELECT profit FROM Profit";
+
+            using (SqlCommand cmd = new SqlCommand (query, con))
+            {
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    value = result.ToString();
                 }
                 else
-                    MessageBox.Show("Error: Failed to update profit.");
+                    MessageBox.Show("Error: No data found.");
             }
-            con.Close();
+
+            return value;
+            
         }
 
     }

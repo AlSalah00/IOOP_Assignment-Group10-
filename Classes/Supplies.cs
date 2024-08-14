@@ -10,12 +10,19 @@ namespace IOOP_Assignment_Group10_.Classes
 {
     internal class Supplies
     {
+        private string itemID;
         private string itemName;
         private int quantity;
         private decimal itemPrice;
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["myCS"].ToString());
 
 
+        public string ItemID
+        {
+            get { return itemID; }
+            set { itemID = value; }
+        }
+        
         public string ItemName
         {
             get { return itemName; }
@@ -34,36 +41,36 @@ namespace IOOP_Assignment_Group10_.Classes
             set { ItemPrice = value; }
         }
 
-        public Supplies(string itemName, int quantity, decimal itemPrice) 
+        public Supplies(string itemID, string itemName, int quantity, decimal itemPrice) 
         {
+            this.itemID = itemID;
             this.itemName = itemName;
             this.quantity = quantity;
             this.itemPrice = itemPrice;
         }
 
-        private bool ItemIsUnique(string itemName)
-        {
-            con.Open();
-            string query = "SELECT COUNT(*) FROM CleaningSupps WHERE itemName = @itemName";
 
-            using (SqlCommand cmd = new SqlCommand(query, con))
-            {
-                cmd.Parameters.AddWithValue("@itemName", itemName);
-                int count = (int)cmd.ExecuteScalar();
-                con.Close();
-                return count == 0; // If count is 0, itemName is unique otherwise, it exists
-            }
+        public Supplies(string itemID)
+        {
+            this.itemID = itemID;
+            this.itemName = string.Empty;
+        }
+
+
+        public string genereateID()
+        {
+            return $"I1{new Random().Next(1000, 9999)}";
         }
 
         public void addItem()
         {
-            if (ItemIsUnique(itemName))
-            {
-                con.Open();
-                string query = "INSERT INTO CleaningSupps (itemName, quantity, itemPrice) VALUES (@itemName, @quantity, @itemPrice)";
+            con.Open();
+            string itemID = genereateID();
+            string query = "INSERT INTO CleaningSupps (itemID, itemName, quantity, itemPrice) VALUES (@itemID, @itemName, @quantity, @itemPrice)";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
+                    cmd.Parameters.AddWithValue("@itemID", itemID);
                     cmd.Parameters.AddWithValue("@itemName", itemName);
                     cmd.Parameters.AddWithValue("@quantity", quantity);
                     cmd.Parameters.AddWithValue("@itemPrice", itemPrice);
@@ -80,23 +87,18 @@ namespace IOOP_Assignment_Group10_.Classes
                     }
                 }
                 con.Close();
-            }
-            else
-            {
-                MessageBox.Show("Error: Item already exists.");
-            }
         }
 
 
-        public void editItem()
+        public void editItem(string itemName, int quantity, decimal itemPrice)
         {
             con.Open();
-            string query = "UPDATE CleaningSupps SET itemName = @itemName, quantity = @quantity, itemPrice = @itemPrice WHERE itemName = @itemName";
+            string query = "UPDATE CleaningSupps SET itemName = @itemName, quantity = @quantity, itemPrice = @itemPrice WHERE itemID = @itemID";
 
-            if (ItemIsUnique(itemName))
-            {
+                
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
+                    cmd.Parameters.AddWithValue("@itemID", itemID);
                     cmd.Parameters.AddWithValue("@itemName", itemName);
                     cmd.Parameters.AddWithValue("@quantity", quantity);
                     cmd.Parameters.AddWithValue("@itemPrice", itemPrice);
@@ -113,32 +115,27 @@ namespace IOOP_Assignment_Group10_.Classes
                     }
                 }
                 con.Close();
-            }
-            else
-            {
-                MessageBox.Show("Error: Item already exists.");
-            }
         }
 
 
         public void delItem()
         {
             con.Open();
-            string query = "DELETE FROM CleaningSupps WHERE itemName = @itemName";
+            string query = "DELETE FROM CleaningSupps WHERE itemID = @itemID";
 
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                cmd.Parameters.AddWithValue("@itemName", itemName);
+                cmd.Parameters.AddWithValue("@itemID", itemID);
 
                 int rowsAffected = cmd.ExecuteNonQuery();
 
                 if (rowsAffected > 0)
                 {
-                    MessageBox.Show("Room deleted successfully.");
+                    MessageBox.Show("Item deleted successfully.");
                 }
                 else
                 {
-                    MessageBox.Show("Error: Failed to delete room.");
+                    MessageBox.Show("Error: Failed to delete item.");
                 }
             }
             con.Close();
@@ -149,15 +146,16 @@ namespace IOOP_Assignment_Group10_.Classes
         {
             List<Supplies> supps = new List<Supplies>();
             con.Open();
-            SqlCommand cmd = new SqlCommand("select itemName, quantity, itemPrice from CleaningSupps", con);
+            SqlCommand cmd = new SqlCommand("select itemID, itemName, quantity, itemPrice from CleaningSupps", con);
             SqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
             {
-                string itemName = rd.GetString(0);
-                int quantity = rd.GetInt32(1);
-                decimal itemPrice = rd.GetDecimal(2);
+                string itemID = rd.GetString(0);
+                string itemName = rd.GetString(1);
+                int quantity = rd.GetInt32(2);
+                decimal itemPrice = rd.GetDecimal(3);
 
-                Supplies supp = new Supplies(itemName, quantity, itemPrice);
+                Supplies supp = new Supplies(itemID, itemName, quantity, itemPrice);
                 supps.Add(supp);
             }
             con.Close();

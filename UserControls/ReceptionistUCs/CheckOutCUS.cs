@@ -81,11 +81,10 @@ namespace IOOP_Assignment_Group10_.UserControls.ReceptionistUCs
                 object value = selectedRow.Cells[0].Value;
                 object value2 = selectedRow.Cells[5].Value;
 
-                if (value2 != null && value2 is decimal && value != null && value is string strValue)
+                if (value2 != null && value2 is decimal payment && value != null && value is string strValue)
                 {
 
                     string resID = strValue.ToString();
-                    decimal payment = (decimal)value2;
 
                     if (payment > 0)
                     {

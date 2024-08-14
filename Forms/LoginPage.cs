@@ -23,24 +23,24 @@ namespace IOOP_Assignment_Group10_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string status;
-
-            if (!string.IsNullOrEmpty(txtUsername.Text) ||
+            if (!string.IsNullOrEmpty(txtUsername.Text) &&
                 !string.IsNullOrEmpty(txtPassword.Text))
             {
-                User u1 = new User(txtUsername.Text, txtPassword.Text);
-                status = u1.Login(txtUsername.Text, txtPassword.Text);               
+                User u1 = new User();
+                string status = u1.Login(txtUsername.Text, txtPassword.Text);
 
-                if (status != null)
+                if (string.IsNullOrEmpty(status))
                 {
                     this.Close();
-                    MessageBox.Show(status);
                 }
                 else
-                {                   
-                    txtUsername.Clear();
-                    txtPassword.Clear();
-                }              
+                {
+                    MessageBox.Show(status);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter your details.");
             }
         }
     }

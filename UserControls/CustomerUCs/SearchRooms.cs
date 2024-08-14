@@ -34,7 +34,7 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
 
                 object value1 = selectedRow.Cells[0].Value;
                 object value2 = selectedRow.Cells[3].Value;
-                DateTime checkinDate = DatePicker.Value.Date;
+                DateTime CheckInDate = DatePicker.Value.Date;
                 DateTime CheckOutDate = DatePicker2.Value.Date;
                 
 
@@ -44,7 +44,7 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
                     decimal price  = (decimal)value2;
                     if (roomNum > 0 && price > 0)
                     {
-                        Reservations r1 = new Reservations("ID", Name, roomNum, checkinDate, CheckOutDate, price, "Pending", "Uncompleted");
+                        Reservations r1 = new Reservations("ID", Name, roomNum, CheckInDate, CheckOutDate, price, "Pending", "Uncompleted");
                         r1.AddReservation();
                         Refreshtable();
                     }
@@ -58,6 +58,7 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
             ReservationGrid.AutoGenerateColumns = false;
             ReservationGrid.Columns.Clear();
             ReservationGrid.Columns.Add("RoomNum", "RoomNum");
+            ReservationGrid.Columns.Add("RoomType", "RoomType");
             ReservationGrid.Columns.Add("Amenities", "Amenities");
             ReservationGrid.Columns.Add("Price", "Price");
             ReservationGrid.Columns.Add("RoomDetails", "RoomDetails");

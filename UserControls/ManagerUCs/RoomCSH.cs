@@ -52,9 +52,10 @@ namespace IOOP_Assignment_Group10_.UserControls.ManagerUCs
             CleaningScheduleTable.Columns.Add("Status", "Status");
             CleaningScheduleTable.Columns.Add("Issues", "Issues");
 
-            List<CleaningSchedule> schedules = CleaningSchedule.viewAll();
+            List<CleaningSchedule> allSchedules = CleaningSchedule.viewAll();
+            var dirty = allSchedules.Where(s => s.Status == "Dirty").ToList();
 
-            foreach (CleaningSchedule schedule in schedules)
+            foreach (CleaningSchedule schedule in dirty)
             {
                 CleaningScheduleTable.Rows.Add(schedule.Username, schedule.RoomNum, schedule.Date, schedule.Status, schedule.Issues);
             }

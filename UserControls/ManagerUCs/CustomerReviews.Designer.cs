@@ -28,30 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new ListBox();
+            ReviewsTable = new DataGridView();
+            lblReviews = new Label();
+            ((System.ComponentModel.ISupportInitialize)ReviewsTable).BeginInit();
             SuspendLayout();
             // 
-            // listBox1
+            // ReviewsTable
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(57, 58);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(634, 524);
-            listBox1.TabIndex = 1;
+            ReviewsTable.BackgroundColor = Color.White;
+            ReviewsTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ReviewsTable.GridColor = Color.Black;
+            ReviewsTable.Location = new Point(97, 373);
+            ReviewsTable.Name = "ReviewsTable";
+            ReviewsTable.RowHeadersWidth = 51;
+            ReviewsTable.Size = new Size(530, 160);
+            ReviewsTable.TabIndex = 31;
+            // 
+            // lblReviews
+            // 
+            lblReviews.AutoSize = true;
+            lblReviews.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblReviews.Location = new Point(61, 64);
+            lblReviews.Name = "lblReviews";
+            lblReviews.Size = new Size(194, 28);
+            lblReviews.TabIndex = 32;
+            lblReviews.Text = "Customers Reviews";
             // 
             // CustomerReviews
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(listBox1);
+            Controls.Add(lblReviews);
+            Controls.Add(ReviewsTable);
             Name = "CustomerReviews";
             Size = new Size(748, 641);
+            ((System.ComponentModel.ISupportInitialize)ReviewsTable).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private ListBox listBox1;
+        private DataGridView ReviewsTable;
+        private Label lblReviews;
     }
 }

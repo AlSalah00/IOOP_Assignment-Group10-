@@ -26,17 +26,16 @@ namespace IOOP_Assignment_Group10_.UserControls
 
         private void RefreshTable()
         {
-            UsersTable.AutoGenerateColumns = false; // Disable auto generation of columns
+            UsersTable.AutoGenerateColumns = false;
             UsersTable.Columns.Clear();
             UsersTable.Columns.Add("Username", "Username");
             UsersTable.Columns.Add("Password", "Password");
             UsersTable.Columns.Add("Email", "Email");
             UsersTable.Columns.Add("Role", "Role");
 
-            // Retrieving user details from the database
-            List<User> users = User.viewAll();
+            List<User> allUsers = User.viewAll();
+            var users = allUsers.Where(u => u.Role == "Housekeeper" || u.Role == "Receptionist").ToList();
 
-            // Populating DataGridView with user details
             foreach (User user in users)
             {
                 UsersTable.Rows.Add(user.Username, user.Password, user.Email, user.Role);

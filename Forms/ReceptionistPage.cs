@@ -14,19 +14,55 @@ namespace IOOP_Assignment_Group10_.Forms
 {
     public partial class ReceptionistPage : Form
     {
+
+        private Color highlight = ColorTranslator.FromHtml("#0066cc");
+        private Color defaultColor = Color.Navy;
+        private Button[] buttons;
+
         public ReceptionistPage(string n)
         {
             InitializeComponent();
             Name = n;
             ManageCustomers mc = new ManageCustomers();
             addUserControl(mc);
+
+            buttons = new Button[] { ManageCustomersBtn, SearchForResBtn, CheckInBtn, checkOutBtn, UpdateProfileBtn_Rec, LOBtn_RCP};
+
+            foreach (Button btn in buttons)
+            {
+                btn.Click += Button_Click;
+            }
+
+            HighlightButton(ManageCustomersBtn);
         }
 
+        private void Button_Click(object? sender, EventArgs e)
+        {
+
+            if (sender is Button clickedButton)
+            {
+                // Reset all buttons to default color
+                foreach (Button btn in buttons)
+                {
+                    btn.BackColor = defaultColor;
+                }
+
+                // Highlight the clicked button
+                HighlightButton(clickedButton);
+            }
+
+        }
+
+        private void HighlightButton(Button button)
+        {
+            button.BackColor = highlight;
+        }
 
         private void ReceptionistPage_Load(object sender, EventArgs e)
         {
             lblIdentityRCP.Text = $"Welcome, {Name}";
         }
+
         private void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
@@ -61,7 +97,7 @@ namespace IOOP_Assignment_Group10_.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Editcustomers update = new Editcustomers();
+            UpdateProfileRec update = new UpdateProfileRec(Name);
             addUserControl(update);
         }
 

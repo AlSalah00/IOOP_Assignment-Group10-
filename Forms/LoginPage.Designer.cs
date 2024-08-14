@@ -37,7 +37,6 @@
             txtUsername = new TextBox();
             txtPassword = new TextBox();
             LoginBtn = new Button();
-            linkLabel1 = new LinkLabel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -139,23 +138,12 @@
             LoginBtn.UseVisualStyleBackColor = false;
             LoginBtn.Click += button1_Click;
             // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(445, 350);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(127, 20);
-            linkLabel1.TabIndex = 7;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Forgot password?";
-            // 
             // LoginPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(858, 471);
-            Controls.Add(linkLabel1);
             Controls.Add(LoginBtn);
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
@@ -182,7 +170,6 @@
         private TextBox txtUsername;
         private TextBox txtPassword;
         private Button LoginBtn;
-        private LinkLabel linkLabel1;
         private Label label4;
     }
 }
