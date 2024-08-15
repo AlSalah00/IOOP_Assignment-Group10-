@@ -103,11 +103,14 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
                         Review r1 = new Review(resID, Name, rating, review);
                         r1.addReview();
                     }
-
+                    else
+                        MessageBox.Show("Error: Unable to send review.");
                 }
                 else
-                    MessageBox.Show("Error: An unexpected error occurred.");
+                    MessageBox.Show("Error: Selected row is empty.");
             }
+            else
+                MessageBox.Show("Error: No reservation selected.");
         }
     }
 }

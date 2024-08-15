@@ -55,7 +55,7 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
                 DataGridViewRow selectedRow = ReservationsTable.SelectedRows[0];
 
                 object value = selectedRow.Cells[0].Value;
-                object value2 = selectedRow.Cells[0].Value;
+                object value2 = selectedRow.Cells[5].Value;
 
                 if (value != null && value is string strValue && value2 != null && value2 is decimal)
                 {
@@ -70,8 +70,14 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
                         res.EditReservation(checkin, checkOut, total);
                         RefreshTable();
                     }
+                    else
+                        MessageBox.Show("Error: Unable to update reservation.");
                 }
+                else
+                    MessageBox.Show("Error: Selected row is empty.");
             }
+            else 
+                MessageBox.Show("Error: No reservation selected.");
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
@@ -91,6 +97,7 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
                     {
                         Reservations res = new Reservations(resID);
                         res.deleteReservation();
+                        RefreshTable();
                     }
                 }
             }

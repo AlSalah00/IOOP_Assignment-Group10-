@@ -31,7 +31,7 @@ namespace IOOP_Assignment_Group10_.UserControls.HousekeepingUCs
 
             List<CleaningSchedule> allSchedules = CleaningSchedule.viewAll();
 
-            var userSchedules = allSchedules.Where(schedule => schedule.Username == Name);
+            var userSchedules = allSchedules.Where(schedule => schedule.Username == Name && schedule.Status == "Dirty");
 
             RoomCSCHTable.Rows.Clear();
             foreach (var schedule in userSchedules)

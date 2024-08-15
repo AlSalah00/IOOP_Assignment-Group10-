@@ -27,7 +27,7 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
 
         private void AddResBtn_Click(object sender, EventArgs e)
         {
-            if (ReservationGrid.CurrentRow != null)
+            if (ReservationGrid.SelectedRows.Count > 0)
             {
 
                 DataGridViewRow selectedRow = ReservationGrid.SelectedRows[0];
@@ -36,20 +36,32 @@ namespace IOOP_Assignment_Group10_.UserControls.CustomerUCs
                 object value2 = selectedRow.Cells[3].Value;
                 DateTime CheckInDate = DatePicker.Value.Date;
                 DateTime CheckOutDate = DatePicker2.Value.Date;
-                
+
 
                 if (value1 != null && value1 is int && value2 != null && value2 is decimal)
                 {
                     int roomNum = (int)value1;
-                    decimal price  = (decimal)value2;
-                    if (roomNum > 0 && price > 0)
+                    decimal price = (decimal)value2;
+
+                    TimeSpan stayDuration = CheckOutDate - CheckInDate;
+                    int numberOfNights = stayDuration.Days;
+
+                    decimal TotalCharges = numberOfNights * price;
+
+                    if (roomNum > 0 && TotalCharges > 0)
                     {
-                        Reservations r1 = new Reservations("ID", Name, roomNum, CheckInDate, CheckOutDate, price, "Pending", "Uncompleted");
+                        Reservations r1 = new Reservations("ID", Name, roomNum, CheckInDate, CheckOutDate, TotalCharges, "Pending", "Uncompleted");
                         r1.AddReservation();
                         Refreshtable();
                     }
+                    else
+                        MessageBox.Show("Error: Unable to reserve room.");
                 }
+                else
+                    MessageBox.Show("Error: Selected row is empty.");
             }
+            else
+                MessageBox.Show("Error: No room selected");
         }
 
 

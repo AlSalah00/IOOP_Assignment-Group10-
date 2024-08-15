@@ -38,10 +38,10 @@
             RoomCSCHTable.BackgroundColor = Color.White;
             RoomCSCHTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             RoomCSCHTable.GridColor = Color.Black;
-            RoomCSCHTable.Location = new Point(248, 161);
+            RoomCSCHTable.Location = new Point(61, 160);
             RoomCSCHTable.Name = "RoomCSCHTable";
             RoomCSCHTable.RowHeadersWidth = 51;
-            RoomCSCHTable.Size = new Size(253, 318);
+            RoomCSCHTable.Size = new Size(441, 318);
             RoomCSCHTable.TabIndex = 0;
             // 
             // lblUCSCH

@@ -38,10 +38,10 @@
             UpcomingResTBL.BackgroundColor = Color.White;
             UpcomingResTBL.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             UpcomingResTBL.GridColor = Color.Black;
-            UpcomingResTBL.Location = new Point(251, 172);
+            UpcomingResTBL.Location = new Point(61, 162);
             UpcomingResTBL.Name = "UpcomingResTBL";
             UpcomingResTBL.RowHeadersWidth = 51;
-            UpcomingResTBL.Size = new Size(247, 297);
+            UpcomingResTBL.Size = new Size(440, 297);
             UpcomingResTBL.TabIndex = 1;
             // 
             // lblUpcomingRes
